@@ -195,7 +195,7 @@ server {
     }
 }
 server {
-    listen ip: 8000
+    listen ip: 8000;
     location / {
       root /etc/nginx/html;
       index 8000.html
@@ -248,4 +248,51 @@ server {
 ![](https://raw.githubusercontent.com/mannixchan/Pics/master/img/20210228181731.png)
 
 ![](https://raw.githubusercontent.com/mannixchan/Pics/master/img/20210228182047.png)
+
+
+
+
+
+#### 部署实践
+
+> 重定向到其他网站
+
+```nginx
+        location / {
+            return 302 http://www.baidu.com;
+        }
+```
+
+> 在服务器配置了多个服务, 想通过不同网址后缀, 访问不同的服务
+
+```nginx
+        listen 8000;
+		location /sell {
+            proxy_pass http://127.0.0.1:8010;
+        }
+        location /music {
+            proxy_pass http://127.0.0.1:8020;
+        }
+#想通过-网址/sell -网址/music访问到不同的项目, 静态文件地址, 并且反向代理到其他端口
+    server {
+        listen 8020;
+        location /music {
+            alias /root/www/vueMusci;
+        }
+#此时访问8000/music, 就会转发到8020/music, 注意转发的时候会带着/music一起转发, 所以配置8020要带着/music
+#注意-root和alias的用法
+    #exeample
+        server {
+        listen 8020;
+        location /music {
+            alias /root/www/vueMusci; #此时会默认寻找/root/www/vueMusci下的index.html
+        }
+        
+         server {
+        listen 8020;
+        location /music {
+            root /root/www/vueMusci; #会寻找/root/www/vueMusci/root下的index.html, root会拼接location觉得地址
+        }
+    # 所以一般/...一般使用alias, 除了根目录都用alias
+```
 
