@@ -291,7 +291,7 @@ server {
          server {
         listen 8020;
         location /music {
-            root /root/www/vueMusci; #会寻找/root/www/vueMusci/root下的index.html, root会拼接location觉得地址
+            root /root/www/vueMusci; #会寻找/root/www/vueMusci/music下的index.html, root会拼接location觉得地址
         }
     # 所以一般/...一般使用alias, 除了根目录都用alias
 ```
