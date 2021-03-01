@@ -240,6 +240,12 @@ server {
 
 `定制日志内容`: nginx.conf
 
+配置日志格式使用的是`log_format`属性
+
+![](https://raw.githubusercontent.com/mannixchan/Pics/master/img/20210301125118.png)
+
+![带准确ip日志详细配置](https://raw.githubusercontent.com/mannixchan/Pics/master/img/20210301125410.png)
+
 ```nginx
 #logging setting
 #需求: 在转发时候携带上真实ip地址, 需要在转发时候把地址放到header里面
