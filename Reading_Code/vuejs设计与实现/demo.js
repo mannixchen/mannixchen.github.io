@@ -12,15 +12,21 @@ const data = {
   text: 'morning chen'
 }
 function cleanup(effectFn) {
-  
+  // 要将副作用函数从对应key 的依赖集合中去掉
+  effectFn.deps.forEach(deps => {
+    deps.delete(effectFn)
+  })
+  effectFn.deps.length = 0
 }
 // 注册函数
 function effect (fn) {
   const effectFn = () => {
+    console.log("🚀 ~ file: demo.js ~ line 28 ~ effectFn ~ effectFn")
     cleanup(effectFn)
     activeEffect = effectFn
     fn()
   }
+  effectFn.deps = []
   effectFn()
 }
 function track (target, key) {
@@ -29,17 +35,18 @@ function track (target, key) {
   if(!depsMap) {
     bucket.set(target, (depsMap = new Map()))
   }
-  let effectSet = depsMap[key]
-  if(!effectSet) {
-    depsMap.set(key, (effectSet = new Set()))
+  let deps = depsMap[key]
+  if(!deps) {
+    depsMap.set(key, (deps = new Set()))
   }
-  effectSet.add(activeEffect)
+  deps.add(activeEffect)
+  activeEffect.deps.push(deps)
 }
 function trigger(target, key) {
-  let dep = bucket.get(target)
-  if(!dep) return
-  let keySet = dep.get(key)
-  keySet && keySet.forEach(fn => fn())
+  let depsMap = bucket.get(target)
+  if(!depsMap) return
+  let effectSet = depsMap.get(key)
+  effectSet && effectSet.forEach(fn => fn())
 }
 const obj = new Proxy(data, {
   get: function (target, key) {
@@ -55,6 +62,5 @@ const obj = new Proxy(data, {
 
 effect(() => {
   document.body.innerHTML = obj.ok ? obj.text : 'not'
-  console.log("🚀 ~ file: demo.js ~ line 44 ~ effect ~ innerHTML")
 })
 window.obj = obj
