@@ -12,46 +12,46 @@ const data = {
   text: 'morning chen'
 }
 function cleanup(effectFn) {
-  // 要将副作用函数从对应key 的依赖集合中去掉
-  effectFn.deps.forEach(deps => {
-    deps.delete(effectFn)
-  })
+  for(let i = 0, l = effectFn.deps.length; i < l; i++) {
+    // 把依赖集合清空
+    effectFn.deps[i].delete(effectFn)
+  }
   effectFn.deps.length = 0
 }
 // 注册函数
 function effect (fn) {
-  // 1. 创建一个副作用函数(直接或间接影响到其他函数的执行, 比如改变了一个全局变量)
   const effectFn = () => {
-    console.log("🚀 ~ file: demo.js ~ line 28 ~ effectFn ~ effectFn")
-    // 每次调用副作用函数, 都会先清理 副作用函数.deps 中存放的依赖集合
+    console.log('excute effect function.....')
     cleanup(effectFn)
     activeEffect = effectFn
     fn()
   }
-  // deps用来收集
   effectFn.deps = []
   effectFn()
 }
 function track (target, key) {
+  console.log('excute get fn....')
   if(!activeEffect) return
   let depsMap = bucket.get(target)
   if(!depsMap) {
     bucket.set(target, (depsMap = new Map()))
   }
-  // deps 为依赖集合(副作用函数)
-  let deps = depsMap[key]
-  if(!deps) {
-    depsMap.set(key, (deps = new Set()))
+  let effectSet = depsMap[key]
+  if(!effectSet) {
+    depsMap.set(key, (effectSet = new Set()))
   }
-  // 副作用函数的 deps (effectFn.deps)收集了跟他有关系的依赖集合, 也就是说, 依赖集合收集 effectFn, 同时 effectFn.deps 也收集着依赖结合
-  deps.add(activeEffect)
-  activeEffect.deps.push(deps)
+  effectSet.add(activeEffect)
+  activeEffect.deps.push(effectSet)
 }
 function trigger(target, key) {
+  console.log('excute set fn....')
   let depsMap = bucket.get(target)
   if(!depsMap) return
-  let effectSet = depsMap.get(key)
-  effectSet && effectSet.forEach(fn => fn())
+  let effects = depsMap.get(key)
+  effects && effects.forEach(fn => {
+    console.log('foreach....', effects, depsMap)
+    fn()
+  })
 }
 const obj = new Proxy(data, {
   get: function (target, key) {
