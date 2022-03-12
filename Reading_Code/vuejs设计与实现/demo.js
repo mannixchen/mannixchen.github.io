@@ -36,7 +36,8 @@ function track (target, key) {
   if(!depsMap) {
     bucket.set(target, (depsMap = new Map()))
   }
-  let effectSet = depsMap[key]
+  // map 用 get 方法, 不是中括号语法
+  let effectSet = depsMap.get(key)
   if(!effectSet) {
     depsMap.set(key, (effectSet = new Set()))
   }
