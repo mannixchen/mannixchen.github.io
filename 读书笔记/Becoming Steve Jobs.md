@@ -113,3 +113,35 @@ VERB 动词(为使某人、团体或国家按自己的意愿做某事而)试图�
 - /dɪ'pɑrtʃɚ/ 离去
 - [/ˌɪɡnə'mɪnɪəs/] 耻辱的;不光彩的;不名誉的;丢脸的 If you describe an experience or action as **ignominious**, you mean it is embarrassing because it shows a great lack of success.
 - saga: 一连串事件,  sequence of events.
+
+### In the six months since, the details of his new startup had been kept hush-hush /ˈhʌʃˌhʌʃ/
+
+- In the six months since 在此后的六个月呢
+- hush-hush 保密的, 机密的
+
+### Had filed lawsuits trying to prevent Jobs from hiring away its employees
+
+- filed lawsuits  提交诉讼
+
+### publicist 公关人员 PR AGENCY public relations agency
+
+
+
+### a handful of interviews
+
+- 少数几个采访
+
+
+
+### I was thoroughly fascinated, and equally wary.
+
+- [/'fæsə'net/] ADJ-GRADED 能被表示程度的副词或介词词组修饰的形容词极感兴趣的;入迷的 If you are **fascinated by** something, you find it very interesting and attractive, and your thoughts tend to concentrate on it.
+
+- /'wɛri/ 谨慎的提防的的
+
+### I did’t want to get taken in by the notoriously charismatic Mr. Jobs.
+
+- /no'tɔrɪəs/ ADJ-GRADED 能被表示程度的副词或介词词组修饰的形容词声名狼藉的;臭名昭著的;众所周知的 To be **notorious** means to be well-known for something bad.
+
+- /ˌkærɪz'mætɪk/ 有魅力的;有感召力的 A **charismatic** person attracts, influences, and inspires people by their personal qualities.
+
