@@ -1,3 +1,5 @@
+[TOC]
+
 # Getting Started
 
 ## Intoduction
@@ -264,6 +266,8 @@ An application instance won't render anything until its `.mount()` method is cal
 
 ## Template syntax
 
+### Vocabulary
+
 ---
 
 `declaratively/dɪ'klærətɪv/`  声明的
@@ -300,9 +304,109 @@ An application instance won't render anything until its `.mount()` method is cal
 
 `XSS vulnerability/ˌvʌlnərə'biliti/ ` 缺陷弱点
 
+`evaluate /ɪˈvæljuˌeɪt/`【数】求…的值
+
+`asynchronous /ei'siŋkrənəs/` 异步的
+
+`Restricted ` 限制有限的
+
+`explicitly /ɪk'splɪsɪtli/` 明确的, 露骨的
+
+`are expected to` 应该是
+
+`with the exception of ` 除了…之外 exception例外除外
+
+`truthiness` 真实
+
+`denote /dɪˈnoʊt/` 表示
+
+`colon/'kolən/ ` 冒号 `denoted by a colon after the directive name` 
+
+`square brackets` 方括号 `[]`
+
+`Constraints  /kən'strent/` 限制;束缚;约束 
+
+`quotes` 引号
+
+`coerce/kəʊ'ɜːs/ ` 强制胁迫
+
+`modifier` 修饰语, 改良剂
+
+`postfixes` 后缀
+
+`visualized /viʒuə,laizd/` 直观的
+
+
+
 ---
 
 Render function does not enjoy the same level of compile-time optimizations  as templates.
+
+### Text Interpolation
+
+> using the "Mustache" syntax
+
+### Raw HTML
+
+> using the `v-html` attribute
+
+### Attribute Bindings
+
+> Mustaches can't be used inside HTML attributes, Instead, use `v-bind` directive
+
+```html
+v-bind:id="dynamicId" ---Shorthand---> :id="daynamicId"
+```
+
+### Dynamically Binding Multiple Attributes
+
+> Binding multiple attributes using a object
+
+```vue
+const objectOfAttrs = {
+  id: 'container',
+  class: 'wrapper'
+}
+<div v-bind="objectOfAttrs"></div>
+```
+
+### Calling Functions
+
+> Functions called inside binding expressions will be called every time the component updates
+
+
+
+### Restricted Globals Access
+
+> explicitly define additional globals for all Vue expressions by adding them to [`app.config.globalProperties`](https://vuejs.org/api/application.html#app-config-globalproperties).
+
+
+
+### Dynamic Argument
+
+1. Dynamic arguments are expected to evaluate to a string, with the exception of `null`. The special value `null` can be used to explicitly remove the binding. Any other non-string value will trigger a warning.
+2. Dynamic argument expressions have some syntax constraints because certain characters, such as spaces and quotes, are invalid inside HTML attribute names. Use `computed` property
+3. When using in-DOM templates (templates directly written in an HTML file), you should also avoid naming keys with uppercase characters, as browsers will coerce attribute names into lowercase
+
+
+
+Full directive syntax visualized:
+
+![img](https://vuejs.org/assets/directive.69c37117.png)
+
+
+
+
+
+
+
+## Reactivity Fundamentals
+
+
+
+
+
+
 
 
 
