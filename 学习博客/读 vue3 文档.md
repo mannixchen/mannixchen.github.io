@@ -240,7 +240,11 @@ Use **es6-string-html** in es6 HTML strings, it will get hightlight support
 
 ---
 
-``
+`expects` 期望, 需要
+
+`registrations/'rɛdʒɪ'streʃən/`  注册
+
+`descendent/dɪˈsɛndənt/` 子孙 后代
 
 
 
@@ -252,7 +256,53 @@ The object we pass to `createApp` is a component, and it’s a root component.
 
 ### Mounting the App
 
+An application instance won't render anything until its `.mount()` method is called. 
 
+
+
+
+
+## Template syntax
+
+---
+
+`declaratively/dɪ'klærətɪv/`  声明的
+
+`underlying component` 底层的组件
+
+`syntactically /sin'tæktikli/ ` 语法层面上 syntactically valid HTML(语法合规的 HTML)
+
+`spec-compliant ` 符合规范的
+
+`compliant /kəm'plaɪənt` 服从的, 顺从的
+
+`hood` 盖子, 引擎盖, 罩子
+
+`Under the hood` 藏在表面之下的机制或结构, 在后台
+
+`reactivity[ˌri:æk'tɪvɪti] ` 反应度；反应能力；活动性, 反应性
+
+`intelligently /ɪnˈtelɪdʒəntli/` 聪明的明智的
+
+`DOM manipulations  [məˌnɪpjəˈleɪʃ(ə)n] ` 操作操纵
+
+`Interpolation [ɪnˌtɚpəˈleɪʃən] ` 插入文字
+
+`curly braces` 花括号 `{}`
+
+`corresponding /ˌkɔrəˈspɑndɪŋ/` 相应的
+
+`interprets/ɪnˈtɜrprət/` 解释
+
+`directive /daɪˈrektɪv/` 指示,命令
+
+`arbitrary` 任意的 武断的
+
+`XSS vulnerability/ˌvʌlnərə'biliti/ ` 缺陷弱点
+
+---
+
+Render function does not enjoy the same level of compile-time optimizations  as templates.
 
 
 
