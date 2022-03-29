@@ -71,6 +71,8 @@
 
 `patterns`-模式
 
+`going over all content ` - 浏览所有内容
+
 
 
 ---
@@ -109,6 +111,150 @@ the Options API is implemented on top of the Composition API!
 The **Options API** is centered around (以… 为中心) the concept of a "component instance" (`this` as seen in the example), which typically aligns better (更好的对齐, 更符合) with a class-based mental model for users coming from OOP language backgrounds.
 
 The **Composition API** is centered around declaring reactive state variables directly in a function scope, and composing state from multiple functions together to handle complexity. It is more free-form, and requires understanding of how reactivity works in Vue to be used effectively. In return, its flexibility enables more powerful patterns for organizing and reusing logic.
+
+
+
+## Quick Start
+
+### Vocabulary
+
+---
+
+`identical` - 完全一样的
+
+`scaffolding /'skæfəldɪŋ/ tool` - 脚手架工具
+
+`for now` - 眼下, 当下, 暂时如此 simply choose `No` by hitting enter for now (暂时选 No)
+
+`viable/ˈvaɪəbəl/ ` - 可行的
+
+`underlying build tool Vite` - 底层的构建工具
+
+`ship your app to production` - 将你的产品交付生产
+
+`consistency` 连贯性;一致性
+
+`primarily` 主要的
+
+`chromium/'kromɪəm/` 谷歌浏览器的, 铬元素, 金属风格
+
+---
+
+### With build tools
+>
+>To create a build-tool-enabled Vue project on your machine
+
+```sh
+npm init vue@latest
+```
+
+### Without build tools
+
+```html
+<script src="https://unpkg.com/vue@3"></script>
+
+<div id="app">{{ message }}</div>
+
+<script>
+  Vue.createApp({
+    data() {
+      return {
+        message: 'Hello Vue!'
+      }
+    }
+  }).mount('#app')
+</script>
+```
+
+But if we want to use ES modules for consistency , use the following HTML instead:
+
+```html
+<script type="importmap">
+  // importmap only works in chromium-based browsers like chrome or edge
+
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+
+<div id="app">{{ message }}</div>
+
+<script type="module">
+  import { createApp } from 'vue'
+
+  createApp({
+    data() {
+      return {
+        message: 'Hello Vue!'
+      }
+    }
+  }).mount('#app')
+</script>
+```
+
+### [Serving over HTTP](https://vuejs.org/guide/quick-start.html#serving-over-http)
+
+If we want to split code into separate js files, we need to author like this
+
+```html
+<!-- index.html -->
+<script type="module">
+  import { createApp } from 'vue'
+  import MyComponent from './my-component.js'
+
+  createApp(MyComponent).mount('#app')
+</script>
+```
+
+```js
+// my-component.js
+export default {
+  data() {
+    return { count: 0 }
+  },
+  template: `<div>count is {{ count }}</div>`
+}
+```
+
+
+
+Run `npx serve` from the command line in the same directory where your HTML is. Or it desn’t work.
+
+
+
+Use **es6-string-html** in es6 HTML strings, it will get hightlight support
+
+
+
+
+
+
+
+# Essentials
+
+## Create a Vue Application
+
+### Vocabulary
+
+---
+
+``
+
+
+
+---
+
+### The Root Component
+
+The object we pass to `createApp` is a component, and it’s a root component.
+
+### Mounting the App
+
+
+
+
 
 
 
