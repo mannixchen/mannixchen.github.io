@@ -1,4 +1,4 @@
-[TOC]
+
 
 # Getting Started
 
@@ -402,7 +402,25 @@ Full directive syntax visualized:
 
 ## Reactivity Fundamentals
 
+### Vocabulary
 
+---
+
+`verbose/vɝ'bos/` 冗长的, 啰嗦的
+
+`synchronous /ˈsɪŋkrənəs/` 同步的
+
+`update cycle` 更新周期
+
+---
+
+### Declaring Reactive State
+
+1. create a reactive object or array with the [`reactive()`](https://vuejs.org/api/reactivity-core.html#reactive) function:
+
+### DOM Update Timing
+
+o wait for the DOM update to complete after a state change, you can use the [nextTick()](https://vuejs.org/api/general.html#nexttick) global API , you need Import from ‘vue’ first
 
 
 
