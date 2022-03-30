@@ -412,6 +412,22 @@ Full directive syntax visualized:
 
 `update cycle` 更新周期
 
+`exclusively` 专门, 完全的
+
+`consistent` 一致的的
+
+`destructure` 解构
+
+`address` 解决, 处理
+
+`In other words` 换句话说
+
+`Composable` 可组合
+
+`extract` 提取提炼 - extracting logic into Composable Functions.
+
+`Unwrapping` 解包, 展开包装
+
 ---
 
 ### Declaring Reactive State
@@ -422,11 +438,28 @@ Full directive syntax visualized:
 
 o wait for the DOM update to complete after a state change, you can use the [nextTick()](https://vuejs.org/api/general.html#nexttick) global API , you need Import from ‘vue’ first
 
+### Deep Reactivity
+
+You can expect changes to be detected even when you mutate nested objects or arrays
+
+Due to deep reactivity, nested objects inside a reactive object are also proxies.
 
 
 
+### Reactive Variables with `ref()`
 
+To address the limitations of `reactive()`, Vue also provides a [`ref()`](https://vuejs.org/api/reactivity-core.html#ref) function which allows us to create reactive **"refs"** that can hold any value type
 
+`ref()` takes the argument and returns it wrapped (包裹, 封装) within a ref object with a `.value` property, when holding object types, ref automatically converts its `.value` with `reactive()`. 
+
+A ref containing an object value can reactively replace the entire object:
+
+```js
+const objectRef = ref({ count: 0 })
+
+// this works reactively
+objectRef.value = { count: 1 }
+```
 
 
 
