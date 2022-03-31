@@ -428,6 +428,16 @@ Full directive syntax visualized:
 
 `Unwrapping` 解包, 展开包装
 
+`drawback` 缺点
+
+`imposed` 被强加
+
+`ergonomics/'ɝgə'nɑmɪks/`  人机工程学
+
+`experimental/ɛk'spɛrɪ'mɛntəl/` 试验性的
+
+`finalize/'faɪnəlaɪz/` 最后确定, 最后敲定
+
 ---
 
 ### Declaring Reactive State
@@ -463,7 +473,55 @@ objectRef.value = { count: 1 }
 
 
 
+## **[Computed Properties](https://vuejs.org/guide/essentials/computed.html)**
 
+### Vocabulary
 
+---
 
+`be meant for` 注定, 意味着
+
+`bloated/'blotɪd/` (机构组织)臃肿的
+
+`cluttered` 杂乱的凌乱的
+
+`probably/'prɑbəbli/` 或许可能大概
+
+` refactor` 重构
+
+`invocation` 调用
+
+`In cases` 在一些情况下
+
+` in turn ` 反过来
+
+`destructuring` 解构的
+
+`accordingly` 相应的
+
+`be free of ` 远离… 免于…
+
+`responsibility /rɪ,spɑnsə'bɪləti/` 责任
+
+`derive` 衍生, 派生
+
+`snapshot` 快照
+
+----
+
+The `computed()` function expects to be passed a getter function, and the returned value is a **computed ref**. Similar to normal refs, you can access the computed result as `publishedBooksMessage.value`. 
+
+**computed properties are cached based on their reactive dependencies.**In comparison, a method invocation will **always** run the function whenever a re-render happens.
+
+Computed properties are by default getter-only. 
+
+ In the rare cases where you need a "writable" computed property, you can create one by providing both a getter and a setter:
+
+**Getters should be side-effect free** For example, don't make async requests or mutate the DOM inside a computed getter! 
+
+Think of a computed property as declaratively describing how to derive a value based on other values
+
+its only responsibility should be computing and returning that value.
+
+Think of it **as a temporary snapshot** - every time the source state changes, a new snapshot is created. **It does not make sense to mutate a snapshot,** so a computed return value should be treated as read-only and never be mutated\- instead, update the source state it depends on to trigger new computations.
 
