@@ -525,3 +525,32 @@ its only responsibility should be computing and returning that value.
 
 Think of it **as a temporary snapshot** - every time the source state changes, a new snapshot is created. **It does not make sense to mutate a snapshot,** so a computed return value should be treated as read-only and never be mutated\- instead, update the source state it depends on to trigger new computations.
 
+## [**Class and Style Bindings**](https://vuejs.org/guide/essentials/class-and-style.html)
+
+### Vocabulary
+
+---
+
+`meddle/'mɛdl/`  干预干涉 meddle with….
+
+`concatenation /kən'kætə'neʃən/` 不可数名词一连串相关联的事情；接二连三的相关事件 string concatenation 字符串连接
+
+`annoying` 令人厌烦的
+
+`prone/pron/` 易于…的, 有..(不好的)倾向 error-prone: 易出错的
+
+`In addition to ` 除了
+
+`presence` 存在
+
+
+
+---
+
+
+
+In addition to strings, the expressions can also evaluate to objects or arrays.
+
+the `:class` directive can also co-exist with the plain `class` attribute. So given the following state.
+
+The bound object doesn't have to be inline.
