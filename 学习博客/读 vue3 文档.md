@@ -554,3 +554,5 @@ In addition to strings, the expressions can also evaluate to objects or arrays.
 the `:class` directive can also co-exist with the plain `class` attribute. So given the following state.
 
 The bound object doesn't have to be inline.
+
+ it's also possible to use the object syntax inside array syntax.
