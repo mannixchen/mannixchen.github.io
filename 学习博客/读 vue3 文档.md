@@ -543,13 +543,15 @@ Think of it **as a temporary snapshot** - every time the source state changes, a
 
 `presence` 存在
 
-###### ` Feel free to` 随意
+` Feel free to` 随意
+
+`Fallthrough` 失败落空
 
 
 
 ---
 
-
+### class
 
 In addition to strings, the expressions can also evaluate to objects or arrays.
 
@@ -558,3 +560,10 @@ the `:class` directive can also co-exist with the plain `class` attribute. So gi
 The bound object doesn't have to be inline.
 
  it's also possible to use the object syntax inside array syntax.
+
+When you use the `class` attribute on a component with a single root element, those classes will be **added to the component's root element**, and merged with any existing class already on it.
+
+If your component has multiple root elements, you would need to define which element will receive this class. You can do this using the `$attrs` component property
+
+### Inline-style 
+
