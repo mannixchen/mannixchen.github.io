@@ -547,6 +547,12 @@ Think of it **as a temporary snapshot** - every time the source state changes, a
 
 `Fallthrough` 失败落空
 
+`camelCase` `kebab-cased ` `kebab /kɪ'bæb/` 烤串, 烤肉片 肉串上的肉块
+
+` conjunction美 /kən'dʒʌŋkʃən/`  N - 同时发生, 同地发生 in conjunction with  共同, 协力
+
+`appropriate /əˈproʊpriˌeɪt/`合适的
+
 
 
 ---
@@ -566,4 +572,54 @@ When you use the `class` attribute on a component with a single root element, th
 If your component has multiple root elements, you would need to define which element will receive this class. You can do this using the `$attrs` component property
 
 ### Inline-style 
+
+
+
+
+
+
+
+## [Conditional Rendering](https://vuejs.org/guide/essentials/conditional.html)
+
+`chain` 链接
+
+`invisible wrapper.` 无形包装
+
+`properly` 正确的, 得体的
+
+`implicit 美 /ɪm'plɪsɪt/`  含蓄的, 不言明的, 隐式的
+
+`precedence 美 /ˈpresɪdəns/` 优先权
+
+## [List Rendering](https://vuejs.org/guide/essentials/list.html)
+
+`iterate 美 /'ɪtəreɪt/`迭代 重复
+
+`delimiter` 定界符
+
+`enumeration美 /ɪˌnjuməˈreʃən/`
+
+`implicit vs explicit` 
+
+`in-place patch` 就地补丁
+
+`performance gains.` 性能增益
+
+`tightly coupled` 紧密耦合
+
+`as the name suggests`
+
+`Mutation Methods` 突变方法, 指改变原有数组的方法
+
+`heuristics/hjuˈrɪstɪks/` 启发式方法
+
+`overlap /ˈoʊvərˌlæp/` 重叠containing overlapping objects 包含重叠对象
+
+`feasible /ˈfizəb/` 行得通的
+
+`though` 然而
+
+## [Event Handling](https://vuejs.org/guide/essentials/event-handling.html)
+
+`dispatch` 触发调度
 
