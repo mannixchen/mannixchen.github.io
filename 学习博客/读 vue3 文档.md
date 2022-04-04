@@ -623,3 +623,24 @@ If your component has multiple root elements, you would need to define which ele
 
 `dispatch` 触发调度
 
+`Recall` 回想
+
+`passive` 顺从的, 听之任之的, 消极的 (用在事件处理函数中, 表示不管触发什么函数, 都先做出默认行为)
+
+`in case` 如果, 万一
+
+`cadet美 /kə'dɛt/` 学员
+
+`Symbolic` 符号的
+
+`combination美 /ˌkɑmbɪ'neʃən/` 结合联合混合
+
+
+
+## [Form Input Bindings](https://vuejs.org/guide/essentials/forms.html)
+
+`cumbersome美 /ˈkʌmbəsəm/`   复杂而又低效的
+
+`wire up` 给.. 布线, 连接
+
+`typecast` 类型转换
