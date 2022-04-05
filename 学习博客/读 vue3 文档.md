@@ -673,3 +673,17 @@ If your component has multiple root elements, you would need to define which ele
 
 ## [Template Refs](https://vuejs.org/guide/essentials/template-refs.html)
 
+`abstract` 抽象
+
+`obtain` 获得
+
+`initialize` 初始化
+
+`account for` 对…负有责任
+
+`populate` 居住于, 填入, 填充
+
+`retrieve` 找回, 挽回, 检索
+
+
+
