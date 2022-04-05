@@ -644,3 +644,32 @@ If your component has multiple root elements, you would need to define which ele
 `wire up` 给.. 布线, 连接
 
 `typecast` 类型转换
+
+## [Lifecycle Hooks](https://vuejs.org/guide/essentials/lifecycle.html)
+
+`Along the way` 在此过程中
+
+`associates` 关联
+
+`lexically美 /'lɛksɪkl/` 词汇上的
+
+`originate美 /ə'rɪdʒɪnet/` 开创, 来自, 发源
+
+`diagram美 /'daɪəɡræm/` 示意图
+
+## [Watchers](https://vuejs.org/guide/essentials/watchers.html)
+
+`differentiated美 /ˌdɪfə'rɛnʃɪet/` 区分区别
+
+`latter` 后者的
+
+`implication`  可能引起的后果
+
+`terser` 简明的, 简短的
+
+`Callback Flush Timing` 回调刷新时间, flush 有刷新之意
+
+
+
+## [Template Refs](https://vuejs.org/guide/essentials/template-refs.html)
+
