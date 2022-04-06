@@ -687,3 +687,11 @@ If your component has multiple root elements, you would need to define which ele
 
 
 
+
+
+## [Component Basics](https://vuejs.org/guide/essentials/component-basics.html)
+
+`On the fly` 动态的, 运行中
+
+
+
