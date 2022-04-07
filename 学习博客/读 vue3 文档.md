@@ -693,5 +693,17 @@ If your component has multiple root elements, you would need to define which ele
 
 `On the fly` 动态的, 运行中
 
+`specific` 特定的, 具体的
+
+`on the fly` 在计算机运行中
+
+`regardless of` 不管
+
+`pros and cons ` 优缺点, 正面和反面
+
+`subject` 服从
+
+`Pascal美 /'pæskəl/ ` PascalCase 帕斯卡命名法
+
 
 
