@@ -705,5 +705,29 @@ If your component has multiple root elements, you would need to define which ele
 
 `Pascal美 /'pæskəl/ ` PascalCase 帕斯卡命名法
 
+`case-insensitive` 大小写不敏感
+
+`accessibility` 可访问性；可达性；可接近性
+
+`accessibility feature` 辅助功能
+
+`documents` 记录
+
+`Caveat美 /'kævɪ'æt/` 警告, 注意事项
+
+`retrieve美 /rɪ'triv/` 检索
+
+`hyphen-delimited` 连字符分隔
+
+`hyphen美 /'haɪfn/` 连字符
+
+`delimit` 划定…的边界
+
+`hoist` 提起
+
+`Essentials` 概要, 基本的, 本质的
+
+
+
 
 
