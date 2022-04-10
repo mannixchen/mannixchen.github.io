@@ -731,3 +731,15 @@ If your component has multiple root elements, you would need to define which ele
 
 
 
+# Components In-Depth
+
+## [Registration](https://vuejs.org/guide/components/registration.html)
+
+`drawbacks` 缺点
+
+`a.k.a` also known as
+
+`maintainability [menˌteɪnə'bɪlətɪ]` 可维护性
+
+`IDE` integrated development environment
+
