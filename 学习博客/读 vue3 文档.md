@@ -743,3 +743,7 @@ If your component has multiple root elements, you would need to define which ele
 
 `IDE` integrated development environment
 
+
+
+## [Props](https://vuejs.org/guide/components/props.html#props-declaration)
+
