@@ -747,3 +747,32 @@ If your component has multiple root elements, you would need to define which ele
 
 ## [Props](https://vuejs.org/guide/components/props.html#props-declaration)
 
+
+
+`fallthrough attributes` 透传 attribute
+
+`expected` 预期的
+
+`further` 进一步
+
+`annotation美 /ˌæno'teʃən/` 注解注释
+
+`convention` 传统, 惯例
+
+`practical` 实际的
+
+`not the other way around.` 而不是反过来
+
+`tempting` 诱人的
+
+`unreasonably美 /ʌn'ri:znəbli/` 不合理的
+
+`reason` 推理推断
+
+`specify` 指定, 具体说明
+
+`absent` 缺席的, 不在的
+
+`mimic` 模仿
+
+`casting` 类型转换
