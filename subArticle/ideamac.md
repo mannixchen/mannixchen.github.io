@@ -25,6 +25,10 @@
 
 > 编辑类
 
+给出当前提醒: `ctrl+space`, 这个按键和macos冲突, 可以禁用切换输入法功能
+
+![image-20220902000116406](http://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20220902000116406.png)
+
 跳到下一个出现: `cmd+g`
 
 保留当前, 并选中下一个出现: `ctrl+g`
