@@ -21,9 +21,23 @@
 
 快速更换主题, 显示模式: `ctrl+~`
 
+运行程序: `ctrl+r` 搭配 `opt` 使用是打开运行列表 搭配 `shift` 使用是**运行当前文件**
+
+debug程序: `ctrl+d`
+
+跳到源文件: `cmd+↓`
+
+打开指定文件: `shift+cmd+o`
+
+快速切换主题等外观: `ctrl+~`
+
 
 
 > 编辑类
+
+给出当前提醒: `ctrl+space`, 这个按键和macos冲突, 可以禁用切换输入法功能
+
+![image-20220902000116406](http://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20220902000116406.png)
 
 跳到下一个出现: `cmd+g`
 
@@ -39,4 +53,14 @@
 
 最近编辑文件: `cmd+e`
 
-新建临时文件: `shift+cmd+n`
+新建临时草稿文件: `shift+cmd+n`
+
+光标历史导航: `cmd+[或]`
+
+匹配标签括号: `ctrl+m`
+
+
+
+
+
+>  html自动补全是用的dtd和schema表, 不好手动设置
