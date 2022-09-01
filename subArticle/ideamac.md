@@ -1,3 +1,4 @@
+![idea快捷](http://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/idea%E5%BF%AB%E6%8D%B7.png)
 > 面板类
 
 打开vcs版本控制: `ctrl+v`
