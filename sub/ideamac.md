@@ -27,6 +27,8 @@ debug程序: `ctrl+d`
 
 跳到源文件: `cmd+↓`
 
+打开指定文件: `shift+cmd+o`
+
 
 
 > 编辑类
@@ -50,6 +52,10 @@ debug程序: `ctrl+d`
 最近编辑文件: `cmd+e`
 
 新建临时文件: `shift+cmd+n`
+
+光标历史导航: `cmd+[或]`
+
+匹配标签括号: `ctrl+m`
 
 
 
