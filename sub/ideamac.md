@@ -29,6 +29,8 @@ debug程序: `ctrl+d`
 
 打开指定文件: `shift+cmd+o`
 
+快速切换主题等外观: `ctrl+~`
+
 
 
 > 编辑类
@@ -51,7 +53,7 @@ debug程序: `ctrl+d`
 
 最近编辑文件: `cmd+e`
 
-新建临时文件: `shift+cmd+n`
+新建临时草稿文件: `shift+cmd+n`
 
 光标历史导航: `cmd+[或]`
 
