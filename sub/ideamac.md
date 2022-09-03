@@ -67,6 +67,16 @@ debug程序: `ctrl+d`
 
 添加或者去除光标: `shift+opt+click`
 
+完成一句声明: `cmd+shift+enter`
+
+选中当前完整行: `shift+↑`, 配合使用复制完整行`cmd+d`
+
+移动当前行或选中内容: `shift+opt+↕`
+
+移动当前方法: `shift+cmd+↕`
+
+格式化代码: `cmd+shift+L`
+
 
 
 
