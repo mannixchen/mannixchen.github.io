@@ -65,6 +65,8 @@ debug程序: `ctrl+d`
 
 扩展缩小选择范围: `opt + ↑/↓`
 
+添加或者去除光标: `shift+opt+click`
+
 
 
 
