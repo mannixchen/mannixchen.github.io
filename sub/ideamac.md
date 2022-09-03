@@ -77,6 +77,10 @@ debug程序: `ctrl+d`
 
 格式化代码: `cmd+shift+L`
 
+跳到实现处: `cmd+b`
+
+重构: `ctrl+t`
+
 
 
 
