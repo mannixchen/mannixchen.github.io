@@ -59,6 +59,12 @@ debug程序: `ctrl+d`
 
 匹配标签括号: `ctrl+m`
 
+从下面插入一行: `shift+enter`
+
+从上面插入一行:`opt + cmd + enter`
+
+扩展缩小选择范围: `opt + ↑/↓`
+
 
 
 
