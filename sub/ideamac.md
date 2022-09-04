@@ -81,8 +81,16 @@ debug程序: `ctrl+d`
 
 重构: `ctrl+t`
 
+显示当前行的历史: `show history for selection`
+
+
+
 
 
 
 
 >  html自动补全是用的dtd和schema表, 不好手动设置
+>
+>  code with me真是神级功能, 非常👍 
+>
+>  可以在 annotation 栏目, 通过选择 view previous annotate revison来查看之前, 或指定版本**当前文件**的修改记录

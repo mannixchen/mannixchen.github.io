@@ -52,6 +52,7 @@ https://zhuanlan.zhihu.com/p/87309977
 
    1. 鼠标
    2. `L`: 向前, `K`: 暂停, `J`: 后退
+   3. 左右键可以按照每一帧进行移动, 辅助`shift` 可以多帧移动
 
 3. 添加静帧
 
@@ -142,3 +143,9 @@ https://zhuanlan.zhihu.com/p/87309977
 #### 导出
 
 可以选默认-> 导出为电脑 -> 就是mp4格式的导出了
+
+
+
+#### **多视频对齐**
+
+![image-20220904130827345](http://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20220904130827345.png)
