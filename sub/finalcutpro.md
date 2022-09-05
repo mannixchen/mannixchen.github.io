@@ -65,21 +65,23 @@ https://zhuanlan.zhihu.com/p/87309977
 
 5. 不要默认粘贴到主时间线, 可以使用: `opt + v`
 
-6. 将片段从故事情节提取, 以致不影响当前时间线 `opt+cmd+↑`
+6. 取消已经选择的出入点: `opt+x`
 
-7. 时间线复制素材
+7. 将片段从故事情节提取, 以致不影响当前时间线 `opt+cmd+↑`
+
+8. 时间线复制素材
 
    1. `opt+拖拽`直接复制到指定位置
 
-8. 添加片段
+9. 添加片段
 
    `QWED` 分别是第二视频轨道, 中间插入, 末尾插入, 在主轨道覆盖, `qwe` 更加常用
 
-9. ![image-20220827234351758](http://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20220827234351758.png)
+10. ![image-20220827234351758](http://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20220827234351758.png)
 
-10. ![image-20220827234807050](http://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20220827234807050.png)
+11. ![image-20220827234807050](http://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20220827234807050.png)
 
-11. 裁剪片段的方法:
+12. 裁剪片段的方法:
 
     1. `b` 切割删除
     2. 用`,` `shift+,` 向左还原/缩短片段, 用 `.` `shift+.`向右缩减/还原片段
