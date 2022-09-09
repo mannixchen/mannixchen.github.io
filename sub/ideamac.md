@@ -94,3 +94,5 @@ debug程序: `ctrl+d`
 >  code with me真是神级功能, 非常👍 
 >
 >  可以在 annotation 栏目, 通过选择 view previous annotate revison来查看之前, 或指定版本**当前文件**的修改记录
+>
+>  字符串拼接, 可以在字符串最后直接按 `enter`键
