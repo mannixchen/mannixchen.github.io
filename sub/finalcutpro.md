@@ -73,15 +73,21 @@ https://zhuanlan.zhihu.com/p/87309977
 
    1. `opt+拖拽`直接复制到指定位置
 
-9. 添加片段
+9. 复制粘贴属性
+
+   1. 在 Final Cut Pro [时间线](https://support.apple.com/zh-cn/guide/final-cut-pro/aside/ver4cdefe82/10.6.2/mac/11.5.1)中[选择](https://support.apple.com/zh-cn/guide/final-cut-pro/aside/verb97d0afe/10.6.2/mac/11.5.1)一个片段，然后选取“编辑”>“拷贝”（或按下 Command-C）。
+
+   2. 选择要应用属性的片段，然后选取“编辑”>“粘贴属性”（或按下 Shift-Command-V）。
+
+10. 添加片段
 
    `QWED` 分别是第二视频轨道, 中间插入, 末尾插入, 在主轨道覆盖, `qwe` 更加常用
 
-10. ![image-20220827234351758](http://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20220827234351758.png)
+11. ![image-20220827234351758](http://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20220827234351758.png)
 
-11. ![image-20220827234807050](http://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20220827234807050.png)
+12. ![image-20220827234807050](http://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20220827234807050.png)
 
-12. 裁剪片段的方法:
+13. 裁剪片段的方法:
 
     1. `b` 切割删除
     2. 用`,` `shift+,` 向左还原/缩短片段, 用 `.` `shift+.`向右缩减/还原片段
@@ -93,6 +99,10 @@ https://zhuanlan.zhihu.com/p/87309977
     #### 速度变化 `ctrl+r`
 
     1. 切割变速区域 `shift + b`
+
+    
+
+    
 
     
 
