@@ -13,4 +13,8 @@
     1. a7s3
     2. 腾龙的17-28mm镜头
 
+11. 购买了rode video micro, 
+    1. 需要让其工作需要有 trs-trrs专用线或者耳机一份二线, 或者专门的trs-lightning线
+    2. 相对iphone, 室外提升不大, 室内明显
+
 
