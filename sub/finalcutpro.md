@@ -37,6 +37,8 @@ https://zhuanlan.zhihu.com/p/87309977
 1. 把文件保存在原位置, 将节省更多的应用空间
 2. 注意关键词选项, 导入时候可以根据文件夹目录进行整理
 3. 关于转码, 转码本身会浪费许多时间, 根据卡顿情况进行转码代理
+4. 可以用final cut pro直接导入iphone的原始视频
+5. 
 
 
 
@@ -178,4 +180,9 @@ https://zhuanlan.zhihu.com/p/87309977
    1. 调高饱和度, 然后降低肤色的饱和度
    2. 先提升你想强调的颜色(低和中), 然后通过高光和全局来平衡吊绿色或者品红
    3. 这样就可以创造自己的风格
-6. 
+6. https://www.youtube.com/watch?v=xBcnOyDonoQ
+   1. 曝光会影响饱和度, 先用luma曲线进行调色, 解决白平衡问题
+   2. 也可以用vector解决白平衡: 放大局部的白色点, 然后保证其颜色居中, 就能得到好的白平衡
+   3. calibrite colorchecker video 护照色板 - 使用教程https://www.youtube.com/watch?v=i8DuPM-CtCk
+   4. 另外一个就是color finale pulg in for final cut pro
+   5. 工具都等到以后买, 现在尝试搞内容先
