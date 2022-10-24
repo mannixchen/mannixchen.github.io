@@ -186,3 +186,5 @@ https://zhuanlan.zhihu.com/p/87309977
    3. calibrite colorchecker video 护照色板 - 使用教程https://www.youtube.com/watch?v=i8DuPM-CtCk
    4. 另外一个就是color finale pulg in for final cut pro
    5. 工具都等到以后买, 现在尝试搞内容先
+7. final cut里可以按住shift来操作hue, 这样就不会左右移动
+8. 如果我在调整用hue调整皮肤的过程中, 如果唇色收到了影响, 再单独调一下唇色就好
