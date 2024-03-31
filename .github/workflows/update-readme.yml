@@ -53,12 +53,12 @@ jobs:
             # 检查文件是否有git提交记录
             if git log -- "$file" > /dev/null 2>&1; then
               # 获取文件的最后提交日期，精确到秒
-              lastDate=$(git log -1 --format="%ad" --date=format:'%Y-%m-%d %H:%M:%S' -- "$file")
+              lastDate=$(git log -1 --format="%ad" --date=format:'%Y-%m-%d %H:%M' -- "$file")
               lastDateKey=$(git log -1 --format="%ct" -- "$file")
               # 获取原始文件名，用于显示
               pretty_name=$(basename "$file")
               # 生成Markdown链接
-              markdownLink="- [$pretty_name](_posts/$pretty_name) - last modified: $lastDate"
+              markdownLink="[$pretty_name](_posts/$pretty_name) - Last Modified: $lastDate"
               # 使用最后修改时间作为键，Markdown链接作为值
               fileEntries["$lastDateKey"]="$markdownLink"
             else
