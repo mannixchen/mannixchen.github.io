@@ -54,7 +54,7 @@ jobs:
             if git log -- "$file" > /dev/null 2>&1; then
               # 获取文件的最后提交日期，精确到秒
               lastDate=$(git log -1 --format="%ad" --date=format:'%Y-%m-%d %H:%M' -- "$file")
-              lastDateKey=$(git log -1 --format="%ct" -- "$file")
+              lastDateKey="$(git log -1 --format="%ct" -- "$file")-$(basename "$file")"
               # 获取原始文件名，用于显示
               pretty_name=$(basename "$file")
               # 生成Markdown链接
