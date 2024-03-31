@@ -1,3 +1,3 @@
 # Blog Posts
 
- - [*](_post/*)
+ - [Hello](_posts/Hello world.md)
