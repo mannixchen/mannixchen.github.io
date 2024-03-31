@@ -75,7 +75,7 @@ jobs:
       - name: Commit and Push
         run: |
           git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
+          git config --global user.name "Github Action"
           git add README.md
           git commit -m "Update README.md with latest blog posts" || exit 0  # 防止无更改时出错
           git push
