@@ -17,23 +17,28 @@ jobs:
         run: |
           echo "# Blog Posts" > README.md
           echo "" >> README.md
-          declare -A fileDates
+
+          # 创建一个临时文件来存储日期和文件名
+          temp_file=$(mktemp)
 
           for file in _post/*; do
-            # 获取文件的首次提交日期
-            firstDate=$(git log --reverse --format="%ad" --date=short -- $file | head -1)
-            # 获取文件的最后提交日期
-            lastDate=$(git log -1 --format="%ad" --date=short -- $file)
-            # 获取文件名
-            name=$(basename $file)
-            # 将文件名和首次提交日期存储在关联数组中，以最后提交日期为键
-            fileDates["$lastDate"]+="$firstDate - [$name]($file)\n"
+            # 检查文件是否有git提交记录
+            if git log -- $file > /dev/null 2>&1; then
+              # 获取文件的最后提交日期
+              lastDate=$(git log -1 --format="%ad" --date=short -- $file)
+              # 获取文件名
+              name=$(basename $file)
+              # 将日期和文件名写入临时文件
+              echo "$lastDate - [$name]($file)" >> $temp_file
+            else
+              echo "Skipping $file as it has no commit history."
+            fi
           done
 
-          # 对日期进行逆序排序并更新README
-          for date in $(echo ${!fileDates[@]} | tr ' ' '\n' | sort -r); do
-            echo -e "${fileDates[$date]}" >> README.md
-          done
+          # 根据日期排序，最近的日期在前，然后将排序后的内容追加到README.md
+          sort -r $temp_file >> README.md
+          # 删除临时文件
+          rm $temp_file
         shell: bash
 
       - name: Commit and Push
