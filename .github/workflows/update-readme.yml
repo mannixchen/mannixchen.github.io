@@ -17,28 +17,32 @@ jobs:
         run: |
           echo "# Blog Posts" > README.md
           echo "" >> README.md
-          declare -A fileDates
 
-          for file in _post/*; do
+          # 创建一个临时文件来存储文件名和最后修改的日期
+          temp_file=$(mktemp)
+
+          for file in _posts/*; do
             # 检查文件是否有git提交记录
             if git log -- $file > /dev/null 2>&1; then
-              firstDate=$(git log --reverse --format="%ad" --date=short -- $file | head -1)
+              # 获取文件的最后提交日期
               lastDate=$(git log -1 --format="%ad" --date=short -- $file)
-              if [[ -z "$firstDate" ]] || [[ -z "$lastDate" ]]; then
-                echo "Warning: Empty date for file $file"
-                continue
-              fi
-              name=$(basename $file)
-              echo "Processing $file: $firstDate, Last modified: $lastDate"
-              fileDates["$lastDate"]+="$firstDate - [$name]($file)\n"
+              # 获取原始文件名，用于显示
+              pretty_name=$(basename "$file")
+              # 获取URL编码后的文件名，用于链接
+              url_name=$(basename "$file" | sed 's/ /%20/g')
+              # 将日期（作为排序键）、原始文件名和最后修改日期写入临时文件
+              # 注意：这里用日期作为排序键，并在日期后加上唯一的标识符（如时间戳）确保唯一性
+              echo "$(date -r "$file" +"%Y-%m-%d-%H-%M-%S") - [$pretty_name](_posts/$url_name) - last modified: $lastDate" >> $temp_file
             else
               echo "Skipping $file as it has no commit history."
             fi
           done
 
-          for date in "${!fileDates[@]}"; do
-            printf "${fileDates[$date]}" | sort -r >> README.md
-          done
+          # 根据日期排序键逆序排序临时文件的内容，然后追加到README.md，并移除排序键
+          sort -r $temp_file | sed 's/^[0-9-]* //g' >> README.md
+
+          # 删除临时文件
+          rm $temp_file
         shell: bash
 
       - name: Commit and Push
