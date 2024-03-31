@@ -15,34 +15,60 @@ jobs:
 
       - name: Generate README
         run: |
+          #echo "# Blog Posts" > README.md
+          #echo "" >> README.md
+
+          ## 创建一个临时文件来存储文件名和最后修改的日期
+          #temp_file=$(mktemp)
+
+          #for file in _posts/*; do
+          #  # 检查文件是否有git提交记录
+          #  if git log -- $file > /dev/null 2>&1; then
+          #    # 获取文件的最后提交日期
+          #    lastDate=$(git log -1 --format="%ad" --date=format:'%Y-%m-%d %H:%M:%S' -- $file)
+          #    # 获取原始文件名，用于显示
+          #    pretty_name=$(basename "$file")
+          #    # 获取URL编码后的文件名，用于链接
+          #    url_name=$(basename "$file" | sed 's/ /%20/g')
+          #    # 将日期（作为排序键）、原始文件名和最后修改日期写入临时文件
+          #    # 注意：这里用日期作为排序键，并在日期后加上唯一的标识符（如时间戳）确保唯一性
+          #    echo "$(date -r "$file" +"%Y-%m-%d-%H-%M-%S") - [$pretty_name](_posts/$url_name) - last modified: $lastDate" >> $temp_file
+          #  else
+          #    echo "Skipping $file as it has no commit history."
+          #  fi
+          #done
+
+          ## 根据日期排序键逆序排序临时文件的内容，然后追加到README.md，并移除排序键
+          #sort -r $temp_file | sed 's/^[0-9-]* //g' >> README.md
+
+          ## 删除临时文件
+          #rm $temp_file
           echo "# Blog Posts" > README.md
           echo "" >> README.md
 
-          # 创建一个临时文件来存储文件名和最后修改的日期
-          temp_file=$(mktemp)
+          # 创建一个关联数组，用于存储文件的最后修改时间和对应的Markdown链接
+          declare -A fileEntries
 
           for file in _posts/*; do
             # 检查文件是否有git提交记录
-            if git log -- $file > /dev/null 2>&1; then
-              # 获取文件的最后提交日期
-              lastDate=$(git log -1 --format="%ad" --date=format:'%Y-%m-%d %H:%M:%S' -- $file)
+            if git log -- "$file" > /dev/null 2>&1; then
+              # 获取文件的最后提交日期，精确到秒
+              lastDate=$(git log -1 --format="%ad" --date=format:'%Y-%m-%d %H:%M:%S' -- "$file")
               # 获取原始文件名，用于显示
               pretty_name=$(basename "$file")
-              # 获取URL编码后的文件名，用于链接
-              url_name=$(basename "$file" | sed 's/ /%20/g')
-              # 将日期（作为排序键）、原始文件名和最后修改日期写入临时文件
-              # 注意：这里用日期作为排序键，并在日期后加上唯一的标识符（如时间戳）确保唯一性
-              echo "$(date -r "$file" +"%Y-%m-%d-%H-%M-%S") - [$pretty_name](_posts/$url_name) - last modified: $lastDate" >> $temp_file
+              # 生成Markdown链接
+              markdownLink="- [$pretty_name](_posts/$pretty_name) - last modified: $lastDate"
+              # 使用最后修改时间作为键，Markdown链接作为值
+              fileEntries["$lastDate"]="$markdownLink"
             else
               echo "Skipping $file as it has no commit history."
             fi
           done
 
-          # 根据日期排序键逆序排序临时文件的内容，然后追加到README.md，并移除排序键
-          sort -r $temp_file | sed 's/^[0-9-]* //g' >> README.md
-
-          # 删除临时文件
-          rm $temp_file
+          # 将关联数组的键（即最后修改时间）排序，然后输出对应的Markdown链接
+          for date in $(printf '%s\n' "${!fileEntries[@]}" | sort -r); do
+            echo "${fileEntries[$date]}" >> README.md
+          done
         shell: bash
 
       - name: Commit and Push
