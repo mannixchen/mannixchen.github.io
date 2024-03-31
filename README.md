@@ -1,3 +1,3 @@
 # Blog Posts
 
-- [Hello world.md](_posts/Hello%20world.md) last modified: 
+- [Hello](_posts/Hello world.md) last modified: 
