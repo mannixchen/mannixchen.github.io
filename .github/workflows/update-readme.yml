@@ -15,6 +15,7 @@ jobs:
 
       - name: Generate README
         run: |
+        shell: bash
           echo "# Blog Posts" > README.md
           echo "" >> README.md
           declare -A fileDates
