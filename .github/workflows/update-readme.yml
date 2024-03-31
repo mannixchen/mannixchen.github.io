@@ -32,7 +32,7 @@ jobs:
               url_name=$(basename "$file" | sed 's/ /%20/g')
               # 将日期（作为排序键）、原始文件名和最后修改日期写入临时文件
               # 注意：这里用日期作为排序键，并在日期后加上唯一的标识符（如时间戳）确保唯一性
-              echo "$(lastDate) [$pretty_name](_posts/$url_name) - last modified: $lastDate" >> $temp_file
+              echo "$(date -r "$file" +"%Y-%m-%d-%H-%M-%S") - [$pretty_name](_posts/$url_name) - last modified: $lastDate" >> $temp_file
             else
               echo "Skipping $file as it has no commit history."
             fi
