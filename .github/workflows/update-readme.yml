@@ -17,12 +17,32 @@ jobs:
         run: |
           echo "# Blog Posts" > README.md
           echo "" >> README.md
+
+          # 创建一个临时文件来存储日期和文件名
+          temp_file=$(mktemp)
+
           for file in _posts/*; do
-            date=$(git log -1 --format="%ad" --date=short -- $file)
-            name=$(basename $file)
-            urlname=$(basename "$file" | sed 's/ /%20/g')
-            echo "- $date - [$name](_posts/$url_name)" >> README.md
+            # 检查文件是否有git提交记录
+            if git log -- $file > /dev/null 2>&1; then
+              # 获取文件的最后提交日期
+              lastDate=$(git log -1 --format="%ad" --date=short -- $file)
+              # 获取原始文件名，用于显示
+              pretty_name=$(basename "$file")
+              # 获取URL编码后的文件名，用于链接
+              url_name=$(basename "$file" | sed 's/ /%20/g')
+              # 将日期、原始文件名（用于显示）和URL编码后的文件名（用于链接）写入临时文件
+              echo "$lastDate - [$pretty_name](_posts/$url_name)" >> $temp_file
+            else
+              echo "Skipping $file as it has no commit history."
+            fi
           done
+
+          # 根据日期排序，最近的日期在前，然后将排序后的内容追加到README.md
+          sort -r $temp_file >> README.md
+          # 删除临时文件
+          rm $temp_file
+        shell: bash
+
       - name: Commit and Push
         run: |
           git config --global user.email "you@example.com"
