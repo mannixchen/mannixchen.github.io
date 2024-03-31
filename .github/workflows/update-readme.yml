@@ -38,6 +38,7 @@ jobs:
           for date in $(echo ${!fileDates[@]} | tr ' ' '\n' | sort -r); do
             echo -e "${fileDates[$date]}" >> README.md
           done
+        shell: bash
 
       - name: Commit and Push
         run: |
