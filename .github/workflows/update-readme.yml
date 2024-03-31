@@ -68,7 +68,7 @@ jobs:
 
           # 将关联数组的键（即最后修改时间）排序，然后输出对应的Markdown链接
           for date in $(printf '%s\n' "${!fileEntries[@]}" | sort -r); do
-            echo "${fileEntries[$date]}" >> README.md
+            echo -e "${fileEntries[$date]}\n" >> README.md  # 使用`-e`选项并在字符串末尾添加`\n`
           done
         shell: bash
 
