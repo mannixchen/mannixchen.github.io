@@ -33,7 +33,7 @@ jobs:
               # 获取URL编码后的文件名，用于链接
               url_name=$(basename "$file" | sed 's/ /%20/g')
               # 将最后修改日期（用于排序）、原始文件名、创建日期和最后修改日期写入临时文件
-              echo "$lastModifiedDate - [$pretty_name](_posts/$url_name) - created: $createdDate - last modified: $lastModifiedDate" >> $temp_file
+              echo "[$pretty_name](_posts/$url_name) - last modified: $lastModifiedDate \n" >> $temp_file
             else
               echo "Skipping $file as it has no commit history."
             fi
