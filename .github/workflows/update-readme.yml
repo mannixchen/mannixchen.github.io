@@ -26,10 +26,10 @@ jobs:
             if git log -- $file > /dev/null 2>&1; then
               # 获取文件的最后提交日期
               lastDate=$(git log -1 --format="%ad" --date=short -- $file)
-              # 获取文件名
-              name=$(basename $file)
+              # 获取文件名，并将空格替换为%20以适应URL格式
+              name=$(basename "$file" | sed 's/ /%20/g')
               # 将日期和文件名写入临时文件
-              echo "$lastDate - [$name]($file)" >> $temp_file
+              echo "$lastDate - [$name](_posts/$name)" >> $temp_file
             else
               echo "Skipping $file as it has no commit history."
             fi
