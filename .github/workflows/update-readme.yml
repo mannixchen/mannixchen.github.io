@@ -53,8 +53,8 @@ jobs:
             # 检查文件是否有git提交记录
             if git log -- "$file" > /dev/null 2>&1; then
               # 获取文件的最后提交日期，精确到秒
-              lastDate=$(git log -1 --format="%ad" --date=format:'%Y-%m-%d %H:%M' -- $("$file"))
-              lastDateKey="$(git log -1 --format="%ct" -- $("$file"))-$(basename "$file")"
+              lastDate=$(git log -1 --format="%ad" --date=format:'%Y-%m-%d %H:%M' -- "$file")
+              lastDateKey="$(git log -1 --format="%ct" -- "$file")-$(basename "$file")"
               # 获取原始文件名，用于显示
               pretty_name=$(basename "$file")
               # 生成Markdown链接
@@ -75,7 +75,7 @@ jobs:
       - name: Commit and Push
         run: |
           git config --global user.email "you@example.com"
-          git config --global user.name "Github Action"
+          git config --global user.name "Github "
           git add README.md
           git commit -m "Update README.md with latest blog posts" || exit 0  # 防止无更改时出错
           git push
