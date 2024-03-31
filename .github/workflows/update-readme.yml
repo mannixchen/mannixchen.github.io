@@ -21,7 +21,7 @@ jobs:
           # 创建一个临时文件来存储日期和文件名
           temp_file=$(mktemp)
 
-          for file in _post/*; do
+          for file in _posts/*; do
             # 检查文件是否有git提交记录
             if git log -- $file > /dev/null 2>&1; then
               # 获取文件的最后提交日期
