@@ -1,0 +1,32 @@
+name: Update README
+
+on:
+  push:
+    branches:
+      - main # 或者你使用的是 master 分支
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # 确保完整地检出仓库
+
+      - name: Generate README
+        run: |
+          echo "# Blog Posts" > README.md
+          echo "" >> README.md
+          for file in _posts/*; do
+            date=$(git log -1 --format="%ad" --date=short -- $file)
+            name=$(basename $file)
+            echo "- $date - [$name]($file)" >> README.md
+          done
+
+      - name: Commit and Push
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git add README.md
+          git commit -m "Update README.md with latest blog posts" || exit 0  # 防止无更改时出错
+          git push
