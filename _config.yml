@@ -17,4 +17,5 @@ exclude:
   - ".*"
   - "_*"
   - "!_posts"
+  - "!_config.yml"
 
