@@ -1,18 +1,17 @@
-name: Build and deploy Jekyll site to GitHub Pages
+name: Jekyll site CI
 
 on:
   push:
     branches:
-      - main  # 你的默认分支，可能是 main 或 master
+      - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
 
       - name: Build and deploy Jekyll site
-        uses: helaili/jekyll-action@2.0.4
-        env:
-          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+        uses: jekyll/actions-pages@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
