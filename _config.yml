@@ -1,0 +1,4 @@
+title: Mannix Chen's Blog
+baseurl: "" # 项目的基础路径，如果你的仓库是 `username.github.io`, 这里应该留空
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
