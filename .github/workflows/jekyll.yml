@@ -15,7 +15,7 @@ jobs:
       - name: Build and deploy Jekyll site
         uses: docker://jekyll/builder:latest
         with:
-          args: jekyll build --future
+          args: jekyll build --future --trace
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
