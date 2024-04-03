@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ghost个人博客搭建 ( centos 7 ) 和配置 ( 汉化 - 搜索 - 评论 ) | Mannix Chen’s Blog</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="ghost个人博客搭建 ( centos 7 ) 和配置 ( 汉化 - 搜索 - 评论 )" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is a wonderful website about awesome stuff." />
+<meta property="og:description" content="This is a wonderful website about awesome stuff." />
+<link rel="canonical" href="https://mannixchen.github.io/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/ghost%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%92%8C%E9%85%8D%E7%BD%AE.html" />
+<meta property="og:url" content="https://mannixchen.github.io/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/ghost%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%92%8C%E9%85%8D%E7%BD%AE.html" />
+<meta property="og:site_name" content="Mannix Chen’s Blog" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ghost个人博客搭建 ( centos 7 ) 和配置 ( 汉化 - 搜索 - 评论 )" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"This is a wonderful website about awesome stuff.","headline":"ghost个人博客搭建 ( centos 7 ) 和配置 ( 汉化 - 搜索 - 评论 )","url":"https://mannixchen.github.io/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/ghost%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%92%8C%E9%85%8D%E7%BD%AE.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://mannixchen.github.io/feed.xml" title="Mannix Chen&apos;s Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Mannix Chen&#39;s Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/backup/2023-12-21-01-file-management.html">文档管理系统</a><a class="page-link" href="/backup/2023-12-21-02-git-sync-github.html">本地 git 仓同步到 github 新库</a><a class="page-link" href="/backup/centos7.html">Update git from v1.8 - v2.x</a><a class="page-link" href="/backup/sub/finalcutpro.html">添加 keyword</a><a class="page-link" href="/backup/sub/javaLearn.html">Java 基本程序设计结构</a><a class="page-link" href="/backup/sub/vloganalyze.html">越南notebook感悟</a><a class="page-link" href="/backup/sub/%E5%BF%83%E6%B5%81.html">第一章</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/WAKE%20UP.html">wake up(2018.9) - casey day</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/bean.html">bean</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/ghost%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%92%8C%E9%85%8D%E7%BD%AE.html">ghost个人博客搭建 ( centos 7 ) 和配置 ( 汉化 - 搜索 - 评论 )</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/ghost%E9%85%8D%E7%BD%AE.html">ghost博客配置</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E4%B8%9A%E7%95%8C%E7%99%BB%E5%BD%95%E6%8C%87%E5%8D%97.html">登录 - 业界解决方案</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92.html">学习计划</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A5%E9%97%A8.html">组件</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E6%80%8E%E4%B9%88%E7%94%A8Nodejs%E5%86%99%E7%99%BB%E5%BD%95.html">用 Nodejs 写登录功能</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E6%94%BE%E4%B8%8B.html">放下</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E6%96%B0%E7%94%B5%E8%84%91-%E6%96%B0%E6%89%A9%E5%B1%95%E5%9D%9E-%E6%B6%B2%E5%8E%8B%E8%87%82.html">年中换新机, 22日官网下单</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E8%AF%BB%20vue3%20%E6%96%87%E6%A1%A3.html">Getting Started</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2-nginx.html">Nginx</a><a class="page-link" href="/backup/%E6%80%9D%E8%80%83%F0%9F%A4%94.html">思考</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0726.html">雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0727.html">小雨转各种雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0728.html">雨 -&amp;gt; 阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0729.html">阴 -&amp;gt; 多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0730.html">大晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0731.html">大晴 - 愉快学习, 缺乏运动</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0801.html">大晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0802.html">晴/阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0803.html">晴日, 偶有多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0804.html">晴天</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0805.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0806.html">晴/多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0807.html">妥妥的多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0808.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0809.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0810.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0811.html">阴 -&amp;gt; 雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0812.html">阴 -&amp;gt; 小雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0813.html">大雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0814.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0815.html">阴雨 -&amp;gt; 连着好几天</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0816.html">雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0817.html">美好的晴天</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0818.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0819.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0820.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0821.html">阴-&amp;gt;晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0822.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0823.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0824.html">阴 -&amp;gt; 雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0825.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0826.html">阴 -&amp;gt; 雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0827.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0828.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0829.html">大雨滂沱</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0830.html">阴 -&amp;gt; 多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0831.html">晴, 大晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0901.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0902.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0903.html">阴 -&amp;gt; 晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0904.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0905.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0906.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0907.html">多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0908.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0909.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0910.html">大晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0911.html">大晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0912.html">多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0913.html">台风天-灿都</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0914.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0915.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0916.html">晴天</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0917.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0918.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0919.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0920.html">阴 -&amp;gt; 多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0921.html">晴 -&amp;gt; 中秋</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0922.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0923.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0924.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0925.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0926.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0927.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0928.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0929.html">雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1017.html">多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1029.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1030.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1031.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1101.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1103.html">无</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1104.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1105.html">无</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1106.html">晴, 但是冷</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1107.html">无</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1108.html">晴, 也冷</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1109.html">无</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1110.html">无</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1111.html">晴, 空气贼好</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1112.html">空气好</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1113.html">空气也不错</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1114.html">无</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1115.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1116.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1117.html">异步函数</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1120.html">JDK</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1121.html">类名字 - 标识符</a><a class="page-link" href="/backup/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/Becoming%20Steve%20Jobs.html">Prologue /’prolɔɡ/ 序言开场白</a><a class="page-link" href="/backup/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/Vim%E7%AF%87.html">https://vim.rtorr.com/lang/en_us</a><a class="page-link" href="/backup/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%B2%9B%E4%B8%8A%E4%B9%A6%E5%BA%97%E8%AF%BB%E5%90%8E%E6%84%9F.html">过年和年后的日子 - 多年未看的</a><a class="page-link" href="/backup/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%B9%B8%E7%A6%8F%E7%9A%84%E6%96%B9%E6%B3%95%E8%AF%BB%E5%90%8E%E6%84%9F.html">幸福的方法</a><a class="page-link" href="/">Blog Posts</a><a class="page-link" href="/backup/">blog</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/">JavaScript 忍者秘籍🥷 0729-0814</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">ghost个人博客搭建 ( centos 7 ) 和配置 ( 汉化 - 搜索 - 评论 )</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="ghost个人博客搭建--centos-7--和配置--汉化---搜索---评论-">ghost个人博客搭建 ( centos 7 ) 和配置 ( 汉化 - 搜索 - 评论 )</h1>
+
+<blockquote>
+  <p>为啥一定要是自己的博客呢? 掘金, 博客园, 知乎, 简书不香吗? 他们有天然的粉丝优势, <code class="language-plaintext highlighter-rouge">SEO</code> 优势,  可无奈都有广告植入, 并且都不太<code class="language-plaintext highlighter-rouge">自我</code>, 我这里所追求的<strong>自我</strong>, 就是一个可定制化外观, 系统相对健全的, 并且带有发布后台的博客系统, 所以我最终选择了轻量化的 <code class="language-plaintext highlighter-rouge">ghost</code> 博客应用</p>
+</blockquote>
+
+<h2 id="如何安装ghost">如何安装ghost</h2>
+
+<p>首先贴一下官网链接 <a href="https://ghost.org/docs/">ghost</a>, 官网推荐 <code class="language-plaintext highlighter-rouge">Ubuntu</code> 进行配置, 然而, 我的腾讯云安装的是 <code class="language-plaintext highlighter-rouge">CentOS7</code> , 不过我还是找到了一篇手把手的 <a href="https://www.alibabacloud.com/help/zh/doc-detail/50604.htm"><code class="language-plaintext highlighter-rouge">CentOS</code> 教程</a>, 整个坐下来, 一次报错都没遇到, 强烈推荐直接阅读跟着后面做. :smile:</p>
+
+<blockquote>
+  <p>如果你已经安装了 <code class="language-plaintext highlighter-rouge">nodejs</code> 那么你可以安装一下 <a href="https://www.npmjs.com/package/n"><code class="language-plaintext highlighter-rouge">n</code></a> 来做一下 <code class="language-plaintext highlighter-rouge">node</code> 版本管理</p>
+</blockquote>
+
+<h3 id="步骤一-首先你得有一台服务器">步骤一: 首先你得有一台服务器</h3>
+
+<h3 id="步骤二-在者你需要部署一下-web-环境-安装-ssh-终端工具">步骤二: 在者你需要部署一下 web 环境, 安装 SSH 终端工具</h3>
+
+<ol>
+  <li>
+    <p>添加 <code class="language-plaintext highlighter-rouge">Nginx</code> 软件库。</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rpm <span class="nt">-Uvh</span> http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+</code></pre></div>    </div>
+
+    <p>软件包中包含的软件及版本为：<code class="language-plaintext highlighter-rouge">nginx/1.10.2</code></p>
+
+    <p><strong>说明</strong> 您下载的版本可能与此不同，请以实际情况为准。</p>
+  </li>
+  <li>
+    <p>安装 <code class="language-plaintext highlighter-rouge">Nginx</code></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum <span class="nt">-y</span> <span class="nb">install </span>nginx
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>设置Nginx服务器自动启动。</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl enable nginx.service
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>启动Nginx并查看Nginx服务状态。</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl start nginx.service
+systemctl status nginx.service
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>在浏览器中输入IP地址，可以看到默认的Nginx网页。</p>
+
+    <p><img src="https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3412649951/p12474.png" alt="nginx网页" /></p>
+  </li>
+</ol>
+
+<h3 id="步骤三安装ghost">步骤三：安装Ghost</h3>
+
+<ol>
+  <li>
+    <p>更新系统。确保您的服务器系统处于最新状态。</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y update
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>安装Node.js。</p>
+
+    <ol>
+      <li>
+        <p>安装EPEL。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum install epel-release -y
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>安装Node.js和npm。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum install nodejs npm --enablerepo=epel
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>安装node.js管理工具。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install -g n
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>安装稳定版本的node.js。</p>
+
+        <p>本示例安装node.js的版本为<code class="language-plaintext highlighter-rouge">12.16.3</code>。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>n 12.16.3
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>运行命令<strong>n</strong>，选择已安装的node.js 12.16.3版本。</p>
+      </li>
+      <li>
+        <p>编辑环境配置文件。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim ~/.bash_profile
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>按i进入编辑模式，在文件末尾添加下列信息。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export N_PREFIX=/usr/local/bin/node
+export PATH=$N_PREFIX/bin:$PATH
+</code></pre></div>        </div>
+
+        <p>编辑完成后按esc键，输入<code class="language-plaintext highlighter-rouge">:wq</code>保存并退出文件。</p>
+      </li>
+      <li>
+        <p>执行以下命令使配置生效。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source ~/.bash_profile
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>安装进程管理器，来控制Node.js应用程序。</p>
+
+        <p>进程管理器可以保持应用程序一直处于运行状态。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install pm2 -g
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>运行<code class="language-plaintext highlighter-rouge">node -v</code>和<code class="language-plaintext highlighter-rouge">npm -v</code>命令，检查Node.js的版本。</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>安装Ghost。</p>
+
+    <ol>
+      <li>
+        <p>创建Ghost安装目录。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p /var/www/ghost
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>进入Ghost安装目录，下载最新版本的Ghost安装包。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/ghost
+wget https://ghost.org/zip/ghost-latest.zip
+mv ghost-latest.zip ghost.zip
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>解压Ghost安装包。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum install unzip -y
+unzip ghost.zip
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>安装gcc和c++编译器。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y install gcc gcc-c++
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>使用npm安装Ghost。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install -production
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>运行<code class="language-plaintext highlighter-rouge">npm start</code>命令启动Ghost，检查是否安装成功。</p>
+
+        <p>启动成功示例如下，您可以按Ctrl+C组合键关闭Ghost。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[2020-04-13 04:00:01] INFO Ghost is running in development...
+[2020-04-13 04:00:01] INFO Listening on: 127.0.0.1:2368
+[2020-04-13 04:00:01] INFO Url configured as: http://121.196.*.*/
+[2020-04-13 04:00:01] INFO Ctrl+C to shut down
+[2020-04-13 04:00:01] INFO Ghost boot 2.185s
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>修改/var/www/ghost/core/shared/config/env目录下的config.development.json文件。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /var/www/ghost/core/shared/config/env/config.development.json
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>配置config.development.json文件中的<strong>URL</strong>为Ghost博客的域名。</p>
+
+        <p><img src="https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3412649951/p98140.png" alt="ghost1" />按下esc退出编辑模式，并输入<code class="language-plaintext highlighter-rouge">:wq</code>保存并退出。</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>配置Nginx作为Ghost的反向代理。</p>
+
+    <ol>
+      <li>
+        <p>进入Nginx配置目录。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /etc/nginx/conf.d/
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>新建Ghost博客的Nginx配置文件。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /etc/nginx/conf.d/ghost.conf
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>将以下内容输入到ghost.conf中，把<strong>server_name</strong>改成Ghost实际的域名。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>upstream ghost {
+    server 127.0.0.1:2368;
+}
+server {
+    listen      80;
+    server_name myghostblog.com;
+      
+    access_log  /var/log/nginx/ghost.access.log;
+    error_log   /var/log/nginx/ghost.error.log;
+      
+    proxy_buffers 16 64k;
+    proxy_buffer_size 128k;
+      
+    location / {
+        proxy_pass  http://ghost;
+        proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
+        proxy_redirect off;
+      
+        proxy_set_header    Host            $host;
+        proxy_set_header    X-Real-IP       $remote_addr;
+        proxy_set_header    X-Forwarded-For $proxy_add_X_forwarded_for;
+        proxy_set_header    X-Forwarded-Proto https;
+    }
+}
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>修改默认的配置文件default.conf为default.conf.bak，使Nginx只应用于ghost.conf。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mv default.conf default.conf.bak
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>重启Nginx服务。</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl restart nginx.service
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>启动Ghost。</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/ghost/
+npm start
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>访问Ghost博客。</p>
+
+    <ol>
+      <li>
+        <p>在浏览器输入http://公网IP或http://域名，访问Ghost。</p>
+
+        <p><img src="https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3412649951/p12480.png" alt="Ghost网页" /></p>
+
+        <p><strong>说明</strong> 如果访问出现502，请检查是否是防火墙的问题，可以关闭防火墙。</p>
+      </li>
+      <li>
+        <p>如果需要对博客进行编辑修改，在浏览器输入http://公网IP/ghost。</p>
+
+        <p><img src="https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3412649951/p12481.png" alt="修改博客" /></p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="步骤四购买域名">步骤四：购买域名</h3>
+
+<p>您可以给自己的网站设定一个单独的域名。这样您的用户可以使用易记的域名访问您的网站，而不需要使用复杂的IP地址。</p>
+
+<p>建议登录阿里云购买域名。详情请参见<a href="https://www.alibabacloud.com/help/zh/doc-detail/54068.htm#task-1830383">注册通用域名</a>。</p>
+
+<h3 id="步骤五备案">步骤五：备案</h3>
+
+<p>对于域名指向中国内地服务器的网站，必须进行网站备案。在域名获得备案号之前，网站无法开通使用。</p>
+
+<p>阿里云有代备案系统，方便您进行备案。备案免费，审核时间一般为20天左右，请您耐心等待。</p>
+
+<h3 id="步骤六配置域名解析">步骤六：配置域名解析</h3>
+
+<p>您需要在阿里云万网上配置域名解析之后，用户才能通过域名访问您的网站。具体操作请参见<a href="https://www.alibabacloud.com/help/doc-detail/58131.htm">设置域名解析</a>。</p>
+
+<h2 id="配置-ghost">配置 ghost</h2>
+
+<blockquote>
+  <p>关于如何配置 <code class="language-plaintext highlighter-rouge">ghost</code> 我也找到一篇<a href="https://huhao.ai/ghost-casper-theme-commets-search-toc-highlight/">很不错的博文</a>, 介绍的很详细, 所要作的也只是做一些样式修改</p>
+</blockquote>
+
+<h3 id="配置搜索">配置搜索</h3>
+
+<blockquote>
+  <p><a href="https://huhao.ai/ghost-casper-theme-commets-search-toc-highlight/#-flexsearch">点击直达</a> 作者用的 <code class="language-plaintext highlighter-rouge">flexsearch</code> 我感觉效果特别好, 以下为转自原作者</p>
+</blockquote>
+
+<p><strong>操作步骤</strong></p>
+
+<ul>
+  <li>Step1: 在导航栏最右边增加搜索入口，partials/site-nav.hbs</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;button class="m-icon-button in-menu-main js-open-search" aria-label="Open search"&gt;
+    &lt;span class="icon-search"&gt;&lt;/span&gt;
+&lt;/button&gt;
+</code></pre></div></div>
+
+<ul>
+  <li>Step2: 新增search icon和close icon
+使用bootstrap的icon，直接用绘制，不用额外引入字体文件，简单便捷</li>
+  <li>search图标：partials/icons/search.hbs</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"bi bi-search"</span> <span class="na">width=</span><span class="s">"16px"</span> <span class="na">height=</span><span class="s">"16px"</span> <span class="na">viewBox=</span><span class="s">"0 0 16 16"</span> <span class="na">fill=</span><span class="s">"currentColor"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">fill-rule=</span><span class="s">"evenodd"</span> <span class="na">d=</span><span class="s">"M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">fill-rule=</span><span class="s">"evenodd"</span> <span class="na">d=</span><span class="s">"M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;</span>
+</code></pre></div></div>
+
+<p>HTML</p>
+
+<p>Copy</p>
+
+<ul>
+  <li>close图标：partials/icons/x.hbs</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"bi bi-x"</span> <span class="na">width=</span><span class="s">"24px"</span> <span class="na">height=</span><span class="s">"24px"</span> <span class="na">viewBox=</span><span class="s">"0 0 16 16"</span> <span class="na">fill=</span><span class="s">"currentColor"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">fill-rule=</span><span class="s">"evenodd"</span> <span class="na">d=</span><span class="s">"M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">fill-rule=</span><span class="s">"evenodd"</span> <span class="na">d=</span><span class="s">"M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;</span>
+</code></pre></div></div>
+
+<p>HTML</p>
+
+<p>Copy</p>
+
+<p><a href="https://icons.getbootstrap.com/">bootstrap-icons</a></p>
+
+<ul>
+  <li>Step3：新增搜索框及partials/search.hbs</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m-search js-search"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"m-icon-button outlined as-close-search js-close-search"</span> <span class="na">aria-label=</span><span class="s">"Close search"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-close"</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m-search__content"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"m-search__form"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;fieldset&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-search m-search-icon"</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"m-input in-search js-input-search"</span> <span class="na">placeholder=</span><span class="s">""</span> <span class="na">aria-label=</span><span class="s">"Type to search"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/fieldset&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"js-search-results hide"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"m-not-found align-center hide js-no-results"</span><span class="nt">&gt;</span>
+      
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>HTML</p>
+
+<p>Copy</p>
+
+<ul>
+  <li>Step4: 在default.hbs中增加search框</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>......
+}
+
+
+......
+</code></pre></div></div>
+
+<p>HTML</p>
+
+<p>Copy</p>
+
+<ul>
+  <li>Step5: 在partials/site-nav.hbs中增加搜索入口</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"m-icon-button in-menu-main js-open-search"</span> <span class="na">aria-label=</span><span class="s">"Open search"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-search"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/button&gt;</span>
+</code></pre></div></div>
+
+<p>HTML</p>
+
+<p>Copy</p>
+
+<ul>
+  <li>Step6: 新增search.css样式表</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">:root</span><span class="o">,[</span><span class="nt">data-theme</span><span class="o">=</span><span class="nt">dark</span><span class="o">]</span> <span class="p">{</span>
+        <span class="py">--background-color</span><span class="p">:</span><span class="m">#111</span><span class="p">;</span>
+        <span class="py">--primary-foreground-color</span><span class="p">:</span><span class="m">#ccc</span><span class="p">;</span>
+        <span class="py">--secondary-foreground-color</span><span class="p">:</span><span class="m">#fff</span><span class="p">;</span>
+        <span class="py">--primary-subtle-color</span><span class="p">:</span><span class="m">#2c2fe6</span><span class="p">;</span>
+        <span class="py">--secondary-subtle-color</span><span class="p">:</span><span class="m">#141920</span><span class="p">;</span>
+        <span class="py">--titles-color</span><span class="p">:</span><span class="m">#b4b4b4</span><span class="p">;</span>
+        <span class="py">--link-color</span><span class="p">:</span><span class="m">#2c2fe6</span><span class="p">;</span>
+        <span class="py">--primary-border-color</span><span class="p">:</span><span class="m">#1d1d1d</span><span class="p">;</span>
+        <span class="py">--secondary-border-color</span><span class="p">:</span><span class="m">#0f0f0f</span><span class="p">;</span>
+        <span class="py">--article-shadow-normal</span><span class="p">:</span><span class="m">0</span> <span class="m">4px</span> <span class="m">5px</span> <span class="m">5px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">);</span>
+        <span class="py">--article-shadow-hover</span><span class="p">:</span><span class="m">0</span> <span class="m">4px</span> <span class="m">5px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">);</span>
+        <span class="py">--transparent-background-color</span><span class="p">:</span><span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.99</span><span class="p">);</span>
+        <span class="py">--footer-background-color</span><span class="p">:</span><span class="m">#080808</span><span class="p">;</span>
+        <span class="py">--submenu-shadow-color-opacity</span><span class="p">:</span><span class="m">0.55</span><span class="p">;</span>
+        <span class="py">--button-shadow-color-normal</span><span class="p">:</span><span class="n">rgba</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">0.5</span><span class="p">);</span>
+        <span class="py">--button-shadow-color-hover</span><span class="p">:</span><span class="n">rgba</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">0.5</span><span class="p">);</span>
+        <span class="py">--toggle-darkmode-button-color</span><span class="p">:</span><span class="m">#efd114</span><span class="p">;</span>
+        <span class="py">--table-background-color-odd</span><span class="p">:</span><span class="m">#050505</span><span class="p">;</span>
+        <span class="py">--table-head-border-bottom</span><span class="p">:</span><span class="m">#1d1d1d</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.clearfix</span><span class="nd">:after</span><span class="o">,</span><span class="nc">.clearfix</span><span class="nd">:before</span> <span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s1">" "</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">table</span>
+<span class="p">}</span>
+
+<span class="nc">.clearfix</span><span class="nd">:after</span> <span class="p">{</span>
+    <span class="nl">clear</span><span class="p">:</span> <span class="nb">both</span>
+<span class="p">}</span>
+
+<span class="nc">.clearfix</span> <span class="p">{</span>
+    <span class="err">*</span><span class="py">zoom</span><span class="p">:</span><span class="m">1</span><span class="p">}</span>
+
+<span class="nc">.content-centered</span><span class="o">,</span><span class="nc">.m-hero</span><span class="o">,</span><span class="nc">.m-icon-button</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span>
+<span class="p">}</span>
+
+<span class="nc">.hide</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--titles-color</span><span class="p">);</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.125rem</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">outline</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nb">transparent</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.outlined</span> <span class="p">{</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-foreground-color</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.filled</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-color</span><span class="p">);</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="nl">-o-box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">2px</span> <span class="m">4px</span> <span class="n">var</span><span class="p">(</span><span class="n">--button-shadow-color-normal</span><span class="p">),</span><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="nb">transparent</span><span class="p">;</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">2px</span> <span class="m">4px</span> <span class="n">var</span><span class="p">(</span><span class="n">--button-shadow-color-normal</span><span class="p">),</span><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="nb">transparent</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">.25s</span> <span class="n">cubic-bezier</span><span class="p">(</span><span class="m">.02</span><span class="p">,</span><span class="m">.01</span><span class="p">,</span><span class="m">.47</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.filled</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">-o-box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">4px</span> <span class="m">8px</span> <span class="n">var</span><span class="p">(</span><span class="n">--button-shadow-color-hover</span><span class="p">),</span><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="nb">transparent</span><span class="p">;</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">4px</span> <span class="m">8px</span> <span class="n">var</span><span class="p">(</span><span class="n">--button-shadow-color-hover</span><span class="p">),</span><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="nb">transparent</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.in-mobile-topbar</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">65px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.as-close-menu</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">32px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">32px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">.625rem</span><span class="p">;</span>
+    <span class="nl">z-index</span><span class="p">:</span> <span class="m">2</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-icon-button.as-close-menu</span> <span class="p">{</span>
+        <span class="nl">display</span><span class="p">:</span><span class="nb">none</span><span class="cp">!important</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.as-close-search</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">32px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">32px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">.625rem</span><span class="p">;</span>
+    <span class="nl">z-index</span><span class="p">:</span> <span class="m">2</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-icon-button.as-close-search</span> <span class="p">{</span>
+        <span class="nl">top</span><span class="p">:</span><span class="m">30px</span><span class="p">;</span>
+        <span class="nl">right</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">42px</span><span class="p">;</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">42px</span><span class="p">;</span>
+        <span class="nl">font-size</span><span class="p">:</span> <span class="m">.875rem</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">80rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-icon-button.as-close-search</span> <span class="p">{</span>
+        <span class="nl">top</span><span class="p">:</span><span class="m">40px</span><span class="p">;</span>
+        <span class="nl">right</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">50px</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.in-menu-main</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-icon-button.in-menu-main</span> <span class="p">{</span>
+        <span class="nl">display</span><span class="p">:</span><span class="n">flex</span><span class="p">;</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">26px</span><span class="p">;</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">25px</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.more</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">6px</span><span class="p">;</span>
+    <span class="nl">z-index</span><span class="p">:</span> <span class="m">6</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.more.active</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-subtle-color</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.in-pagination-left</span><span class="o">,</span><span class="nc">.m-icon-button.in-pagination-right</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">.625rem</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-icon-button.in-pagination-left</span><span class="o">,</span><span class="nc">.m-icon-button.in-pagination-right</span> <span class="p">{</span>
+        <span class="nl">width</span><span class="p">:</span><span class="m">46px</span><span class="p">;</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">46px</span><span class="p">;</span>
+        <span class="nl">font-size</span><span class="p">:</span> <span class="m">.688rem</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.in-pagination-left</span> <span class="p">{</span>
+    <span class="nl">margin-right</span><span class="p">:</span> <span class="m">30px</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.in-pagination-right</span> <span class="p">{</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">30px</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.in-featured-articles</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">.875rem</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">29px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">22px</span><span class="p">;</span>
+    <span class="nl">bottom</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+    <span class="nl">z-index</span><span class="p">:</span> <span class="m">2</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-icon-button.in-featured-articles</span> <span class="p">{</span>
+        <span class="nl">bottom</span><span class="p">:</span><span class="m">36px</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.in-featured-articles.slick-prev</span> <span class="p">{</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="m">52px</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-icon-button.in-featured-articles.slick-prev</span> <span class="p">{</span>
+        <span class="nl">right</span><span class="p">:</span><span class="m">72px</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.in-featured-articles.slick-next</span> <span class="p">{</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="m">16px</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-icon-button.in-featured-articles.slick-next</span> <span class="p">{</span>
+        <span class="nl">right</span><span class="p">:</span><span class="m">36px</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.in-recommended-articles</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">.625rem</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+    <span class="nl">z-index</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">-50%</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.in-recommended-articles.slick-prev</span> <span class="p">{</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.in-recommended-articles.slick-next</span> <span class="p">{</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="m">0</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.as-load-comments</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">60px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">60px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.25rem</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">z-index</span><span class="p">:</span> <span class="m">2</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-icon-button.as-load-comments</span> <span class="p">{</span>
+        <span class="nl">width</span><span class="p">:</span><span class="m">80px</span><span class="p">;</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">80px</span><span class="p">;</span>
+        <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.625rem</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.in-share</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--titles-color</span><span class="p">);</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">.75rem</span><span class="p">;</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">31px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">31px</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">25px</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">64rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-icon-button.in-share</span> <span class="p">{</span>
+        <span class="nl">font-size</span><span class="p">:</span><span class="m">.875rem</span><span class="p">;</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+        <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">20px</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">80rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-icon-button.in-share</span> <span class="p">{</span>
+        <span class="nl">font-size</span><span class="p">:</span><span class="m">1rem</span><span class="p">;</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">50px</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.progress</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.progress</span> <span class="nt">svg</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span>
+<span class="p">}</span>
+
+<span class="nc">.m-icon-button.progress</span> <span class="nt">svg</span> <span class="nt">circle</span> <span class="p">{</span>
+    <span class="py">stroke</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-subtle-color</span><span class="p">);</span>
+    <span class="nl">transform-origin</span><span class="p">:</span> <span class="m">50%</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-90deg</span><span class="p">);</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">stroke-dashoffset</span> <span class="m">.2s</span>
+<span class="p">}</span>
+
+
+<span class="nc">.m-search</span> <span class="p">{</span>
+    <span class="nl">visibility</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">fixed</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">overflow-y</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">z-index</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--transparent-background-color</span><span class="p">);</span>
+    <span class="nl">-webkit-overflow-scrolling</span><span class="p">:</span> <span class="n">touch</span><span class="p">;</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.2</span><span class="p">);</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">.4s</span> <span class="n">cubic-bezier</span><span class="p">(</span><span class="m">.165</span><span class="p">,</span><span class="m">.84</span><span class="p">,</span><span class="m">.44</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nc">.m-search.opened</span> <span class="p">{</span>
+    <span class="nl">visibility</span><span class="p">:</span> <span class="nb">visible</span><span class="p">;</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="nl">z-index</span><span class="p">:</span> <span class="m">1000</span><span class="p">;</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nc">.m-search__content</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">80px</span> <span class="m">20px</span> <span class="m">40px</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-search__content</span> <span class="p">{</span>
+        <span class="nl">padding-top</span><span class="p">:</span><span class="m">100px</span><span class="p">;</span>
+        <span class="nl">padding-bottom</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+        <span class="nl">max-width</span><span class="p">:</span> <span class="m">700px</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">80rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-search__content</span> <span class="p">{</span>
+        <span class="nl">padding-left</span><span class="p">:</span><span class="m">0</span><span class="p">;</span>
+        <span class="nl">padding-right</span><span class="p">:</span> <span class="m">0</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">90rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-search__content</span> <span class="p">{</span>
+        <span class="nl">max-width</span><span class="p">:</span><span class="m">800px</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.m-search__form</span> <span class="p">{</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">30px</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-search__form</span> <span class="p">{</span>
+        <span class="nl">max-width</span><span class="p">:</span><span class="m">500px</span><span class="p">;</span>
+        <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span> <span class="m">45px</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.m-search-icon</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">45%</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#9b9b9b</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">500</span><span class="p">;</span>
+    <span class="nl">pointer-events</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">-45%</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-search-icon</span> <span class="p">{</span>
+        <span class="nl">font-size</span><span class="p">:</span><span class="m">1.25em</span><span class="p">;</span>
+        <span class="nl">left</span><span class="p">:</span> <span class="m">25px</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.m-result</span> <span class="p">{</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-border-color</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nc">.m-result.last</span> <span class="p">{</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0</span>
+<span class="p">}</span>
+
+<span class="nc">.m-result__link</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span> <span class="m">0</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-result__link</span> <span class="p">{</span>
+        <span class="nl">padding</span><span class="p">:</span><span class="m">15px</span> <span class="m">0</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.m-result__title</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-foreground-color</span><span class="p">);</span>
+    <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">.3px</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.4</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">400</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">5px</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-result__title</span> <span class="p">{</span>
+        <span class="nl">letter-spacing</span><span class="p">:</span><span class="m">.4px</span><span class="p">;</span>
+        <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.25rem</span><span class="p">;</span>
+        <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">10px</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">80rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-result__title</span> <span class="p">{</span>
+        <span class="nl">font-size</span><span class="p">:</span><span class="m">1.375rem</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.m-result__date</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--titles-color</span><span class="p">);</span>
+    <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">.2px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">.813rem</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-result__date</span> <span class="p">{</span>
+        <span class="nl">letter-spacing</span><span class="p">:</span><span class="m">.3px</span><span class="p">;</span>
+        <span class="nl">font-size</span><span class="p">:</span> <span class="m">.938rem</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="o">*,</span><span class="nd">:after</span><span class="o">,</span><span class="nd">:before</span> <span class="p">{</span>
+    <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+    <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span>
+<span class="p">}</span>
+
+<span class="nc">.m-not-found</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-foreground-color</span><span class="p">);</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.3</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">.875rem</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">600</span>
+<span class="p">}</span>
+
+<span class="nc">.m-not-found.in-recent-articles</span> <span class="p">{</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">20px</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.m-not-found.in-recent-articles</span> <span class="p">{</span>
+        <span class="nl">margin-left</span><span class="p">:</span><span class="m">0</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.l-post-content</span> <span class="nt">input</span><span class="o">,</span><span class="nc">.l-post-content</span> <span class="nt">select</span><span class="o">,</span><span class="nc">.l-post-content</span> <span class="nt">textarea</span><span class="o">,</span><span class="nc">.m-input</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-foreground-color</span><span class="p">);</span>
+    <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">.2px</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.3</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">11px</span> <span class="m">15px</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-border-color</span><span class="p">);</span>
+    <span class="nl">outline</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-color</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nc">.l-post-content</span> <span class="nt">input</span><span class="nc">.in-search</span><span class="o">,</span><span class="nc">.l-post-content</span> <span class="nt">select</span><span class="nc">.in-search</span><span class="o">,</span><span class="nc">.l-post-content</span> <span class="nt">textarea</span><span class="nc">.in-search</span><span class="o">,</span><span class="nc">.m-input.in-search</span> <span class="p">{</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">600</span><span class="p">;</span>
+    <span class="nl">padding-left</span><span class="p">:</span> <span class="m">40px</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">48rem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.l-post-content</span> <span class="nt">input</span><span class="nc">.in-search</span><span class="o">,</span><span class="nc">.l-post-content</span> <span class="nt">select</span><span class="nc">.in-search</span><span class="o">,</span><span class="nc">.l-post-content</span> <span class="nt">textarea</span><span class="nc">.in-search</span><span class="o">,</span><span class="nc">.m-input.in-search</span> <span class="p">{</span>
+        <span class="nl">font-size</span><span class="p">:</span><span class="m">1.25rem</span><span class="p">;</span>
+        <span class="nl">padding</span><span class="p">:</span> <span class="m">15px</span> <span class="m">30px</span> <span class="m">15px</span> <span class="m">60px</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nc">.l-post-content</span> <span class="nt">input</span><span class="nc">.in-subscribe-section</span><span class="o">,</span><span class="nc">.l-post-content</span> <span class="nt">select</span><span class="nc">.in-subscribe-section</span><span class="o">,</span><span class="nc">.l-post-content</span> <span class="nt">textarea</span><span class="nc">.in-subscribe-section</span><span class="o">,</span><span class="nc">.m-input.in-subscribe-section</span> <span class="p">{</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">15px</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>CSS</p>
+
+<p>Copy</p>
+
+<ul>
+  <li>Step7: 获取content-api.min.js放入assets/js/lib目录</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://unpkg.com/@tryghost/content-api@1.4.1/umd/content-api.min.js assets/js/lib
+</code></pre></div></div>
+
+<p>Shell</p>
+
+<p>Copy</p>
+
+<ul>
+  <li>Step8: 在default.hbs文件加载search.css并新增搜索触发、索引、搜索代码</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="kd">function</span> <span class="nx">formatDate</span><span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">toLocaleDateString</span><span class="p">(</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">lang</span><span class="p">,</span>
+            <span class="p">{</span>
+                <span class="na">year</span><span class="p">:</span> <span class="dl">'</span><span class="s1">numeric</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">month</span><span class="p">:</span> <span class="dl">'</span><span class="s1">long</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">day</span><span class="p">:</span> <span class="dl">'</span><span class="s1">numeric</span><span class="dl">'</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="dl">''</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">$body</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">body</span><span class="dl">'</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">$openSearch</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-open-search</span><span class="dl">'</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">$closeSearch</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-close-search</span><span class="dl">'</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">$search</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-search</span><span class="dl">'</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">$inputSearch</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-input-search</span><span class="dl">'</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">$searchResults</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-search-results</span><span class="dl">'</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">$searchNoResults</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.js-no-results</span><span class="dl">'</span><span class="p">)</span>
+
+    <span class="kd">let</span> <span class="nx">flexIndexZh</span> <span class="o">=</span> <span class="kc">null</span>
+    <span class="kd">let</span> <span class="nx">flexIndexEn</span> <span class="o">=</span> <span class="kc">null</span>
+
+    <span class="kd">function</span> <span class="nx">trySearchFeature</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">ghostSearchApiKey</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nx">ghostHost</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">getAllPosts</span><span class="p">(</span><span class="nx">ghostHost</span><span class="p">,</span> <span class="nx">ghostSearchApiKey</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">$openSearch</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="dl">'</span><span class="s1">visibility</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">hidden</span><span class="dl">'</span><span class="p">)</span>
+            <span class="nx">$closeSearch</span><span class="p">.</span><span class="nx">remove</span><span class="p">()</span>
+            <span class="nx">$search</span><span class="p">.</span><span class="nx">remove</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">toggleScrollVertical</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$body</span><span class="p">.</span><span class="nx">toggleClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">no-scroll-y</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">getAllPosts</span><span class="p">(</span><span class="nx">host</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GhostContentAPI</span><span class="p">({</span>
+            <span class="na">url</span><span class="p">:</span> <span class="nx">host</span><span class="p">,</span>
+            <span class="nx">key</span><span class="p">,</span>
+            <span class="na">version</span><span class="p">:</span> <span class="dl">'</span><span class="s1">v2</span><span class="dl">'</span>
+        <span class="p">})</span>
+        <span class="kd">const</span> <span class="nx">allPosts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="kd">const</span> <span class="nx">docOption</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="na">doc</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">,</span>
+                <span class="na">field</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">html</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">custom_excerpt</span><span class="dl">"</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="kd">const</span> <span class="nx">flexOptionsZh</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="na">encode</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="na">tokenize</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">){</span>
+                <span class="k">return</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">[\x</span><span class="sr">00-</span><span class="se">\x</span><span class="sr">7F</span><span class="se">]</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">""</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="kd">const</span> <span class="nx">flexOptionsEn</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="na">encode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">advanced</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">tokenize</span><span class="p">:</span> <span class="dl">'</span><span class="s1">forward</span><span class="dl">'</span>
+        <span class="p">}</span>
+
+        <span class="nx">api</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nx">browse</span><span class="p">({</span>
+            <span class="na">limit</span><span class="p">:</span> <span class="dl">'</span><span class="s1">all</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">fields</span><span class="p">:</span> <span class="dl">'</span><span class="s1">id, title, url, published_at, custom_excerpt, html</span><span class="dl">'</span>
+        <span class="p">})</span>
+            <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">posts</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">posts</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">allPosts</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">posts</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+                <span class="p">}</span>
+
+                <span class="c1">//fuse = new Fuse(allPosts, fuseOptions)</span>
+
+                <span class="nx">flexIndexZh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FlexSearch</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">flexOptionsZh</span><span class="p">,</span> <span class="nx">docOption</span><span class="p">))</span>
+                <span class="nx">flexIndexZh</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">allPosts</span><span class="p">)</span>
+
+                <span class="nx">flexIndexEn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FlexSearch</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">flexOptionsEn</span><span class="p">,</span> <span class="nx">docOption</span><span class="p">))</span>
+                <span class="nx">flexIndexEn</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">allPosts</span><span class="p">)</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+            <span class="p">})</span>
+
+    <span class="p">}</span>
+
+    <span class="nx">$openSearch</span><span class="p">.</span><span class="nx">click</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">$search</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">opened</span><span class="dl">'</span><span class="p">)</span>
+        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">$inputSearch</span><span class="p">.</span><span class="nx">focus</span><span class="p">()</span>
+        <span class="p">},</span> <span class="mi">400</span><span class="p">);</span>
+        <span class="nx">toggleScrollVertical</span><span class="p">()</span>
+    <span class="p">})</span>
+
+    <span class="nx">$closeSearch</span><span class="p">.</span><span class="nx">click</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">$inputSearch</span><span class="p">.</span><span class="nx">blur</span><span class="p">()</span>
+        <span class="nx">$search</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">opened</span><span class="dl">'</span><span class="p">)</span>
+        <span class="nx">toggleScrollVertical</span><span class="p">()</span>
+    <span class="p">})</span>
+
+    <span class="nx">$inputSearch</span><span class="p">.</span><span class="nx">keyup</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">$inputSearch</span><span class="p">.</span><span class="nx">val</span><span class="p">().</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">flexIndexEn</span> <span class="o">&amp;&amp;</span> <span class="nx">flexIndexZh</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">resultsZh</span> <span class="o">=</span> <span class="nx">flexIndexZh</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="nx">$inputSearch</span><span class="p">.</span><span class="nx">val</span><span class="p">())</span>
+            <span class="kd">const</span> <span class="nx">resultsEn</span> <span class="o">=</span> <span class="nx">flexIndexEn</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="nx">$inputSearch</span><span class="p">.</span><span class="nx">val</span><span class="p">())</span>
+
+            <span class="kd">const</span> <span class="nx">results</span> <span class="o">=</span> <span class="nx">resultsZh</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">resultsEn</span><span class="p">)</span>
+            <span class="kd">let</span> <span class="nx">htmlString</span> <span class="o">=</span> <span class="dl">''</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">let</span> <span class="nx">duplicate_ids</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">results</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">results</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">id</span> <span class="k">in</span> <span class="nx">duplicate_ids</span><span class="p">)</span>
+                        <span class="k">continue</span>
+                    <span class="nx">htmlString</span> <span class="o">+=</span> <span class="s2">`
+  &lt;article class="m-result"&gt;\
+    &lt;a href="</span><span class="p">${</span><span class="nx">results</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">url</span><span class="p">}</span><span class="s2">" class="m-result__link"&gt;\
+      &lt;h3 class="m-result__title"&gt;</span><span class="p">${</span><span class="nx">results</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">title</span><span class="p">}</span><span class="s2">&lt;/h3&gt;\
+      &lt;span class="m-result__date"&gt;</span><span class="p">${</span><span class="nx">formatDate</span><span class="p">(</span><span class="nx">results</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">published_at</span><span class="p">)}</span><span class="s2">&lt;/span&gt;\
+    &lt;/a&gt;\
+  &lt;/article&gt;`</span>
+                    <span class="nx">duplicate_ids</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">results</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">id</span><span class="p">)</span>
+                <span class="p">}</span>
+
+                <span class="nx">$searchNoResults</span><span class="p">.</span><span class="nx">hide</span><span class="p">()</span>
+                <span class="nx">$searchResults</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">htmlString</span><span class="p">)</span>
+                <span class="nx">$searchResults</span><span class="p">.</span><span class="nx">show</span><span class="p">()</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">$searchResults</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="dl">''</span><span class="p">)</span>
+                <span class="nx">$searchResults</span><span class="p">.</span><span class="nx">hide</span><span class="p">()</span>
+                <span class="nx">$searchNoResults</span><span class="p">.</span><span class="nx">show</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">$searchResults</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="dl">''</span><span class="p">)</span>
+            <span class="nx">$searchResults</span><span class="p">.</span><span class="nx">hide</span><span class="p">()</span>
+            <span class="nx">$searchNoResults</span><span class="p">.</span><span class="nx">hide</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+
+    <span class="nx">trySearchFeature</span><span class="p">()</span>
+<span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>HTML</p>
+
+<p>Copy</p>
+
+<p>Step9: 打包新主题并上传ghost后台</p>
+
+<p>Step10: 在ghost后台传递使用content-api.min.js的关键参数
+需要先在ghost后台新增自定义插件并获取content api key</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+  <span class="kd">const</span> <span class="nx">ghostHost</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://huhao.ai</span><span class="dl">'</span>
+  <span class="kd">const</span> <span class="nx">ghostSearchApiKey</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">d017b25xxxxxxx59c08f3</span><span class="dl">'</span>     <span class="c1">//ghost后台获取的content api key</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>HTML</p>
+
+<p>Copy</p>
+
+<p>其他参考</p>
+
+<ul>
+  <li><a href="https://ghost.org/tutorials/adding-search-to-a-ghost-theme/">ghost官网集成search360</a></li>
+</ul>
+
+<h3 id="配置汉化">配置汉化</h3>
+
+<blockquote>
+  <p>目录:` 主题名如默认主题-themes\casper</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>在该目录下新建<code class="language-plaintext highlighter-rouge">locales</code>文件夹, 并新增zh-CN.json文件, 输入以下内容, 并将设置里面的语言换成文件名: <code class="language-plaintext highlighter-rouge">zh-CN</code></p>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"More Posts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"更多内容"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Loading"</span><span class="p">:</span><span class="w"> </span><span class="s2">"正在载入"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Page Not Found"</span><span class="p">:</span><span class="w"> </span><span class="s2">"无法找到页面"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Recent Posts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"近期更新"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Home Page"</span><span class="p">:</span><span class="w"> </span><span class="s2">"主页"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Back"</span><span class="p">:</span><span class="w"> </span><span class="s2">"返回"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Subscribe"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subscribe"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Subscribe to {blogtitle}"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subscribe to {blogtitle}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Subscribed!"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subscribed!"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"with the email address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"with the email address"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"邮件"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Your email address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"你的邮件地址"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"You've successfully subscribed to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You've successfully subscribed to"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Featured Post"</span><span class="p">:</span><span class="w"> </span><span class="s2">"加星内容"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Share on Twitter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"分享至Twitter"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Share on Facebook"</span><span class="p">:</span><span class="w"> </span><span class="s2">"分享至Facebook"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Share on LinkedIn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"分享至LinkedIn"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Share on Pinterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"分享至Pinterest"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Share via Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"分享至邮件"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"A collection of posts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"共有 0 篇"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"A collection of 1 post"</span><span class="p">:</span><span class="w"> </span><span class="s2">"共有 1 篇"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"A collection of % posts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"共有 % 篇"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"1 post"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 篇"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"% posts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"% 篇"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Copy link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"拷贝链接"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Link copied to clipboard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"链接已被拷贝至剪贴板"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Search"</span><span class="p">:</span><span class="w"> </span><span class="s2">"搜索"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Search {blogtitle}"</span><span class="p">:</span><span class="w"> </span><span class="s2">"搜索 {blogtitle}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Type to Search"</span><span class="p">:</span><span class="w"> </span><span class="s2">"请输入搜索内容"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Navigation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"导航"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Newsletter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Newsletter"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Published with {ghostlink}"</span><span class="p">:</span><span class="w"> </span><span class="s2">"使用{ghostlink}发布/ "</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"You Might Be Interested In"</span><span class="p">:</span><span class="w"> </span><span class="s2">"你可能感兴趣的内容"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"热门标签"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Advertise"</span><span class="p">:</span><span class="w"> </span><span class="s2">"广告"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"评论（需翻墙）"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"1 min read"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 分钟读完"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"% min read"</span><span class="p">:</span><span class="w"> </span><span class="s2">"约 % 分钟读完"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"See all % posts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"查看其余 % 篇"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>普通的汉化, 直接可以更改hbs文件中的英文</p>
+  </li>
+  <li>
+    <p>对于需要获取 <code class="language-plaintext highlighter-rouge">%</code> 作为数量统计的部分要使用对于语言替换的, 要做语法特殊处理</p>
+
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"read-next-card-footer"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;</span>
+        →<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/footer&gt;</span>
+<span class="nt">&lt;</span> <span class="err">!</span><span class="na">--</span> <span class="na">首先对要进行处理的文字段加上</span>
+<span class="na">然后再具体的文字部位用</span><span class="err">(</span><span class="na">t</span> <span class="na">****</span><span class="err">)</span><span class="na">来进行国际化处理</span><span class="err">~</span> <span class="na">--</span> <span class="nt">&gt;</span>
+</code></pre></div>    </div>
+
+    <ol>
+      <li>然后一个个替换就可以了</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="配置文章目录">配置文章目录</h3>
+
+<blockquote>
+  <p><a href="https://huhao.ai/ghost-casper-theme-commets-search-toc-highlight/#-">点击直达</a></p>
+</blockquote>
+
+<h3 id="语法高亮">语法高亮</h3>
+
+<blockquote>
+  <p><strong>核心</strong>: 引入 <code class="language-plaintext highlighter-rouge">Prismjs</code> 下载的 js 和 css 代码引入, 然后插入以下代码即可</p>
+</blockquote>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!--在Header中微调字体大小--&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+    <span class="nt">pre</span><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="nt">language-</span><span class="o">]</span> <span class="p">{</span>
+        <span class="nl">margin</span><span class="p">:</span> <span class="m">1.75em</span> <span class="m">0</span><span class="p">;</span>
+        <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.4rem</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="c">&lt;!--在Footer中调整pre样式，增加line-numbers样式--&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">pre[class*=language-]</span><span class="dl">'</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">node</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">line-numbers</span><span class="dl">'</span><span class="p">);</span>
+		<span class="p">});</span>
+        <span class="nx">Prism</span><span class="p">.</span><span class="nx">highlightAll</span><span class="p">();</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h3 id="根据上述博文配置会遇到几个问题-特此记录">根据上述博文配置会遇到几个问题, 特此记录</h3>
+
+<ol>
+  <li>
+    <p>代码块在移动端下会有显示 bug , 需要自己修改一下 css , 长度 100%</p>
+
+    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 注释掉prism.css文件下的如下属性 */</span>
+<span class="nt">div</span><span class="nc">.code-toolbar</span> <span class="p">{</span>
+    <span class="c">/*添加 width 100*/</span>
+    	<span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+   
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p><img src="https://raw.githubusercontent.com/mannixchan/Pics/master/img/20210309080612.png" alt="" /></p>
+  </li>
+  <li>
+    <p>点击搜索之后, 弹出来的搜索框, 会有被背景图遮挡一会儿的 bug, 貌似这个和搜索框的 <code class="language-plaintext highlighter-rouge">css transition</code> 属性有关系, 没想到怎么解决, 但是禁用了该 <code class="language-plaintext highlighter-rouge">css</code> 属性, 虽然跳出来有点生硬, 但是比之前好一些</p>
+
+    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 注释掉search.css文件下的如下属性 */</span>
+<span class="nc">.m-search</span> <span class="p">{</span>
+<span class="nl">transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">.4s</span> <span class="n">cubic-bezier</span><span class="p">(</span><span class="m">.165</span><span class="p">,</span><span class="m">.84</span><span class="p">,</span><span class="m">.44</span><span class="p">,</span><span class="m">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p><img src="https://raw.githubusercontent.com/mannixchan/Pics/master/img/image-20210309080254158.png" alt="image-20210309080254158" /></p>
+  </li>
+</ol>
+
+<h2 id="总结">总结</h2>
+
+<p>有时间, 想把自己博客定制的很漂亮的话, 还是需要好好研究一下 <code class="language-plaintext highlighter-rouge">ghost</code> 官方文档</p>
+
+<p>官网链接 <a href="https://ghost.org/docs/">ghost</a>,</p>
+
+<p>感谢以上收录的两个作者, 让我博客搭建的前所未有的顺利~</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Mannix Chen&#39;s Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Mannix Chen&#39;s Blog</li><li><a class="u-email" href="mailto:job@mannixchen.com">job@mannixchen.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is a wonderful website about awesome stuff.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
