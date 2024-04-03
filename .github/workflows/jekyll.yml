@@ -1,23 +1,36 @@
-name: Jekyll site CI
+name: Build and Deploy Jekyll site to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main  # 你的源代码分支
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2  # 检出代码
 
-      - name: Build and deploy Jekyll site
-        uses: docker://jekyll/builder:latest
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          args: jekyll build --future --trace
-      - name: Deploy
+          ruby-version: 3.0  # 指定 Ruby 版本
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle config set --local path vendor/bundle
+          bundle install --jobs 4 --retry 3
+
+      - name: Build Jekyll site
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --trace --disable-disk-cache
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
+          keep_files: true  # 如果你希望保留gh-pages分支中的现有文件，设置为true
