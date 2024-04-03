@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Getting Started | Mannix Chen’s Blog</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Getting Started" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is a wonderful website about awesome stuff." />
+<meta property="og:description" content="This is a wonderful website about awesome stuff." />
+<link rel="canonical" href="https://mannixchen.github.io/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E8%AF%BB%20vue3%20%E6%96%87%E6%A1%A3.html" />
+<meta property="og:url" content="https://mannixchen.github.io/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E8%AF%BB%20vue3%20%E6%96%87%E6%A1%A3.html" />
+<meta property="og:site_name" content="Mannix Chen’s Blog" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Getting Started" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"This is a wonderful website about awesome stuff.","headline":"Getting Started","url":"https://mannixchen.github.io/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E8%AF%BB%20vue3%20%E6%96%87%E6%A1%A3.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://mannixchen.github.io/feed.xml" title="Mannix Chen&apos;s Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Mannix Chen&#39;s Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/backup/2023-12-21-01-file-management.html">文档管理系统</a><a class="page-link" href="/backup/2023-12-21-02-git-sync-github.html">本地 git 仓同步到 github 新库</a><a class="page-link" href="/backup/centos7.html">Update git from v1.8 - v2.x</a><a class="page-link" href="/backup/sub/finalcutpro.html">添加 keyword</a><a class="page-link" href="/backup/sub/javaLearn.html">Java 基本程序设计结构</a><a class="page-link" href="/backup/sub/vloganalyze.html">越南notebook感悟</a><a class="page-link" href="/backup/sub/%E5%BF%83%E6%B5%81.html">第一章</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/WAKE%20UP.html">wake up(2018.9) - casey day</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/bean.html">bean</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/ghost%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%92%8C%E9%85%8D%E7%BD%AE.html">ghost个人博客搭建 ( centos 7 ) 和配置 ( 汉化 - 搜索 - 评论 )</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/ghost%E9%85%8D%E7%BD%AE.html">ghost博客配置</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E4%B8%9A%E7%95%8C%E7%99%BB%E5%BD%95%E6%8C%87%E5%8D%97.html">登录 - 业界解决方案</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92.html">学习计划</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A5%E9%97%A8.html">组件</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E6%80%8E%E4%B9%88%E7%94%A8Nodejs%E5%86%99%E7%99%BB%E5%BD%95.html">用 Nodejs 写登录功能</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E6%94%BE%E4%B8%8B.html">放下</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E6%96%B0%E7%94%B5%E8%84%91-%E6%96%B0%E6%89%A9%E5%B1%95%E5%9D%9E-%E6%B6%B2%E5%8E%8B%E8%87%82.html">年中换新机, 22日官网下单</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E8%AF%BB%20vue3%20%E6%96%87%E6%A1%A3.html">Getting Started</a><a class="page-link" href="/backup/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2-nginx.html">Nginx</a><a class="page-link" href="/backup/%E6%80%9D%E8%80%83%F0%9F%A4%94.html">思考</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0726.html">雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0727.html">小雨转各种雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0728.html">雨 -&amp;gt; 阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0729.html">阴 -&amp;gt; 多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0730.html">大晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0731.html">大晴 - 愉快学习, 缺乏运动</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0801.html">大晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0802.html">晴/阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0803.html">晴日, 偶有多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0804.html">晴天</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0805.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0806.html">晴/多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0807.html">妥妥的多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0808.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0809.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0810.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0811.html">阴 -&amp;gt; 雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0812.html">阴 -&amp;gt; 小雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0813.html">大雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0814.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0815.html">阴雨 -&amp;gt; 连着好几天</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0816.html">雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0817.html">美好的晴天</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0818.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0819.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0820.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0821.html">阴-&amp;gt;晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0822.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0823.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0824.html">阴 -&amp;gt; 雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0825.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0826.html">阴 -&amp;gt; 雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0827.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0828.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0829.html">大雨滂沱</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0830.html">阴 -&amp;gt; 多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0831.html">晴, 大晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0901.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0902.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0903.html">阴 -&amp;gt; 晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0904.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0905.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0906.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0907.html">多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0908.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0909.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0910.html">大晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0911.html">大晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0912.html">多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0913.html">台风天-灿都</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0914.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0915.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0916.html">晴天</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0917.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0918.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0919.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0920.html">阴 -&amp;gt; 多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0921.html">晴 -&amp;gt; 中秋</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0922.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0923.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0924.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0925.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0926.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0927.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0928.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/0929.html">雨</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1017.html">多云</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1029.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1030.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1031.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1101.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1103.html">无</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1104.html">阴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1105.html">无</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1106.html">晴, 但是冷</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1107.html">无</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1108.html">晴, 也冷</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1109.html">无</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1110.html">无</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1111.html">晴, 空气贼好</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1112.html">空气好</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1113.html">空气也不错</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1114.html">无</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1115.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1116.html">晴</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1117.html">异步函数</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1120.html">JDK</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/2021/1121.html">类名字 - 标识符</a><a class="page-link" href="/backup/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/Becoming%20Steve%20Jobs.html">Prologue /’prolɔɡ/ 序言开场白</a><a class="page-link" href="/backup/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/Vim%E7%AF%87.html">https://vim.rtorr.com/lang/en_us</a><a class="page-link" href="/backup/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%B2%9B%E4%B8%8A%E4%B9%A6%E5%BA%97%E8%AF%BB%E5%90%8E%E6%84%9F.html">过年和年后的日子 - 多年未看的</a><a class="page-link" href="/backup/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%B9%B8%E7%A6%8F%E7%9A%84%E6%96%B9%E6%B3%95%E8%AF%BB%E5%90%8E%E6%84%9F.html">幸福的方法</a><a class="page-link" href="/">Blog Posts</a><a class="page-link" href="/backup/">blog</a><a class="page-link" href="/backup/%E6%97%A5%E5%BF%97/">JavaScript 忍者秘籍🥷 0729-0814</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Getting Started</h1>
+  </header>
+
+  <div class="post-content">
+    
+<h1 id="getting-started">Getting Started</h1>
+
+<h2 id="intoduction">Intoduction</h2>
+
+<h3 id="单词-vocabulary">单词 vocabulary</h3>
+
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">author</code>- 编写</p>
+
+<p><code class="language-plaintext highlighter-rouge">abbreviated /ə'brivɪ'et/ as SFC</code> - 用 SFC 缩写</p>
+
+<p><code class="language-plaintext highlighter-rouge">as the name suggests,</code>- 顾名思义</p>
+
+<p><code class="language-plaintext highlighter-rouge">encapsulates</code> - 封装</p>
+
+<p><code class="language-plaintext highlighter-rouge">be it simple or complex.  </code>- 无论是简单还是复杂。</p>
+
+<p><code class="language-plaintext highlighter-rouge">Prerequisites </code>-  前提；必要条件</p>
+
+<p><code class="language-plaintext highlighter-rouge">grasp the basics </code>- 掌握基础知识</p>
+
+<p><code class="language-plaintext highlighter-rouge">Prior experience </code>- 先前的经验</p>
+
+<p><code class="language-plaintext highlighter-rouge">Progressive /prə'ɡrɛsɪv/ </code>- 逐步发生的，逐步发展的</p>
+
+<p><code class="language-plaintext highlighter-rouge">extremely diverse /dɪ'vɝs/ </code> - 各式各样的.. 及其多样化</p>
+
+<p><code class="language-plaintext highlighter-rouge">the things we build on the web may vary drastically /ˈdræstɪklɪ/ in form and scale. </code>- 在形式和规模上可能有很大的不同。 (vary变化 drastically大大地彻底的)</p>
+
+<p><code class="language-plaintext highlighter-rouge">With that in mind </code>- 考虑到这一点</p>
+
+<p><code class="language-plaintext highlighter-rouge">Vue is designed to be flexible and incrementally  /ɪnkrə'məntl/ adoptable.</code>- Vue旨在灵活且逐步采用 (增量可采用性)。</p>
+
+<p><code class="language-plaintext highlighter-rouge">intimidating </code>- 令人惊恐的;骇人的;令人胆怯的</p>
+
+<p><code class="language-plaintext highlighter-rouge">tackle /ˈtækəl/ more ambitious goals </code>- 实现更远大的目标</p>
+
+<p><code class="language-plaintext highlighter-rouge">veteran /'vɛtərən/ </code> - 老手</p>
+
+<p><code class="language-plaintext highlighter-rouge">optimal /'ɑptəml/</code> - 同 optimum 最优的最佳的最适宜的</p>
+
+<p><code class="language-plaintext highlighter-rouge">leverage /'lɛvərɪdʒ/</code> - 利用</p>
+
+<p><code class="language-plaintext highlighter-rouge">you can pick the optimal way to leverage Vue based on the problems you are trying to solve</code>- 你可以挑选最后方式来利用 vue , 基于你尝试解决的问题</p>
+
+<p><code class="language-plaintext highlighter-rouge">retain </code>- 保持</p>
+
+<p><code class="language-plaintext highlighter-rouge">adapt </code>- 适合</p>
+
+<p><code class="language-plaintext highlighter-rouge">defining feature</code> - 最典型的特征</p>
+
+<p><code class="language-plaintext highlighter-rouge">if your use case warrants /'wɔrənt/ a build setup. </code>  - 如果你的案例保证了了 warrants 保证</p>
+
+<p><code class="language-plaintext highlighter-rouge">dedicated /'dɛdə'ketɪd/ section</code> dedicated 为…专门设计 You can learn more about the <a href="https://vuejs.org/guide/scaling-up/sfc.html">how and why of SFC</a> in its dedicated section</p>
+
+<p><code class="language-plaintext highlighter-rouge">typically</code> - 一般的</p>
+
+<p><code class="language-plaintext highlighter-rouge">compile-time transforms</code> - 编译时转换</p>
+
+<p><code class="language-plaintext highlighter-rouge">boilerplate/'bɔɪlɚplet/</code> - 样板文件</p>
+
+<p><code class="language-plaintext highlighter-rouge">on top of </code>- 在…上面</p>
+
+<p><code class="language-plaintext highlighter-rouge">aligns</code> - 对准, 使成为一条直线 which typically aligns better with a class-based mental model</p>
+
+<p><code class="language-plaintext highlighter-rouge">effectively /ɪ'fɛktɪvli/</code> - 实际上,事实上</p>
+
+<p><code class="language-plaintext highlighter-rouge">In return,</code> - 反过来</p>
+
+<p><code class="language-plaintext highlighter-rouge">patterns</code>-模式</p>
+
+<p><code class="language-plaintext highlighter-rouge">going over all content </code> - 浏览所有内容</p>
+
+<hr />
+
+<h3 id="vue-can-be-used-in-different-ways">Vue can be used in different ways:</h3>
+
+<ol>
+  <li>Enhancing static HTML without a build step - 增强静态html</li>
+  <li>Embed as Web Components on any page - 作为网络组件嵌入在任何 page</li>
+  <li>Single-Page Application (SPA)</li>
+  <li>Server-SideRendering (SSR)</li>
+  <li>Static-Site-Generation (SSG)</li>
+  <li>Targeting desktop, mobile, WebGL or even the terminal</li>
+</ol>
+
+<p>Despite the flexibility, the core knowledge about how Vue works is shared across all these use cases (核心知识在这 6 个使用场景共享).</p>
+
+<h3 id="single-file-components">Single-File Components</h3>
+
+<blockquote>
+  <p>A Vue SFC, as the name suggests, encapsulates the component’s logic (JavaScript), template (HTML), and styles (CSS) in a single file.</p>
+</blockquote>
+
+<ul>
+  <li>SFC is a defining feature of Vue,</li>
+</ul>
+
+<h3 id="api-style">API Style</h3>
+
+<p>Vue components can be authored in two different API styles: <strong>Options API</strong> and <strong>Composition API</strong>.</p>
+
+<p>With Composition API,  we define a component’s logic using imported API functions.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">setup</code> attribute is a hint that makes Vue perform compile-time transforms that allow us to use Composition API with less boilerplate. For example, <strong>imports and top-level variables / functions</strong> declared in <code class="language-plaintext highlighter-rouge">&lt;script setup&gt;</code> are directly usable in the template.</p>
+
+<h3 id="which-to-choose-">Which to choose ?</h3>
+
+<p>the Options API is implemented on top of the Composition API!</p>
+
+<p>The <strong>Options API</strong> is centered around (以… 为中心) the concept of a “component instance” (<code class="language-plaintext highlighter-rouge">this</code> as seen in the example), which typically aligns better (更好的对齐, 更符合) with a class-based mental model for users coming from OOP language backgrounds.</p>
+
+<p>The <strong>Composition API</strong> is centered around declaring reactive state variables directly in a function scope, and composing state from multiple functions together to handle complexity. It is more free-form, and requires understanding of how reactivity works in Vue to be used effectively. In return, its flexibility enables more powerful patterns for organizing and reusing logic.</p>
+
+<h2 id="quick-start">Quick Start</h2>
+
+<h3 id="vocabulary">Vocabulary</h3>
+
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">identical</code> - 完全一样的</p>
+
+<p><code class="language-plaintext highlighter-rouge">scaffolding /'skæfəldɪŋ/ tool</code> - 脚手架工具</p>
+
+<p><code class="language-plaintext highlighter-rouge">for now</code> - 眼下, 当下, 暂时如此 simply choose <code class="language-plaintext highlighter-rouge">No</code> by hitting enter for now (暂时选 No)</p>
+
+<p><code class="language-plaintext highlighter-rouge">viable/ˈvaɪəbəl/ </code> - 可行的</p>
+
+<p><code class="language-plaintext highlighter-rouge">underlying build tool Vite</code> - 底层的构建工具</p>
+
+<p><code class="language-plaintext highlighter-rouge">ship your app to production</code> - 将你的产品交付生产</p>
+
+<p><code class="language-plaintext highlighter-rouge">consistency</code> 连贯性;一致性</p>
+
+<p><code class="language-plaintext highlighter-rouge">primarily</code> 主要的</p>
+
+<p><code class="language-plaintext highlighter-rouge">chromium/'kromɪəm/</code> 谷歌浏览器的, 铬元素, 金属风格</p>
+
+<hr />
+
+<h3 id="with-build-tools">With build tools</h3>
+<blockquote>
+
+  <p>To create a build-tool-enabled Vue project on your machine</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init vue@latest
+</code></pre></div></div>
+
+<h3 id="without-build-tools">Without build tools</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/vue@3"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
+    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span>
+        <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Hello Vue!</span><span class="dl">'</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}).</span><span class="nx">mount</span><span class="p">(</span><span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">)</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>But if we want to use ES modules for consistency , use the following HTML instead:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"importmap"</span><span class="nt">&gt;</span>
+  <span class="c1">// importmap only works in chromium-based browsers like chrome or edge</span>
+
+  <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">imports</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">vue</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://unpkg.com/vue@3/dist/vue.esm-browser.js</span><span class="dl">"</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">createApp</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+
+  <span class="nx">createApp</span><span class="p">({</span>
+    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span>
+        <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Hello Vue!</span><span class="dl">'</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}).</span><span class="nx">mount</span><span class="p">(</span><span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">)</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h3 id="serving-over-http"><a href="https://vuejs.org/guide/quick-start.html#serving-over-http">Serving over HTTP</a></h3>
+
+<p>If we want to split code into separate js files, we need to author like this</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- index.html --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">createApp</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+  <span class="k">import</span> <span class="nx">MyComponent</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./my-component.js</span><span class="dl">'</span>
+
+  <span class="nx">createApp</span><span class="p">(</span><span class="nx">MyComponent</span><span class="p">).</span><span class="nx">mount</span><span class="p">(</span><span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">)</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// my-component.js</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="na">count</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="na">template</span><span class="p">:</span> <span class="s2">`&lt;div&gt;count is 8&lt;/div&gt;`</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Run <code class="language-plaintext highlighter-rouge">npx serve</code> from the command line in the same directory where your HTML is. Or it desn’t work.</p>
+
+<p>Use <strong>es6-string-html</strong> in es6 HTML strings, it will get hightlight support</p>
+
+<h1 id="essentials">Essentials</h1>
+
+<h2 id="create-a-vue-application">Create a Vue Application</h2>
+
+<h3 id="vocabulary-1">Vocabulary</h3>
+
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">expects</code> 期望, 需要</p>
+
+<p><code class="language-plaintext highlighter-rouge">registrations/'rɛdʒɪ'streʃən/</code>  注册</p>
+
+<p><code class="language-plaintext highlighter-rouge">descendent/dɪˈsɛndənt/</code> 子孙 后代</p>
+
+<hr />
+
+<h3 id="the-root-component">The Root Component</h3>
+
+<p>The object we pass to <code class="language-plaintext highlighter-rouge">createApp</code> is a component, and it’s a root component.</p>
+
+<h3 id="mounting-the-app">Mounting the App</h3>
+
+<p>An application instance won’t render anything until its <code class="language-plaintext highlighter-rouge">.mount()</code> method is called.</p>
+
+<h2 id="template-syntax">Template syntax</h2>
+
+<h3 id="vocabulary-2">Vocabulary</h3>
+
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">declaratively/dɪ'klærətɪv/</code>  声明的</p>
+
+<p><code class="language-plaintext highlighter-rouge">underlying component</code> 底层的组件</p>
+
+<p><code class="language-plaintext highlighter-rouge">syntactically /sin'tæktikli/ </code> 语法层面上 syntactically valid HTML(语法合规的 HTML)</p>
+
+<p><code class="language-plaintext highlighter-rouge">spec-compliant </code> 符合规范的</p>
+
+<p><code class="language-plaintext highlighter-rouge">compliant /kəm'plaɪənt</code> 服从的, 顺从的</p>
+
+<p><code class="language-plaintext highlighter-rouge">hood</code> 盖子, 引擎盖, 罩子</p>
+
+<p><code class="language-plaintext highlighter-rouge">Under the hood</code> 藏在表面之下的机制或结构, 在后台</p>
+
+<p><code class="language-plaintext highlighter-rouge">reactivity[ˌri:æk'tɪvɪti] </code> 反应度；反应能力；活动性, 反应性</p>
+
+<p><code class="language-plaintext highlighter-rouge">intelligently /ɪnˈtelɪdʒəntli/</code> 聪明的明智的</p>
+
+<p><code class="language-plaintext highlighter-rouge">DOM manipulations  [məˌnɪpjəˈleɪʃ(ə)n] </code> 操作操纵</p>
+
+<p><code class="language-plaintext highlighter-rouge">Interpolation [ɪnˌtɚpəˈleɪʃən] </code> 插入文字</p>
+
+<p><code class="language-plaintext highlighter-rouge">curly braces</code> 花括号 <code class="language-plaintext highlighter-rouge">{}</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">corresponding /ˌkɔrəˈspɑndɪŋ/</code> 相应的</p>
+
+<p><code class="language-plaintext highlighter-rouge">interprets/ɪnˈtɜrprət/</code> 解释</p>
+
+<p><code class="language-plaintext highlighter-rouge">directive /daɪˈrektɪv/</code> 指示,命令</p>
+
+<p><code class="language-plaintext highlighter-rouge">arbitrary</code> 任意的 武断的</p>
+
+<p><code class="language-plaintext highlighter-rouge">XSS vulnerability/ˌvʌlnərə'biliti/ </code> 缺陷弱点</p>
+
+<p><code class="language-plaintext highlighter-rouge">evaluate /ɪˈvæljuˌeɪt/</code>【数】求…的值</p>
+
+<p><code class="language-plaintext highlighter-rouge">asynchronous /ei'siŋkrənəs/</code> 异步的</p>
+
+<p><code class="language-plaintext highlighter-rouge">Restricted </code> 限制有限的</p>
+
+<p><code class="language-plaintext highlighter-rouge">explicitly /ɪk'splɪsɪtli/</code> 明确的, 露骨的</p>
+
+<p><code class="language-plaintext highlighter-rouge">are expected to</code> 应该是</p>
+
+<p><code class="language-plaintext highlighter-rouge">with the exception of </code> 除了…之外 exception例外除外</p>
+
+<p><code class="language-plaintext highlighter-rouge">truthiness</code> 真实</p>
+
+<p><code class="language-plaintext highlighter-rouge">denote /dɪˈnoʊt/</code> 表示</p>
+
+<p><code class="language-plaintext highlighter-rouge">colon/'kolən/ </code> 冒号 <code class="language-plaintext highlighter-rouge">denoted by a colon after the directive name</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">square brackets</code> 方括号 <code class="language-plaintext highlighter-rouge">[]</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">Constraints  /kən'strent/</code> 限制;束缚;约束</p>
+
+<p><code class="language-plaintext highlighter-rouge">quotes</code> 引号</p>
+
+<p><code class="language-plaintext highlighter-rouge">coerce/kəʊ'ɜːs/ </code> 强制胁迫</p>
+
+<p><code class="language-plaintext highlighter-rouge">modifier</code> 修饰语, 改良剂</p>
+
+<p><code class="language-plaintext highlighter-rouge">postfixes</code> 后缀</p>
+
+<p><code class="language-plaintext highlighter-rouge">visualized /viʒuə,laizd/</code> 直观的</p>
+
+<hr />
+
+<p>Render function does not enjoy the same level of compile-time optimizations  as templates.</p>
+
+<h3 id="text-interpolation">Text Interpolation</h3>
+
+<blockquote>
+  <p>using the “Mustache” syntax</p>
+</blockquote>
+
+<h3 id="raw-html">Raw HTML</h3>
+
+<blockquote>
+  <p>using the <code class="language-plaintext highlighter-rouge">v-html</code> attribute</p>
+</blockquote>
+
+<h3 id="attribute-bindings">Attribute Bindings</h3>
+
+<blockquote>
+  <p>Mustaches can’t be used inside HTML attributes, Instead, use <code class="language-plaintext highlighter-rouge">v-bind</code> directive</p>
+</blockquote>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v-bind:id="dynamicId" ---Shorthand---&gt; :id="daynamicId"
+</code></pre></div></div>
+
+<h3 id="dynamically-binding-multiple-attributes">Dynamically Binding Multiple Attributes</h3>
+
+<blockquote>
+  <p>Binding multiple attributes using a object</p>
+</blockquote>
+
+<div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const objectOfAttrs = {
+  id: 'container',
+  class: 'wrapper'
+}
+<span class="nt">&lt;div</span> <span class="na">v-bind=</span><span class="s">"objectOfAttrs"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h3 id="calling-functions">Calling Functions</h3>
+
+<blockquote>
+  <p>Functions called inside binding expressions will be called every time the component updates</p>
+</blockquote>
+
+<h3 id="restricted-globals-access">Restricted Globals Access</h3>
+
+<blockquote>
+  <p>explicitly define additional globals for all Vue expressions by adding them to <a href="https://vuejs.org/api/application.html#app-config-globalproperties"><code class="language-plaintext highlighter-rouge">app.config.globalProperties</code></a>.</p>
+</blockquote>
+
+<h3 id="dynamic-argument">Dynamic Argument</h3>
+
+<ol>
+  <li>Dynamic arguments are expected to evaluate to a string, with the exception of <code class="language-plaintext highlighter-rouge">null</code>. The special value <code class="language-plaintext highlighter-rouge">null</code> can be used to explicitly remove the binding. Any other non-string value will trigger a warning.</li>
+  <li>Dynamic argument expressions have some syntax constraints because certain characters, such as spaces and quotes, are invalid inside HTML attribute names. Use <code class="language-plaintext highlighter-rouge">computed</code> property</li>
+  <li>When using in-DOM templates (templates directly written in an HTML file), you should also avoid naming keys with uppercase characters, as browsers will coerce attribute names into lowercase</li>
+</ol>
+
+<p>Full directive syntax visualized:</p>
+
+<p><img src="https://vuejs.org/assets/directive.69c37117.png" alt="img" /></p>
+
+<h2 id="reactivity-fundamentals">Reactivity Fundamentals</h2>
+
+<h3 id="vocabulary-3">Vocabulary</h3>
+
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">verbose/vɝ'bos/</code> 冗长的, 啰嗦的</p>
+
+<p><code class="language-plaintext highlighter-rouge">synchronous /ˈsɪŋkrənəs/</code> 同步的</p>
+
+<p><code class="language-plaintext highlighter-rouge">update cycle</code> 更新周期</p>
+
+<p><code class="language-plaintext highlighter-rouge">exclusively</code> 专门, 完全的</p>
+
+<p><code class="language-plaintext highlighter-rouge">consistent</code> 一致的的</p>
+
+<p><code class="language-plaintext highlighter-rouge">destructure</code> 解构</p>
+
+<p><code class="language-plaintext highlighter-rouge">address</code> 解决, 处理</p>
+
+<p><code class="language-plaintext highlighter-rouge">In other words</code> 换句话说</p>
+
+<p><code class="language-plaintext highlighter-rouge">Composable</code> 可组合</p>
+
+<p><code class="language-plaintext highlighter-rouge">extract</code> 提取提炼 - extracting logic into Composable Functions.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Unwrapping</code> 解包, 展开包装</p>
+
+<p><code class="language-plaintext highlighter-rouge">drawback</code> 缺点</p>
+
+<p><code class="language-plaintext highlighter-rouge">imposed</code> 被强加</p>
+
+<p><code class="language-plaintext highlighter-rouge">ergonomics/'ɝgə'nɑmɪks/</code>  人机工程学</p>
+
+<p><code class="language-plaintext highlighter-rouge">experimental/ɛk'spɛrɪ'mɛntəl/</code> 试验性的</p>
+
+<p><code class="language-plaintext highlighter-rouge">finalize/'faɪnəlaɪz/</code> 最后确定, 最后敲定</p>
+
+<hr />
+
+<h3 id="declaring-reactive-state">Declaring Reactive State</h3>
+
+<ol>
+  <li>create a reactive object or array with the <a href="https://vuejs.org/api/reactivity-core.html#reactive"><code class="language-plaintext highlighter-rouge">reactive()</code></a> function:</li>
+</ol>
+
+<h3 id="dom-update-timing">DOM Update Timing</h3>
+
+<p>o wait for the DOM update to complete after a state change, you can use the <a href="https://vuejs.org/api/general.html#nexttick">nextTick()</a> global API , you need Import from ‘vue’ first</p>
+
+<h3 id="deep-reactivity">Deep Reactivity</h3>
+
+<p>You can expect changes to be detected even when you mutate nested objects or arrays</p>
+
+<p>Due to deep reactivity, nested objects inside a reactive object are also proxies.</p>
+
+<h3 id="reactive-variables-with-ref">Reactive Variables with <code class="language-plaintext highlighter-rouge">ref()</code></h3>
+
+<p>To address the limitations of <code class="language-plaintext highlighter-rouge">reactive()</code>, Vue also provides a <a href="https://vuejs.org/api/reactivity-core.html#ref"><code class="language-plaintext highlighter-rouge">ref()</code></a> function which allows us to create reactive <strong>“refs”</strong> that can hold any value type</p>
+
+<p><code class="language-plaintext highlighter-rouge">ref()</code> takes the argument and returns it wrapped (包裹, 封装) within a ref object with a <code class="language-plaintext highlighter-rouge">.value</code> property, when holding object types, ref automatically converts its <code class="language-plaintext highlighter-rouge">.value</code> with <code class="language-plaintext highlighter-rouge">reactive()</code>.</p>
+
+<p>A ref containing an object value can reactively replace the entire object:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">objectRef</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">({</span> <span class="na">count</span><span class="p">:</span> <span class="mi">0</span> <span class="p">})</span>
+
+<span class="c1">// this works reactively</span>
+<span class="nx">objectRef</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="p">{</span> <span class="na">count</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="computed-properties"><strong><a href="https://vuejs.org/guide/essentials/computed.html">Computed Properties</a></strong></h2>
+
+<h3 id="vocabulary-4">Vocabulary</h3>
+
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">be meant for</code> 注定, 意味着</p>
+
+<p><code class="language-plaintext highlighter-rouge">bloated/'blotɪd/</code> (机构组织)臃肿的</p>
+
+<p><code class="language-plaintext highlighter-rouge">cluttered</code> 杂乱的凌乱的</p>
+
+<p><code class="language-plaintext highlighter-rouge">probably/'prɑbəbli/</code> 或许可能大概</p>
+
+<p>` refactor` 重构</p>
+
+<p><code class="language-plaintext highlighter-rouge">invocation</code> 调用</p>
+
+<p><code class="language-plaintext highlighter-rouge">In cases</code> 在一些情况下</p>
+
+<p>` in turn ` 反过来</p>
+
+<p><code class="language-plaintext highlighter-rouge">destructuring</code> 解构的</p>
+
+<p><code class="language-plaintext highlighter-rouge">accordingly</code> 相应的</p>
+
+<p><code class="language-plaintext highlighter-rouge">be free of </code> 远离… 免于…</p>
+
+<p><code class="language-plaintext highlighter-rouge">responsibility /rɪ,spɑnsə'bɪləti/</code> 责任</p>
+
+<p><code class="language-plaintext highlighter-rouge">derive</code> 衍生, 派生</p>
+
+<p><code class="language-plaintext highlighter-rouge">snapshot</code> 快照</p>
+
+<hr />
+
+<p>The <code class="language-plaintext highlighter-rouge">computed()</code> function expects to be passed a getter function, and the returned value is a <strong>computed ref</strong>. Similar to normal refs, you can access the computed result as <code class="language-plaintext highlighter-rouge">publishedBooksMessage.value</code>.</p>
+
+<p><strong>computed properties are cached based on their reactive dependencies.</strong>In comparison, a method invocation will <strong>always</strong> run the function whenever a re-render happens.</p>
+
+<p>Computed properties are by default getter-only.</p>
+
+<p>In the rare cases where you need a “writable” computed property, you can create one by providing both a getter and a setter:</p>
+
+<p><strong>Getters should be side-effect free</strong> For example, don’t make async requests or mutate the DOM inside a computed getter!</p>
+
+<p>Think of a computed property as declaratively describing how to derive a value based on other values</p>
+
+<p>its only responsibility should be computing and returning that value.</p>
+
+<p>Think of it <strong>as a temporary snapshot</strong> - every time the source state changes, a new snapshot is created. <strong>It does not make sense to mutate a snapshot,</strong> so a computed return value should be treated as read-only and never be mutated- instead, update the source state it depends on to trigger new computations.</p>
+
+<h2 id="class-and-style-bindings"><a href="https://vuejs.org/guide/essentials/class-and-style.html"><strong>Class and Style Bindings</strong></a></h2>
+
+<h3 id="vocabulary-5">Vocabulary</h3>
+
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">meddle/'mɛdl/</code>  干预干涉 meddle with….</p>
+
+<p><code class="language-plaintext highlighter-rouge">concatenation /kən'kætə'neʃən/</code> 不可数名词一连串相关联的事情；接二连三的相关事件 string concatenation 字符串连接</p>
+
+<p><code class="language-plaintext highlighter-rouge">annoying</code> 令人厌烦的</p>
+
+<p><code class="language-plaintext highlighter-rouge">prone/pron/</code> 易于…的, 有..(不好的)倾向 error-prone: 易出错的</p>
+
+<p><code class="language-plaintext highlighter-rouge">In addition to </code> 除了</p>
+
+<p><code class="language-plaintext highlighter-rouge">presence</code> 存在</p>
+
+<p>` Feel free to` 随意</p>
+
+<p><code class="language-plaintext highlighter-rouge">Fallthrough</code> 失败落空</p>
+
+<p><code class="language-plaintext highlighter-rouge">camelCase</code> <code class="language-plaintext highlighter-rouge">kebab-cased </code> <code class="language-plaintext highlighter-rouge">kebab /kɪ'bæb/</code> 烤串, 烤肉片 肉串上的肉块</p>
+
+<p>` conjunction美 /kən’dʒʌŋkʃən/`  N - 同时发生, 同地发生 in conjunction with  共同, 协力</p>
+
+<p><code class="language-plaintext highlighter-rouge">appropriate /əˈproʊpriˌeɪt/</code>合适的</p>
+
+<hr />
+
+<h3 id="class">class</h3>
+
+<p>In addition to strings, the expressions can also evaluate to objects or arrays.</p>
+
+<p>the <code class="language-plaintext highlighter-rouge">:class</code> directive can also co-exist with the plain <code class="language-plaintext highlighter-rouge">class</code> attribute. So given the following state.</p>
+
+<p>The bound object doesn’t have to be inline.</p>
+
+<p>it’s also possible to use the object syntax inside array syntax.</p>
+
+<p>When you use the <code class="language-plaintext highlighter-rouge">class</code> attribute on a component with a single root element, those classes will be <strong>added to the component’s root element</strong>, and merged with any existing class already on it.</p>
+
+<p>If your component has multiple root elements, you would need to define which element will receive this class. You can do this using the <code class="language-plaintext highlighter-rouge">$attrs</code> component property</p>
+
+<h3 id="inline-style">Inline-style</h3>
+
+<h2 id="conditional-rendering"><a href="https://vuejs.org/guide/essentials/conditional.html">Conditional Rendering</a></h2>
+
+<p><code class="language-plaintext highlighter-rouge">chain</code> 链接</p>
+
+<p><code class="language-plaintext highlighter-rouge">invisible wrapper.</code> 无形包装</p>
+
+<p><code class="language-plaintext highlighter-rouge">properly</code> 正确的, 得体的</p>
+
+<p><code class="language-plaintext highlighter-rouge">implicit 美 /ɪm'plɪsɪt/</code>  含蓄的, 不言明的, 隐式的</p>
+
+<p><code class="language-plaintext highlighter-rouge">precedence 美 /ˈpresɪdəns/</code> 优先权</p>
+
+<h2 id="list-rendering"><a href="https://vuejs.org/guide/essentials/list.html">List Rendering</a></h2>
+
+<p><code class="language-plaintext highlighter-rouge">iterate 美 /'ɪtəreɪt/</code>迭代 重复</p>
+
+<p><code class="language-plaintext highlighter-rouge">delimiter</code> 定界符</p>
+
+<p><code class="language-plaintext highlighter-rouge">enumeration美 /ɪˌnjuməˈreʃən/</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">implicit vs explicit</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">in-place patch</code> 就地补丁</p>
+
+<p><code class="language-plaintext highlighter-rouge">performance gains.</code> 性能增益</p>
+
+<p><code class="language-plaintext highlighter-rouge">tightly coupled</code> 紧密耦合</p>
+
+<p><code class="language-plaintext highlighter-rouge">as the name suggests</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">Mutation Methods</code> 突变方法, 指改变原有数组的方法</p>
+
+<p><code class="language-plaintext highlighter-rouge">heuristics/hjuˈrɪstɪks/</code> 启发式方法</p>
+
+<p><code class="language-plaintext highlighter-rouge">overlap /ˈoʊvərˌlæp/</code> 重叠containing overlapping objects 包含重叠对象</p>
+
+<p><code class="language-plaintext highlighter-rouge">feasible /ˈfizəb/</code> 行得通的</p>
+
+<p><code class="language-plaintext highlighter-rouge">though</code> 然而</p>
+
+<h2 id="event-handling"><a href="https://vuejs.org/guide/essentials/event-handling.html">Event Handling</a></h2>
+
+<p><code class="language-plaintext highlighter-rouge">dispatch</code> 触发调度</p>
+
+<p><code class="language-plaintext highlighter-rouge">Recall</code> 回想</p>
+
+<p><code class="language-plaintext highlighter-rouge">passive</code> 顺从的, 听之任之的, 消极的 (用在事件处理函数中, 表示不管触发什么函数, 都先做出默认行为)</p>
+
+<p><code class="language-plaintext highlighter-rouge">in case</code> 如果, 万一</p>
+
+<p><code class="language-plaintext highlighter-rouge">cadet美 /kə'dɛt/</code> 学员</p>
+
+<p><code class="language-plaintext highlighter-rouge">Symbolic</code> 符号的</p>
+
+<p><code class="language-plaintext highlighter-rouge">combination美 /ˌkɑmbɪ'neʃən/</code> 结合联合混合</p>
+
+<h2 id="form-input-bindings"><a href="https://vuejs.org/guide/essentials/forms.html">Form Input Bindings</a></h2>
+
+<p><code class="language-plaintext highlighter-rouge">cumbersome美 /ˈkʌmbəsəm/</code>   复杂而又低效的</p>
+
+<p><code class="language-plaintext highlighter-rouge">wire up</code> 给.. 布线, 连接</p>
+
+<p><code class="language-plaintext highlighter-rouge">typecast</code> 类型转换</p>
+
+<h2 id="lifecycle-hooks"><a href="https://vuejs.org/guide/essentials/lifecycle.html">Lifecycle Hooks</a></h2>
+
+<p><code class="language-plaintext highlighter-rouge">Along the way</code> 在此过程中</p>
+
+<p><code class="language-plaintext highlighter-rouge">associates</code> 关联</p>
+
+<p><code class="language-plaintext highlighter-rouge">lexically美 /'lɛksɪkl/</code> 词汇上的</p>
+
+<p><code class="language-plaintext highlighter-rouge">originate美 /ə'rɪdʒɪnet/</code> 开创, 来自, 发源</p>
+
+<p><code class="language-plaintext highlighter-rouge">diagram美 /'daɪəɡræm/</code> 示意图</p>
+
+<h2 id="watchers"><a href="https://vuejs.org/guide/essentials/watchers.html">Watchers</a></h2>
+
+<p><code class="language-plaintext highlighter-rouge">differentiated美 /ˌdɪfə'rɛnʃɪet/</code> 区分区别</p>
+
+<p><code class="language-plaintext highlighter-rouge">latter</code> 后者的</p>
+
+<p><code class="language-plaintext highlighter-rouge">implication</code>  可能引起的后果</p>
+
+<p><code class="language-plaintext highlighter-rouge">terser</code> 简明的, 简短的</p>
+
+<p><code class="language-plaintext highlighter-rouge">Callback Flush Timing</code> 回调刷新时间, flush 有刷新之意</p>
+
+<h2 id="template-refs"><a href="https://vuejs.org/guide/essentials/template-refs.html">Template Refs</a></h2>
+
+<p><code class="language-plaintext highlighter-rouge">abstract</code> 抽象</p>
+
+<p><code class="language-plaintext highlighter-rouge">obtain</code> 获得</p>
+
+<p><code class="language-plaintext highlighter-rouge">initialize</code> 初始化</p>
+
+<p><code class="language-plaintext highlighter-rouge">account for</code> 对…负有责任</p>
+
+<p><code class="language-plaintext highlighter-rouge">populate</code> 居住于, 填入, 填充</p>
+
+<p><code class="language-plaintext highlighter-rouge">retrieve</code> 找回, 挽回, 检索</p>
+
+<h2 id="component-basics"><a href="https://vuejs.org/guide/essentials/component-basics.html">Component Basics</a></h2>
+
+<p><code class="language-plaintext highlighter-rouge">On the fly</code> 动态的, 运行中</p>
+
+<p><code class="language-plaintext highlighter-rouge">specific</code> 特定的, 具体的</p>
+
+<p><code class="language-plaintext highlighter-rouge">on the fly</code> 在计算机运行中</p>
+
+<p><code class="language-plaintext highlighter-rouge">regardless of</code> 不管</p>
+
+<p><code class="language-plaintext highlighter-rouge">pros and cons </code> 优缺点, 正面和反面</p>
+
+<p><code class="language-plaintext highlighter-rouge">subject</code> 服从</p>
+
+<p><code class="language-plaintext highlighter-rouge">Pascal美 /'pæskəl/ </code> PascalCase 帕斯卡命名法</p>
+
+<p><code class="language-plaintext highlighter-rouge">case-insensitive</code> 大小写不敏感</p>
+
+<p><code class="language-plaintext highlighter-rouge">accessibility</code> 可访问性；可达性；可接近性</p>
+
+<p><code class="language-plaintext highlighter-rouge">accessibility feature</code> 辅助功能</p>
+
+<p><code class="language-plaintext highlighter-rouge">documents</code> 记录</p>
+
+<p><code class="language-plaintext highlighter-rouge">Caveat美 /'kævɪ'æt/</code> 警告, 注意事项</p>
+
+<p><code class="language-plaintext highlighter-rouge">retrieve美 /rɪ'triv/</code> 检索</p>
+
+<p><code class="language-plaintext highlighter-rouge">hyphen-delimited</code> 连字符分隔</p>
+
+<p><code class="language-plaintext highlighter-rouge">hyphen美 /'haɪfn/</code> 连字符</p>
+
+<p><code class="language-plaintext highlighter-rouge">delimit</code> 划定…的边界</p>
+
+<p><code class="language-plaintext highlighter-rouge">hoist</code> 提起</p>
+
+<p><code class="language-plaintext highlighter-rouge">Essentials</code> 概要, 基本的, 本质的</p>
+
+<h1 id="components-in-depth">Components In-Depth</h1>
+
+<h2 id="registration"><a href="https://vuejs.org/guide/components/registration.html">Registration</a></h2>
+
+<p><code class="language-plaintext highlighter-rouge">drawbacks</code> 缺点</p>
+
+<p><code class="language-plaintext highlighter-rouge">a.k.a</code> also known as</p>
+
+<p><code class="language-plaintext highlighter-rouge">maintainability [menˌteɪnə'bɪlətɪ]</code> 可维护性</p>
+
+<p><code class="language-plaintext highlighter-rouge">IDE</code> integrated development environment</p>
+
+<h2 id="props"><a href="https://vuejs.org/guide/components/props.html#props-declaration">Props</a></h2>
+
+<p><code class="language-plaintext highlighter-rouge">fallthrough attributes</code> 透传 attribute</p>
+
+<p><code class="language-plaintext highlighter-rouge">expected</code> 预期的</p>
+
+<p><code class="language-plaintext highlighter-rouge">further</code> 进一步</p>
+
+<p><code class="language-plaintext highlighter-rouge">annotation美 /ˌæno'teʃən/</code> 注解注释</p>
+
+<p><code class="language-plaintext highlighter-rouge">convention</code> 传统, 惯例</p>
+
+<p><code class="language-plaintext highlighter-rouge">practical</code> 实际的</p>
+
+<p><code class="language-plaintext highlighter-rouge">not the other way around.</code> 而不是反过来</p>
+
+<p><code class="language-plaintext highlighter-rouge">tempting</code> 诱人的</p>
+
+<p><code class="language-plaintext highlighter-rouge">unreasonably美 /ʌn'ri:znəbli/</code> 不合理的</p>
+
+<p><code class="language-plaintext highlighter-rouge">reason</code> 推理推断</p>
+
+<p><code class="language-plaintext highlighter-rouge">specify</code> 指定, 具体说明</p>
+
+<p><code class="language-plaintext highlighter-rouge">absent</code> 缺席的, 不在的</p>
+
+<p><code class="language-plaintext highlighter-rouge">mimic</code> 模仿</p>
+
+<p><code class="language-plaintext highlighter-rouge">casting</code> 类型转换</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Mannix Chen&#39;s Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Mannix Chen&#39;s Blog</li><li><a class="u-email" href="mailto:job@mannixchen.com">job@mannixchen.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is a wonderful website about awesome stuff.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
