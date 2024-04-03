@@ -16,3 +16,5 @@ plugins:
 exclude:
   - "backup"
   - "README.md"
+  - vendor
+
