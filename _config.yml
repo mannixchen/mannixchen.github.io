@@ -1,20 +1,52 @@
-# 网站标题和描述
-title: Mannix Chen's Blog
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Welcome to Mannix Chen's Blog
 email: job@mannixchen.com
-description: >- # 这是你的网站描述
-  This is a wonderful website about awesome stuff.
+description: >- # this means to ignore newlines until "baseurl:"
+  花很多时间, 分享思考, 分享总结.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://mannixchen.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: cmm935920981
+github_username: mannixchen
 
-# 基础 URL 和 URL 设置
-url: "https://mannixchen.github.io" # 你的网站 URL
-baseurl: "" # 项目的基础路径，如果你的网站托管在项目仓库，如 username.github.io/blog，则设置为 "/blog"
-
-# 构建设置
-markdown: kramdown
+# Build settings
 theme: minima
 plugins:
   - jekyll-feed
-exclude:
-  - "backup"
-  - "README.md"
-  - vendor
-
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
