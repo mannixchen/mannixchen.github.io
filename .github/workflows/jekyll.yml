@@ -3,15 +3,16 @@ name: Jekyll site CI
 on:
   push:
     branches:
-      - main
+      - main  # 确保这里是你的源代码所在分支
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build and deploy Jekyll site
-        uses: jekyll/actions-pages@v1
+      - name: Build and publish to GitHub Pages
+        uses: actions/jekyll-build-pages@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
