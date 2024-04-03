@@ -1,2 +1,494 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://mannixchen.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mannixchen.github.io/" rel="alternate" type="text/html" /><updated>2024-04-03T15:19:32+00:00</updated><id>https://mannixchen.github.io/feed.xml</id><title type="html">Mannix Chen’s Blog</title><subtitle>This is a wonderful website about awesome stuff.</subtitle><entry><title type="html">Test2</title><link href="https://mannixchen.github.io/2024/04/03/test2.html" rel="alternate" type="text/html" title="Test2" /><published>2024-04-03T00:00:00+00:00</published><updated>2024-04-03T00:00:00+00:00</updated><id>https://mannixchen.github.io/2024/04/03/test2</id><content type="html" xml:base="https://mannixchen.github.io/2024/04/03/test2.html"><![CDATA[<p>good test2dd</p>]]></content><author><name></name></author><summary type="html"><![CDATA[good test2dd]]></summary></entry><entry><title type="html">Time</title><link href="https://mannixchen.github.io/2024/04/03/time.html" rel="alternate" type="text/html" title="Time" /><published>2024-04-03T00:00:00+00:00</published><updated>2024-04-03T00:00:00+00:00</updated><id>https://mannixchen.github.io/2024/04/03/time</id><content type="html" xml:base="https://mannixchen.github.io/2024/04/03/time.html"><![CDATA[<p>Hello nihao
-1</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Hello nihao 1]]></summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://mannixchen.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mannixchen.github.io/" rel="alternate" type="text/html" /><updated>2024-04-03T15:58:41+00:00</updated><id>https://mannixchen.github.io/feed.xml</id><title type="html">Welcome to Mannix Chen’s Blog</title><subtitle>花很多时间, 分享思考, 分享总结.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="https://mannixchen.github.io/jekyll/update/2024/04/03/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2024-04-03T15:28:38+00:00</published><updated>2024-04-03T15:28:38+00:00</updated><id>https://mannixchen.github.io/jekyll/update/2024/04/03/welcome-to-jekyll</id><content type="html" xml:base="https://mannixchen.github.io/jekyll/update/2024/04/03/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+
+<p>Jekyll requires blog post files to be named according to the following format:</p>
+
+<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+
+<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name>mannix</name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">学习是什么, 我该怎么学</title><link href="https://mannixchen.github.io/%E6%80%9D%E8%80%83/2024/04/03/%E5%AD%A6%E4%B9%A0%E6%98%AF%E4%BB%80%E4%B9%88_%E6%88%91%E8%AF%A5%E6%80%8E%E4%B9%88%E5%AD%A6.html" rel="alternate" type="text/html" title="学习是什么, 我该怎么学" /><published>2024-04-03T15:28:38+00:00</published><updated>2024-04-03T15:28:38+00:00</updated><id>https://mannixchen.github.io/%E6%80%9D%E8%80%83/2024/04/03/%E5%AD%A6%E4%B9%A0%E6%98%AF%E4%BB%80%E4%B9%88_%E6%88%91%E8%AF%A5%E6%80%8E%E4%B9%88%E5%AD%A6</id><content type="html" xml:base="https://mannixchen.github.io/%E6%80%9D%E8%80%83/2024/04/03/%E5%AD%A6%E4%B9%A0%E6%98%AF%E4%BB%80%E4%B9%88_%E6%88%91%E8%AF%A5%E6%80%8E%E4%B9%88%E5%AD%A6.html"><![CDATA[<h1 id="学习是什么-怎么学-方法论的归纳总结">学习是什么? 怎么学? 方法论的归纳总结</h1>
+
+<p>这几天看的李笑来的方法论, 可以总结为以下概念:</p>
+
+<h2 id="学习是什么"><strong>学习是什么</strong></h2>
+
+<h3 id="学习的本质是花时间---怎么花更多有效的时间"><strong>学习的本质是花时间</strong> - <em>怎么花更多有效的时间</em>?</h3>
+
+<ul>
+  <li>
+    <p><u>利用好既有时间</u>(<strong>充分计划</strong>) - 主动的去分配自己的行为, 警惕成为被动人格, 如果所有行为来自刺激, 只会让你充满无力感。<strong>应激的生活状态是原始的, 野蛮的, 随机的, 对应的未来也是混沌的</strong>计划分两种:</p>
+
+    <ul>
+      <li>每日计划, 规定了你每天该做的</li>
+      <li>项目计划(全面完整清单): 项目上所要的每一个细节</li>
+    </ul>
+
+    <p>将所有可能要做的内容计入待办, 小心脆弱的完美主义(能力不足者的轻重不分)</p>
+  </li>
+  <li><u>提升注意力</u>(<strong>提升效率</strong>) - (1)物理上清空干扰 (2)精神上养成洁癖 (利用觉知, 以及全面且完整清单)</li>
+  <li><u>创造新时间块</u>(<strong>时间扩容</strong>) - <strong>利用清晨</strong></li>
+</ul>
+
+<h3 id="学习的灵魂是思考"><strong>学习的灵魂是思考</strong></h3>
+
+<blockquote>
+  <p>知识系统的底层来自于一个个清晰的概念以及概念之间明确的关联</p>
+</blockquote>
+
+<p>在学习<strong>一个新的知识点</strong>的时候通常可以如下思考:</p>
+
+<ol>
+  <li><strong>What</strong>: <em>他的清晰的概念是什么? 它和现有的概念有什么关联?</em></li>
+  <li><strong>Why</strong>: <em>为什么需要这个概念, 解决了什么问题呢?</em></li>
+  <li><strong>Where</strong>: <em>这个知识点可以用在哪里? 还有哪些值得开发的应用场景?</em></li>
+  <li><strong>How</strong>: <em>怎么去应用它, 怎么去实现它?</em></li>
+</ol>
+
+<p>在面对一个<strong>难点</strong>的时候:</p>
+
+<ol>
+  <li><em>这个地方到底难在哪里?</em></li>
+  <li><em>会的人为什么会?</em></li>
+  <li><em>我可以做哪些拆分? 让其变成可以被逐个攻克的小问题。</em></li>
+  <li>刻意思考: <strong><em>我需要做哪些刻意练习?</em></strong></li>
+</ol>
+
+<h3 id="学习的关键手段是重复"><strong>学习的关键手段是重复</strong></h3>
+
+<p>第一种重复的好手段是:</p>
+
+<blockquote>
+  <p>尽快的开始<strong>整理归纳总结</strong></p>
+</blockquote>
+
+<p>不仅仅是知识的再记忆, 还有知识拆分, 通过理解, 再次整合。这种拆开重新组装的方式非常有利于深入理解和记忆。</p>
+
+<p>第二种重复的手段是<strong>刻意练习</strong>:</p>
+
+<blockquote>
+  <p>没有在刻意练习的时间就是“混日子”</p>
+</blockquote>
+
+<p>具体做哪些刻意练习需要你去“刻意思考”</p>
+
+<p>千万不要低估需要重复的次数, 这将是一个漫长的过程, 所以请给足时间的预算。如果没有预算, 干脆不要开始。</p>
+
+<h2 id="怎么学">怎么学</h2>
+
+<h3 id="认清现实"><strong>认清现实</strong></h3>
+
+<blockquote>
+  <p><strong>开始的时候注定笨拙</strong></p>
+</blockquote>
+
+<p><strong>这是真理, 你唯一能做的就是看清这个事实, 接受这个事实, 理解这个事实, 然后逐步地攻克这个事实</strong></p>
+
+<ol>
+  <li>拆解它, 然后放慢速度, 加上不断地重复。</li>
+  <li><strong>重复的过程必然充满挫折, 去思考这些挫折, 观察哪里可以改进, 进一步的去进行练习</strong></li>
+  <li>重复的目标是内化, 内化就是真正为己所用, 只有内化, 你才能真正享受到学成的快乐。(内化其实是个物理过程, 就是形成大脑皮层的新的沟回, 健身健脑是一回事)</li>
+</ol>
+
+<blockquote>
+  <p><strong>焦虑的本质是时间预算不够</strong></p>
+</blockquote>
+
+<p>很多人竟然认为自己一上来就能学会?</p>
+
+<p>学习的过程充斥着漫长的重复, <strong>如果想耐心的学完, 就需要理解这种漫长, 接受这个物理内化的过程</strong>。</p>
+
+<p>给足时间和精力的预算, 尽快开始这个过程。尽早度过这个过程。</p>
+
+<h3 id="策略"><strong>策略</strong></h3>
+
+<blockquote>
+  <p>获取<strong>最少必要知识</strong>后, 立马开始“使用”</p>
+</blockquote>
+
+<p>学习只是手段, <strong>用才是目的</strong>。真正的价值也只在使用和创造中才能创造。做一个坚定的务实主义者, 避免陷入学习的陷阱 (为了学习而学)</p>
+
+<blockquote>
+  <p>在用的过程中遭受挫折, 然后思考挫折, 然后进一步的去改进</p>
+</blockquote>
+
+<p>最终在用的过程中实现知识内化。</p>
+
+<h3 id="实践"><strong>实践</strong></h3>
+
+<p><strong>全面完整清单</strong></p>
+
+<blockquote>
+  <p>在做一个项目或者学习一个技能前, 详细列举可能得细节, 可能遇到的问题。</p>
+</blockquote>
+
+<ol>
+  <li>拆解的越细致, 方向就越清晰, 执行性也会大大提高</li>
+  <li><strong>利用清单指导具体的行为</strong>, 而不仅仅是一个模糊的方向, 这叫做<strong>行为具体化</strong></li>
+  <li>提防注意力漂移</li>
+  <li>作为一个事情完成度的标准</li>
+</ol>
+
+<p><strong>先完整的读完</strong></p>
+
+<blockquote>
+  <p>如果一上来就事无巨细的去深究原理, 那么你大可能从一开始就积累大量的挫折, 从而更容易放弃</p>
+</blockquote>
+
+<p>所以一开始目的并不是事无巨细的深入思考, 更多应该是理解基础概念以及概念之间的关联, 这样战术上的调整是为了避免从一开始就积累过多的挫败感。</p>
+
+<blockquote>
+  <p><strong>相反, 一开始读完并存活才是我们的目的。</strong></p>
+</blockquote>
+
+<p><strong>尽快开始整理归纳总结</strong></p>
+
+<p>这是重复的重要手段, <strong>对于刚刚存活下来的我们, 及时清扫战场, 理清战利品, 有利于高效的吸收和内化。</strong></p>
+
+<p><strong>用才是目的 (以用代练) X 查漏补缺-更深刻的归纳总结</strong></p>
+
+<p>在掌握的必要最少知识后, 相比继续死磕教材, 看一本又一本的书, 陷入学习的死循环, 我们要及时的进入: <strong>用的状态</strong></p>
+
+<blockquote>
+  <p>学习只是手段, 用才是目的。</p>
+</blockquote>
+
+<p>遇到困难就充分拆分, 然后放慢速度继续前行, 意识到这个过程就是要花时间。</p>
+
+<p>同时<strong>利用”用”的过程, 反复对知识进行查漏补缺, 进行整理归纳总结</strong>。最终实现知识内化的目的。</p>]]></content><author><name>Mannix</name></author><category term="思考" /><summary type="html"><![CDATA[学习是什么? 怎么学? 方法论的归纳总结]]></summary></entry><entry><title type="html">学习的周期</title><link href="https://mannixchen.github.io/%E6%80%9D%E8%80%83/2024/04/02/%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%91%A8%E6%9C%9F.html" rel="alternate" type="text/html" title="学习的周期" /><published>2024-04-02T15:28:38+00:00</published><updated>2024-04-02T15:28:38+00:00</updated><id>https://mannixchen.github.io/%E6%80%9D%E8%80%83/2024/04/02/%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%91%A8%E6%9C%9F</id><content type="html" xml:base="https://mannixchen.github.io/%E6%80%9D%E8%80%83/2024/04/02/%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%91%A8%E6%9C%9F.html"><![CDATA[<h1 id="学习的周期">学习的周期</h1>
+
+<h2 id="学习之前">学习之前</h2>
+
+<h3 id="大前提">大前提</h3>
+
+<blockquote>
+  <p>觉知一定要在线, 人需要保持警醒的状态</p>
+</blockquote>
+
+<p>我必须保持觉知在线的状态, 要意识到自己自己在做什么, 对于偏离主观意向的行为要格外的敏感, 这是一个自发的警觉机制. 保持理性和觉知. 而非仅仅依赖于直觉。</p>
+
+<h3 id="心理建设---认清现实">心理建设 - 认清现实</h3>
+
+<h4 id="现实是什么"><strong>现实是什么</strong></h4>
+
+<ol>
+  <li>
+    <p>学习的开始注定<strong>笨拙</strong></p>
+  </li>
+  <li>
+    <p>笨拙就是现实</p>
+
+    <p><code class="language-plaintext highlighter-rouge">解决方案是: 拆分, 放慢速度</code></p>
+  </li>
+</ol>
+
+<h4 id="学习的本质是花时间"><strong>学习的本质是花时间</strong></h4>
+
+<ol>
+  <li>
+    <p>这个时间注定漫长, 一定要给足预算。</p>
+  </li>
+  <li>
+    <p>焦虑的根本原因在于 “之前根本就没准备花那么多时间和精力” - 时间和精力超出了预算。</p>
+
+    <p><code class="language-plaintext highlighter-rouge">不要做超出预算的任何事情</code></p>
+  </li>
+  <li>
+    <p>时间, 必须是<strong>投入注意力的时间</strong>, 也是<strong>刻意练习的时间</strong></p>
+
+    <p><code class="language-plaintext highlighter-rouge">没有在刻意练习的时间就是 “混日子”</code></p>
+  </li>
+</ol>
+
+<h4 id="学习的灵魂是思考"><strong>学习的灵魂是思考</strong></h4>
+
+<p>学习一个新的概念: What ? Why? How?</p>
+
+<ul>
+  <li>是什么?</li>
+  <li>为什么是它 - 它有什么用?</li>
+  <li>怎么使用它 - 他有哪些应用场景?</li>
+</ul>
+
+<p>遇到难点了</p>
+
+<ul>
+  <li>难在哪里 - 拆分的不够细还是太多前置引用</li>
+  <li>那些擅长的人为什么擅长</li>
+</ul>
+
+<p>刻意思考</p>
+
+<ul>
+  <li>我应该做哪些刻意练习?</li>
+</ul>
+
+<h4 id="学习的关键---哪儿哪儿都需要大量的重复"><strong>学习的关键 - 哪儿哪儿都需要大量的重复</strong></h4>
+
+<ol>
+  <li>
+    <p><strong>你竟然以为自己一下就能学会</strong>?</p>
+  </li>
+  <li>
+    <p><strong>重复是学习的必要手段</strong>:</p>
+
+    <p><code class="language-plaintext highlighter-rouge">学要学很多遍, 练要练很多遍, 用要用很多遍</code></p>
+  </li>
+  <li>
+    <p>重复的重要手段是:</p>
+
+    <p><code class="language-plaintext highlighter-rouge">整理归纳总结, 尽快开始这个过程</code></p>
+  </li>
+  <li>
+    <p>只有不断地<strong>重复才能将知识内化</strong></p>
+  </li>
+</ol>
+
+<h3 id="出发点和动机">出发点和动机</h3>
+
+<p>一种是单纯的兴趣, 另一种则是来源于压力, 最后一种是合理的自我引导</p>
+
+<p>兴趣和压力不言自明, 我们来说说自我引导</p>
+
+<p>当学习索然无味, 压力又没有太大的时候, 自我引导的意义尤其重要:</p>
+
+<ol>
+  <li>明确意义, 值得你主动引导的事物必然有其明确的意义, 搞清楚这些事务可以给你带来什么?</li>
+  <li>明确步骤和行为, 利用<strong>全面完整清单</strong>, 这样子可以具体到具体的行为。更明确的执行。</li>
+  <li><strong>用思考引导兴趣</strong>。自发主动地去思考这个概念的意义是什么? 对于这个学科有什么意义? 对于以后的实际应用有什么意义?
+    <ul>
+      <li>他是什么 - what?</li>
+      <li>为什么需要他 - for what / why?</li>
+      <li>怎么用 - how?</li>
+      <li>怎么实现 - another how?</li>
+    </ul>
+  </li>
+</ol>
+
+<p>总而言之:</p>
+
+<blockquote>
+  <p><strong>知道意义, 明确行为, 用思考让自己进入状态。</strong></p>
+</blockquote>
+
+<h2 id="学习本身">学习本身</h2>
+
+<h3 id="寻得最少必要知识-然后用">寻得最少必要知识, 然后“用”!</h3>
+
+<blockquote>
+  <p>学习只是手段。 <strong>“用”</strong>才是真正的目的。</p>
+</blockquote>
+
+<p>在掌握最少必要知识之后, 立马开始用! 不要陷入学习的陷阱。</p>
+
+<blockquote>
+  <p>用是最好的练习手段</p>
+</blockquote>
+
+<p>最少必要知识其实是一个灵活的 “相对概念”: 同样知识体系下, 不同的项目所对应的最少必要知识其实可能是不一样的</p>
+
+<p>这其实是一个”<strong>用学相长</strong>“的过程:</p>
+
+<ul>
+  <li>你没法在一开始就牢牢掌握所有相关知识</li>
+  <li><strong>一味的追求细节只会更快的积累挫败感, 更容易放弃</strong></li>
+  <li>更加可能得情况是:
+    <ul>
+      <li>先囫囵吞枣的学完, 然后尽快开始<strong>“整理归纳总结”</strong></li>
+      <li><strong>然后直接开始用起来, 时刻思考你可以把这个知识用在哪里</strong>, 然后在学习中验证知识, 进一步的重复, 进一步的归纳总结。</li>
+      <li>利用多轮重复, 来完善巩固知识系统, 而<strong>整理归纳总结是非常好的重复的手段~</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p>在 <strong>用</strong> 的最初阶段你要认清一个现实:</p>
+
+<blockquote>
+  <p><strong>开始注定笨拙</strong></p>
+</blockquote>
+
+<p>这就好比一个人刚刚开始学习走路, 你要给足时间预算, 不要焦虑, 你清醒的知道<strong>这个过程需要很多很多的重复, 在做的不好的时候持续去做</strong>。这是唯一的解决之道。</p>
+
+<h3 id="全面且完整的清单">全面且完整的清单</h3>
+
+<blockquote>
+  <p>在做一个项目或者学习一个技能前, 详细列举可能得细节, 可能遇到的问题。</p>
+</blockquote>
+
+<ol>
+  <li>拆解的越细致, 方向就越清晰, 执行性也会大大提高</li>
+  <li>利用清单提防注意力漂移</li>
+  <li><strong>利用清单指导具体的行为</strong>, 而不仅仅是一个模糊的方向, 这叫做行为具体化</li>
+  <li>作为一个事情完成度的标准</li>
+</ol>
+
+<h3 id="可能遇到的困难">可能遇到的困难</h3>
+
+<h4 id="过多的前置引用">过多的前置引用</h4>
+
+<blockquote>
+  <p>阅读的颗粒度需要自己调节: 一上来太认真容易积累挫败, 而过度的走马观花也会让无法理解, 甚至错误的理解。</p>
+</blockquote>
+
+<ol>
+  <li>硬着头皮也要读完 - 读不懂也要读, 然后重复很多遍 (往往适合第一遍)</li>
+  <li>到了第二遍第三遍就要施展 “<strong>只字不差的阅读</strong>” 技能了</li>
+  <li>加深记忆和理解 - 做笔记</li>
+  <li><strong>尽快开始整理归纳总结</strong></li>
+</ol>]]></content><author><name>Mannix</name></author><category term="思考" /><summary type="html"><![CDATA[学习的周期]]></summary></entry><entry><title type="html">认知与学习</title><link href="https://mannixchen.github.io/%E6%80%9D%E8%80%83/2024/04/01/%E8%AE%A4%E7%9F%A5%E4%B8%8E%E5%AD%A6%E4%B9%A0.html" rel="alternate" type="text/html" title="认知与学习" /><published>2024-04-01T15:28:38+00:00</published><updated>2024-04-01T15:28:38+00:00</updated><id>https://mannixchen.github.io/%E6%80%9D%E8%80%83/2024/04/01/%E8%AE%A4%E7%9F%A5%E4%B8%8E%E5%AD%A6%E4%B9%A0</id><content type="html" xml:base="https://mannixchen.github.io/%E6%80%9D%E8%80%83/2024/04/01/%E8%AE%A4%E7%9F%A5%E4%B8%8E%E5%AD%A6%E4%B9%A0.html"><![CDATA[<h1 id="认知与学习">认知与学习</h1>
+
+<h2 id="觉知---大前提">觉知 - 大前提</h2>
+
+<blockquote>
+  <p>觉知一定要在线, 人需要保持警醒的状态</p>
+</blockquote>
+
+<p>我必须保持觉知在线的状态, 要意识到自己自己在做什么, 对于偏离主观意向的行为要格外的敏感, 这是一个自发的警觉机制. 保持理性和觉知. 而非仅仅依赖于直觉。</p>
+
+<h2 id="学习的本质---底层原理">学习的本质 - 底层原理</h2>
+
+<p>学习的本质就是<strong>花时间</strong>, 而且是花足够多的时间, 不过值得注意的是:</p>
+
+<blockquote>
+  <p><strong>只有被投射了注意力的时间，才是真正的属于自己的时间</strong>。<strong>学习的本质就是花足够多投入了注意力的时间</strong>。</p>
+</blockquote>
+
+<p>稀碎的，零散的时间让人难有作为， 尤其是再加上飘忽不定的注意力:</p>
+
+<blockquote>
+  <p>时间一定要大块, 注意力一定要集中</p>
+</blockquote>
+
+<p>减少外界的干扰, 并充分分配注意力。而这需要物理和精神上的配合。</p>
+
+<ul>
+  <li>物理上, 将手机, 电视, 手表等设备放在非工作区域, <strong>深刻意识到手机是异步通讯工具</strong>。</li>
+  <li>精神上, 让觉知接入, 一旦意识到意识游走到非关键事务上, 及时纠错: <strong>没有什么当下必须立马完成的, 如果重要, 记录待办</strong></li>
+</ul>
+
+<p>同时利用<strong>全面完整列表</strong>实现自我监督:</p>
+
+<blockquote>
+  <p>但凡想认真做一个事情 / 学习一个事情前, 详细且完整的列出, 完成 / 学习这样一个事物所需要的所有关键点, 并将他作为当前时间段的完整必要清单, 在这么一段时间里面, 一旦注意漂移, 及时发现并纠正回来</p>
+</blockquote>
+
+<p>除了常见的工作时间块, 我还需要<strong>创造出更多时间块</strong>:</p>
+
+<blockquote>
+  <p>凌晨</p>
+</blockquote>
+
+<p><strong><code class="language-plaintext highlighter-rouge">5 am - 8 am</code> 必定是一天中最没有干扰的 3 小时</strong>, 这三小时绝对值得投入所有</p>
+
+<h2 id="如何保持动机">如何保持动机?</h2>
+
+<p>一种是单纯的兴趣, 另一种则是来源于压力, 最后一种是合理的自我引导</p>
+
+<p>兴趣和压力不言自明, 我们来说说自我引导</p>
+
+<p>当学习索然无味, 压力又没有太大的时候, 自我引导的意义尤其重要:</p>
+
+<ol>
+  <li>明确意义, 值得你主动引导的事物必然有其明确的意义, 搞清楚这些事务可以给你带来什么?</li>
+  <li>明确步骤和行为, 利用<strong>全面完整清单</strong>, 这样子可以具体到具体的行为。更明确的执行。</li>
+  <li><strong>用思考引导兴趣</strong>。自发主动地去思考这个概念的意义是什么? 对于这个学科有什么意义? 对于以后的实际应用有什么意义?
+    <ul>
+      <li>他是什么 - what?</li>
+      <li>为什么需要他 - for what / why?</li>
+      <li>怎么用 - how?</li>
+      <li>怎么实现 - another how?</li>
+    </ul>
+  </li>
+</ol>
+
+<p>总而言之:</p>
+
+<blockquote>
+  <p><strong>知道意义, 明确行为, 用思考让自己进入状态。</strong></p>
+</blockquote>
+
+<h2 id="计划--预算-放纵--约束">计划 / 预算 放纵 / 约束</h2>
+
+<p>人有几种生活节奏:</p>
+
+<ol>
+  <li>完全散漫的, 放纵的, 无计划, 随机生活的状态 - 最原始</li>
+  <li>有大体的方向, 却没有计划的。 即使当天做了一些值得做的事情, 但这些事情都是应激的, 无计划的, 最终都会给人一种无力感, 失落感。就像一只无头的苍蝇, 永远在打转。毫无掌控感。</li>
+  <li>有大体的方向, <strong>但无限制的“陷入工作”中去, 或许也是一种自由散漫</strong>, 这一点在我剪辑视频的时候经常显现。这样的优点是极致的高效, 缺点也很明显, 不够平衡。因为你会牺牲掉很多原本用于思考, 运动的时间, 你可能会因为”过度的痴迷”, 而在其他方面失去把控, 比如说: 越活越狭隘, 以及身体跟不上</li>
+  <li>理想的状态
+    <ul>
+      <li><strong>明确每一阶段的大方向</strong>, 比如现阶段就是找一份拿薪水的工资。下一个阶段就是找一份海外远程工作。</li>
+      <li><strong>全面完整清单</strong>: 用纸和笔详细完整的列出我所要完成一个任务或者学习一个技能所要做的所有细节, 全面完整清单不仅有利于指导具体的行为, 还能根据清单预防注意力漂移。在列清单的时候可以参考 <strong>MoSCoW Method</strong>, 分辨哪些是 Must have, 哪些是 Should have, 哪些是 Could have, 哪些是 Won’t have。另外<strong>MoSCoW Method</strong>同样可以运用到其他方向: 比如确定哪些是最少必要知识, 再比如写一个新的需求的时候。</li>
+      <li><strong>合理计划/分配自己的时间</strong>, 平衡工作, 思考与运动的时间, 并且要<strong>及时归纳总结</strong></li>
+      <li>遇到注意力漂移, 直接断舍离(<strong>没有什么事是当下必须完成的</strong>), <strong>有必要的则记录待办</strong></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="掌握最少必要知识-然后用就对了">掌握最少必要知识, 然后“用”就对了!</h2>
+
+<p>学一个知识的时候<strong>要做这样的刻意思考: 这个东西可以用到哪里?</strong></p>
+
+<p>如果一时想不到, 则可以看看网络上别人的回答, 然后再顺势问自己一句: “这个知识<strong>还</strong>可以用在哪里? ”</p>
+
+<p>其实学习最少必要知识和用之间并非单纯的先后顺序的关系, 也可能是一种杂糅的关系, 每学一个知识点, 我们都可以先试着用起来, 加深理解。</p>
+
+<p><strong>具体哪些才是最少必要知识, 其实这是个相对概念</strong>; 复杂项目所依赖的最少必要知识肯定多于其他小项目。这很灵活。</p>
+
+<p>掌握了相应的最少必要知识后, <strong>用</strong>就行了</p>
+
+<h2 id="笨拙与重复---思考是学习的灵魂">笨拙与重复 - 思考是学习的灵魂</h2>
+
+<p>正因为是老生常谈, 所以才要深刻的去理解, 去领会:</p>
+
+<ol>
+  <li>刚开始注定笨拙, 笨拙怎么办, <strong>拆分, 放慢速度, 慢慢去做</strong></li>
+  <li>只有足够的重复才能内化新知识新技能, <strong>尽快, 并且不断的整理归纳总结</strong>, 将会加快内化的深度和进度。 <strong>整理归纳总结是重复的重要手段</strong>。<strong>高质量的整理归纳总结效果好于单纯的照本宣科的复习</strong>。尽快开始这个过程。</li>
+  <li>一定不要低估需要重复的量, 只有够量才能体会到内化的快乐</li>
+  <li>一定要频繁的认真的思考, 遇到问题思考, 遇到挫折思考, <strong>思考是学习的灵魂,</strong> 否则就是一个做做样子的行尸走肉</li>
+  <li>思考可以让人更加进入状态, 更加专注。归纳总结可以强化思考。</li>
+  <li>要非常注重基础概念, 以及概念间的关联。<strong>概念必须清晰, 之间的关联必须明确。</strong>因为这是知识系统的底层认知。</li>
+  <li>做笔记可以强化记忆和思考的质量。</li>
+  <li><strong>刻意思考: 我需要做哪些刻意练习</strong>? 没有刻意练习的时间就是在“<strong>混日子</strong>”</li>
+</ol>
+
+<h2 id="你的预算给够了吗">你的预算给够了吗?</h2>
+
+<p>没有耐心的本质其实是: 你竟然觉得自己可以轻易学会? - <strong>你留给学习时间的预算太少了。而学习的本质就是投入大量的有效的时间。</strong></p>
+
+<blockquote>
+  <p>给足预算, 远离焦虑</p>
+</blockquote>
+
+<h2 id="必不可少的其他品质">必不可少的其他品质</h2>
+
+<blockquote>
+  <p>独立自强, 坚守原则</p>
+</blockquote>
+
+<p>人始终需要<strong>独自自强, 并且信仰原则</strong>。这种原则会优化人际的关系, 保持合理的距离。并且可以保持长久地理性状态。摒弃所有腻歪, 黏腻的状态与人际关系, 强者自强。</p>
+
+<blockquote>
+  <p>远离电视剧</p>
+</blockquote>
+
+<p>电视剧是另一个腻歪的存在, 电视剧让人陷入一种软弱, 黏腻, 痴呆的状态。要避免电视剧的侵入。</p>
+
+<blockquote>
+  <p>看清重点, 认清现实</p>
+</blockquote>
+
+<p><strong>提防</strong>脆弱的, 且不切实际的完美主义 / 能力不足者的轻重不分, <strong>一定用明确这个时间段的行为目的, 但凡不属于这个时间短的追求, 统统断舍离</strong> , 你要知道, 没有什么是当下必须完成的。一定要清楚我现在要做什么? 可以借助全面完整清单辅助。</p>
+
+<blockquote>
+  <p>迷恋也是一种散漫</p>
+</blockquote>
+
+<p><strong>其实迷恋学习也是一种自由散漫, 贪图安逸。</strong> 留一点时间给运动, 给思考。我之前迷恋剪辑视频其实就是一种贪图安逸的自由散漫。<strong>更多的思考, 更多的阅读, 运动以及定期的复习 - 更利于全面的发展和进步。思考让人不会迷失方向。非常重要</strong></p>]]></content><author><name>Mannix</name></author><category term="思考" /><summary type="html"><![CDATA[认知与学习]]></summary></entry></feed>
