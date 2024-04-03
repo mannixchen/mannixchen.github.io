@@ -9,8 +9,8 @@ url: "https://mannixchen.github.io" # 你的网站 URL
 baseurl: "" # 项目的基础路径，如果你的网站托管在项目仓库，如 username.github.io/blog，则设置为 "/blog"
 
 # 构建设置
+source: ./_posts
 markdown: kramdown
 theme: minima
-source: _posts
 plugins:
   - jekyll-feed
