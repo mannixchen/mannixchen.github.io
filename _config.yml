@@ -11,5 +11,6 @@ baseurl: "" # 项目的基础路径，如果你的网站托管在项目仓库，
 # 构建设置
 markdown: kramdown
 theme: minima
+source: _posts
 plugins:
   - jekyll-feed
