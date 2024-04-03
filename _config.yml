@@ -1,5 +1,15 @@
+# 网站标题和描述
 title: Mannix Chen's Blog
-baseurl: "" # 项目的基础路径，如果你的仓库是 `username.github.io`, 这里应该留空
-url:"url: "https://mannixchen.github.io"
-permalink: /:year/:month/:day/:title/
+email: job@mannixchen.com
+description: >- # 这是你的网站描述
+  This is a wonderful website about awesome stuff.
+
+# 基础 URL 和 URL 设置
+url: "https://mannixchen.github.io" # 你的网站 URL
+baseurl: "" # 项目的基础路径，如果你的网站托管在项目仓库，如 username.github.io/blog，则设置为 "/blog"
+
+# 构建设置
 markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
