@@ -2,6 +2,7 @@
 title: 利用 Github Page 和 Jekyll 建立个人博客
 description: 利用 Github Page 和 Jekyll 建立个人博客, 同时配置自定义域名, 完全跳过服务器依赖
 date: 2024-04-05 13:55:03 +0800
+comments: true
 categories: [折腾, 建站]
 tags: [博客]
 pin: false
