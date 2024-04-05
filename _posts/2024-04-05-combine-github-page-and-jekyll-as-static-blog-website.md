@@ -19,13 +19,13 @@ pin: false
 
    以[chirpy](https://github.com/cotes2020/jekyll-theme-chirpy/) 为例, 你可以利用 [chirpy-starter](https://github.com/cotes2020/chirpy-starter) 直接创建模版
 
-![image-20240405140847500](http://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20240405140847500.png)
+![image-20240405140847500](https://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20240405140847500.png)
 
 ​	然后参照 [Getting Started](https://chirpy.cotes.page/posts/getting-started/) 来创建自己的仓库
 
 2. 配置自定义域名
 
-   ![image-20240405141438206](http://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20240405141438206.png)
+   ![image-20240405141438206](https://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20240405141438206.png)
 
    并在域名服务商中, 将对应的**自定义域名** 反指向`<username>.github.iio`
 
