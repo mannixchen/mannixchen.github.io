@@ -8,13 +8,13 @@ tags: [技术, Angular]
 pin: false 
 ---
 
-# 轮廓 - 重要的概念
+## 轮廓 - 重要的概念
 
 * 组件
 * 模版
 * 依赖注入
 
-## 众多自带库
+### 众多自带库
 
 * 路由
 * 表单
@@ -25,9 +25,9 @@ pin: false
 
 
 
-# 架构
+## 架构
 
-## NgModule
+### NgModule
 
 > **Angular 的架构设计都是围绕着 NgModule 来构建的, 用来组织和模块化代码。**它定义了应用如何组成, 提供了`declarations`, `imports`, `exports`, `providers`, `bootstrap` 等属性来实现功能的整合和划分, **建立连接和引用关系, 以组合成一个整体**。通常一个应用包含一个根模块`AppModule`和多个特性模块。
 
@@ -45,7 +45,7 @@ pin: false
 
 
 
-## 构建顺序
+### 构建顺序
 
 1. 入口文件 `main.ts`
 
@@ -66,7 +66,7 @@ pin: false
 
 
 
-# 组件
+## 组件
 
 组件的构成
 
@@ -77,9 +77,9 @@ pin: false
 
 
 
-## 组件的创建
+### 组件的创建
 
-### 使用 Angular CLI (Command Line Interface)
+#### 使用 Angular CLI (Command Line Interface)
 
 运行 `ng generate component <component-name>` 命令，其中 `<component-name>` 是新组件的名字。
 
@@ -91,7 +91,7 @@ pin: false
 4. 一个`<component-name>.component.css`的样式文件
 5. 一个`<component-name>.component.spec.ts`的测试文件
 
-### 手动
+#### 手动
 
 1. 在项目目录下
 2. 创建一个名为`<component-name>.component.ts`的文件
@@ -115,7 +115,7 @@ export class ComponentOverViewComponent {
 }
 ```
 
-### CSS 选择器
+#### CSS 选择器
 
 > 用来**指定该组件渲染的位置**, 每个组件必有。
 
@@ -123,7 +123,7 @@ Angular 会寻找改名字的**标签**, 并将该模版渲染在这个位置
 
 也就是这里的 `selector` 对应的就是以该模版名字命名的**标签对**
 
-### 模板
+#### 模板
 
 > **定义了组件渲染的内容**
 
@@ -147,13 +147,13 @@ Angular 会寻找改名字的**标签**, 并将该模版渲染在这个位置
 
 ***注意, 以上两个字段不能同时存在***
 
-### 样式
+#### 样式
 
 > 同上, 定义组件的样式, 也可以用两个字段表示: styleUrls, styles
 
 
 
-## 生命周期
+### 生命周期
 
 
 
