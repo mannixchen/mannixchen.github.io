@@ -5,7 +5,7 @@ date: 2024-04-13 08:37:16 +0800
 comments: true
 categories: [工具, IDE]
 tags: [工具, 效率]
-pin: false 
+pin: true
 ---
 
 # Intellij IDEA
