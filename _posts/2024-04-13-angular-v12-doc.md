@@ -45,6 +45,171 @@ pin: false
 
 
 
+### 服务 Service
+
+> 服务本身指的是**逻辑的抽象和复用**的一种机制, 它通常是实现单一的目的, 或者多个相关功能的**类**。**通过依赖注入(DI)系统, 可以被任何部分如: 组件, 其他的服务, 或者指令所重用。** 以达到**关注点分离** (**将数据处理, 业务规则, 工具函数分离到服务中**, 而让**组件关心视图和用户的交互**), 可复用, 可测试的目的。
+
+#### 在模块和组件中
+
+service:
+
+```ts
+import { Injectable } from '@angular/core';
+
+@Injectable() // 注意这里没有使用 providedIn
+export class ModuleScopedService {
+  constructor() { }
+
+  getServiceMessage(): string {
+    return 'This service is provided by a specific NgModule.';
+  }
+}
+
+```
+
+module:
+
+```ts
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ModuleScopedService } from './module-scoped.service';
+
+@NgModule({
+  declarations: [],
+  imports: [
+    CommonModule
+  ],
+  providers: [ModuleScopedService] // 在这里提供服务
+})
+export class SomeFeatureModule { }
+
+```
+
+`ModuleScopedService`服务将仅在`SomeFeatureModule`模块及其组件和注入的服务中可用。如果`SomeFeatureModule`是惰性加载的，那么`ModuleScopedService`服务的每个实例也将是独立的，仅限于每个模块的实例。
+
+
+
+#### 服务自身注册
+
+```ts
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class GlobalService {
+  constructor() { }
+
+  getServiceMessage(): string {
+    return 'This is a global service accessible throughout the application.';
+  }
+}
+```
+
+直接通过`providedIn: 'root'`注册到全局`root`, 可以直接在整个应用中被注入和使用, 无需额外的注册步骤
+
+`providedIn` 还有一些其他选项:
+
+1. **`root`**
+
+   最常用选项, 它会把服务注册为全局单例, 还支持 <u>Angular</u> 的 <u>tree-shake</u>, 如果服务没有被用到, 就不会包含在最终的生产包中。
+
+2. **`platform`**
+
+   适合一个页面引导了多个 <u>Angular</u> 应用的情况
+
+3. **`any`**
+
+   为每个木块提供一个服务的新的实例, 而不是一个全局单例
+
+4. **`SomeModule`**
+
+   只在指定的模块和其子模块中使用, 实例的作用域被限定在这个模块中, 这种情况通常可以在模块的`providers`数组中实现
+
+#### 单例和多例
+
+**单例服务（Singleton）**
+
+单例服务在应用的生命周期内只被创建一次，所有组件共享同一个服务实例。这意味着单例服务可以用来共享数据和逻辑。
+
+场景:
+
+* 全局状态管理 - 身份验证状态, 全局应用配置
+* 公共工具服务 - 日志服务, 错误处理服务
+* 数据服务 - 公用数据
+
+**多例服务（Non-Singleton）**
+
+多例服务每次注入时都会创建一个新的实例，不同的组件或模块使用的是不同的服务实例。这意味着每个服务实例可以维护自己的状态。
+
+* 组件特定的状态管理
+* 懒加载模块的独立性
+* 可配置服务
+
+##### 单例的情况
+
+- `providedIn: 'root'`：服务在整个应用中都是单例的。Angular在应用启动时创建服务的单个实例，并在应用的所有部分共享这个实例。这是最常用的方法来创建全局单例服务。
+- `providedIn: 'platform'`：服务在所有应用中是单例的，适用于一个页面上有多个Angular应用的情况。
+- 当服务在根模块（`AppModule`）的`providers`数组中注册时，服务通常是单例的，因为根模块的注入器是全应用级别的。
+- 当服务在**非懒加载**的特性模块中注册时，如果**这些特性模块是通过根模块的`imports`数组导入的**，服务实例也将是单例的，因为它们共享同一个注入器。
+
+##### 多例的情况
+
+- `providedIn: 'any'`：每个懒加载模块都会得到服务的一个新实例，对于根模块及其同步加载的模块，服务也是单例的。但是，对于每个懒加载的模块，Angular会为其创建服务的新实例。
+
+- 当服务在**懒加载模块**的`providers`数组中注册时，每个懒加载模块实例都会获得服务的一个新实例。这是因为懒加载模块拥有自己的注入器。
+- 当服务在**组件的`providers`数组**中注册时，每个组件实例都会获得服务的一个新实例，服务的生命周期与组件实例绑定。
+
+
+
+#### 异同
+
+> 这两种声明服务的方式, 给了开发者更多的灵活和控制权
+
+**相同点**
+
+1. 这两种方式**都用在 Angular 的依赖注入系统中注册服务**, 可以让其自动创建实例, 并注入到组件, 指令以及其他服务中
+2. 使用方式一致, 通过组件或者服务的构造函数进行注入
+
+**不同点**
+
+1. 注册位置不同
+2. 作用域不同: **`providers `更尝尝用来注入不同模块级别的私有域服务, `ProvidedIn` 更尝尝用来注册全局可用的单例服务, (虽然他们彼此都可以实现全局或局部)**
+3. `providedIn` 支持 tree-shake, 而`providers`不支持;
+4. 早期只支持 `providers`, Angular 6 后支持 `providedIn`
+
+**总结**
+
+`ProvidedIn`适合全局, `providers`适合控制精准注册颗粒度。
+
+
+
+#### 最佳实践
+
+- **全局单例服务**最适合使用`providedIn: 'root'`或在根模块的`providers`中注册，适用于全应用共享的服务。
+- **懒加载模块的多例服务**应该在懒加载模块的`providers`中注册，确保每个模块实例都有自己的服务实例。
+- **组件级的多例服务**应该在组件的`providers`数组中注册，使服务与组件实例的生命周期相绑定。
+
+#### 原理
+
+>  `constructor(private logService: LogService) { }`
+
+* 当你使用`providedIn`属性或在`NgModule`的`providers`数组中注册一个服务时，Angular的DI系统会**记录这个服务及其提供方式的信息**。这相当于告诉Angular：“这里有一个可以创建和提供`LogService`实例的配方。”
+
+* 当Angular需要创建一个组件的实例时，它会**首先检查该组件的构造函数**，**看看组件是否声明了任何依赖（即构造函数的参数**）。如果构造函数有参数，Angular会根据参数的**类型**（在上述示例中是`LogService`）到自己的**注入器**中查找对应的服务提供者。
+
+* 找到服务提供者后，Angular的DI系统会负责创建服务的实例（如果服务是单例且之前已被创建，则直接提供已有的实例），并**将这个实例注入到组件的构造函数**中。这个过程是自动完成的，开发者**无需手动创建服务实例或显式传递它们**。
+
+* 一旦服务实例被注入到组件中，组件就可以自由地使用这个服务了。在上述示例中，`LogService`的实例被保存在了`MyComponent`的私有成员`logService`中，因此`MyComponent`的任何方法都可以通过`this.logService`访问到`LogService`提供的功能。
+
+Angular的DI系统底层使用了TypeScript的**装饰器（Decorators）和反射（Reflection）API来实现**。装饰器提供了元数据（Metadata），而反射API使Angular能够在运行时读取这些元数据，从而了解如何创建和提供依赖。
+
+
+
+
+
+
+
 ### 构建顺序
 
 1. 入口文件 `main.ts`
