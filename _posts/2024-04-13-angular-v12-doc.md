@@ -1,3 +1,15 @@
+```
+---
+title: Angular V12 文档学习与整理
+description: 新入公司使用 Angular 12, 特此学习和理解
+date: 2024-04-13 21:27:55 +0800
+comments: true
+categories: [编程, 前端, Angular]
+tags: [技术, Angular]
+pin: false 
+---
+```
+
 # 轮廓 - 重要的概念
 
 * 组件
