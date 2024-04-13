@@ -1,8 +1,10 @@
 # Blog Posts
 
-[2024-04-03-学习是什么_我该怎么学.md](_posts/2024-04-03-学习是什么_我该怎么学.md) - Last Modified: 2024-04-13 17:33
+[2024-04-13-mac-intellij-idea-shortcuts.md](_posts/2024-04-13-mac-intellij-idea-shortcuts.md) - Last Modified: 2024-04-13 20:16
 
-[2024-04-13-mac-intellij-idea-shortcuts.md](_posts/2024-04-13-mac-intellij-idea-shortcuts.md) - Last Modified: 2024-04-13 17:32
+[2024-04-13-angular-v12-doc.md](_posts/2024-04-13-angular-v12-doc.md) - Last Modified: 2024-04-13 20:16
+
+[2024-04-03-学习是什么_我该怎么学.md](_posts/2024-04-03-学习是什么_我该怎么学.md) - Last Modified: 2024-04-13 17:33
 
 [2024-04-05-combine-github-page-and-jekyll-as-static-blog-website.md](_posts/2024-04-05-combine-github-page-and-jekyll-as-static-blog-website.md) - Last Modified: 2024-04-08 15:52
 
