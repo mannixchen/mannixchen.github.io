@@ -1,4 +1,3 @@
-```
 ---
 title: Angular V12 文档学习与整理
 description: 新入公司使用 Angular 12, 特此学习和理解
@@ -8,7 +7,6 @@ categories: [编程, 前端, Angular]
 tags: [技术, Angular]
 pin: false 
 ---
-```
 
 # 轮廓 - 重要的概念
 
