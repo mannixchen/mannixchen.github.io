@@ -150,7 +150,15 @@ Find ⌘ + F 全局搜索: `⌘ + ⇧ + F`
 
 Replace: `⌘ + R`
 
+搜索类名 Class: `⌘ + O`
 
+搜索文件名 Files: `⌘ + ⇧ + O`
+
+搜索 Symbols: `⌥ + ⌘ + O`
+
+搜索 Actions: `⌘ + ⇧ + A`
+
+搜索所有: `Double ⇧`
 
 ## Git:
 
