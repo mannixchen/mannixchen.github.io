@@ -3,7 +3,7 @@ title: Mac 环境中 Intellij IDEA 快捷键的整理
 description: 花三个小时整理一下快捷键
 date: 2024-04-13 08:37:16 +0800
 comments: true
-categories: [工具]
+categories: [工具, IDE]
 tags: [工具, 效率]
 pin: false 
 ---
@@ -34,7 +34,7 @@ Copy **path**: `⇧ + ⌘ + C`
 
 切换 **tab**: `⌘ + ⇧ + [ / ]`
 
-切换项目窗口: ``⌘ + ⌥ + \`` `
+切换项目窗口: `⌘ + ⌥ + Backtick` 
 
 **Project**: `⌘ + 1`
 
