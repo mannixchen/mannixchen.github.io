@@ -142,6 +142,8 @@ Unselect Occurrence: `⌃ + ⇧ + G`
 
 **扩展选择**: `⌥ + ↑` 反向: `⌥ + ↓`
 
+**Select In**: `⌥ + F1` (将文件在不同的场景下打开, 如: Finder, Terminal, Project View 等)
+
 
 
 ## 搜索:
