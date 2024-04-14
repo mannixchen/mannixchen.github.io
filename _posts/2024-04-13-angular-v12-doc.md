@@ -341,6 +341,159 @@ Angular 会寻找改名字的**标签**, 并将该模版渲染在这个位置
 
 过度使用`ngDoCheck`和`ngAfterViewChecked`可能会导致性能下降，因为它们在每次变更检测循环中都会被调用。
 
+### 组件传值
+
+#### 1. 父组件传给子组件
+
+父组件通过绑定到子组件的`@Input()`属性来传值。
+
+**父组件**:
+
+```ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  template: `
+    <app-child [childProperty]="parentProperty"></app-child>
+  `
+})
+export class ParentComponent {
+  parentProperty = 'Hello from parent';
+}
+```
+
+**子组件**:
+
+```ts
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: `<p>{{ childProperty }}</p>`
+})
+export class ChildComponent {
+  @Input() childProperty: string;
+}
+```
+
+#### 2. 子组件传给父组件
+
+子组件通过`EventEmitter`和`@Output()`装饰器发射事件来传值给父组件。
+
+**子组件**:
+
+```ts
+import { Component, EventEmitter, Output } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: `<button (click)="sendMessage()">Send Message</button>`
+})
+export class ChildComponent {
+  @Output() messageEvent = new EventEmitter<string>();
+
+  sendMessage() {
+    this.messageEvent.emit('Hello from child');
+  }
+}
+```
+
+**父组件**:
+
+```ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  template: `
+    <app-child (messageEvent)="receiveMessage($event)"></app-child>
+    <p>{{ message }}</p>
+  `
+})
+export class ParentComponent {
+  message: string;
+
+  receiveMessage($event) {
+    this.message = $event;
+  }
+}
+```
+
+#### 3. 兄弟组件间的传值
+
+兄弟组件间传值通常通过共享服务实现。
+
+**共享服务**:
+
+```ts
+
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SharedService {
+  private messageSource = new BehaviorSubject('Default message');
+  currentMessage = this.messageSource.asObservable();
+
+  changeMessage(message: string) {
+    this.messageSource.next(message);
+  }
+}
+```
+
+**兄弟组件A**:
+
+```ts
+
+import { Component } from '@angular/core';
+import { SharedService } from './shared.service';
+
+@Component({
+  selector: 'sibling-a',
+  template: `<button (click)="sendMessage()">Send Message</button>`
+})
+export class SiblingAComponent {
+  constructor(private sharedService: SharedService) {}
+
+  sendMessage() {
+    this.sharedService.changeMessage('Hello from Sibling A');
+  }
+}
+```
+
+**兄弟组件B**:
+
+```ts
+
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from './shared.service';
+
+@Component({
+  selector: 'sibling-b',
+  template: `<p>{{message}}</p>`
+})
+export class SiblingBComponent implements OnInit {
+  message: string;
+
+  constructor(private sharedService: SharedService) {}
+
+  ngOnInit() {
+    this.sharedService.currentMessage.subscribe(message => this.message = message);
+  }
+}
+```
+
+#### 4. 跨级组件传值
+
+跨级组件（比如孙子组件和祖父组件）间的传值也可以通过共享服务实现，类似于兄弟组件间的传值方法。
+
+另一种方法是使用Angular的`@Input()`和`@Output()`结合，通过中间组件逐级传递。
+
+这些方法概括了Angular组件间通信的基本方式，不同场景下可以根据需要灵活选择。
+
 ## 模版
 
 > 将 HTML 和 Angular 的指令和绑定标记组合在一起, 在渲染前格式化这些 HTML
@@ -690,6 +843,55 @@ export class ChildComponent {
 `ng generate component my-new-component`
 
 `ng g c my-new-component`
+
+
+
+## 总结
+
+**NgModule**:
+
+负责整合 Angular 资源
+
+
+
+**服务**
+
+负责抽象有关数据的逻辑, 获取, 处理
+
+可以通过自身声明, 也可以在**模块中或者组件中声明**
+
+他的使用依赖于 DI 依赖注入系统
+
+**指令**
+
+具有直接操作 DOM 元素的能力, 一般可以用来抽象需要影响视图的逻辑
+
+**组件**
+
+这是一种特殊类型的指令, 在指令的基础上附加了模版和样式的能力, 负责具体的渲染
+
+**模板**
+
+模板提供很多模板标记来让组件逻辑和视图结合在一起
+
+1. 插值
+2. 属性绑定
+3. 事件
+4. 双向数据绑定
+5. 属性指令
+6. 结构指令
+
+**管道**
+
+处理文本的显示
+
+**事件**
+
+
+
+
+
+
 
 
 
