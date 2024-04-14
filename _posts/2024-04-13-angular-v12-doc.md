@@ -1,5 +1,5 @@
 ---
-title: Angular V12 文档学习与整理
+title: Angular V12 文档学习与整理(一) - 概念篇
 description: 新入公司使用 Angular 12, 特此学习和理解
 date: 2024-04-13 21:27:55 +0800
 comments: true
@@ -237,6 +237,8 @@ Angular的DI系统底层使用了TypeScript的**装饰器（Decorators）和反�
 
 ## 组件
 
+> 组件继承自指令, 并在指令的基础上扩展出了模版和样式的功能
+
 组件的构成
 
 * HTML **模版**, 用于渲染内容
@@ -329,6 +331,145 @@ Angular 会寻找改名字的**标签**, 并将该模版渲染在这个位置
 ## 模版
 
 > 将 HTML 和 Angular 的指令和绑定标记组合在一起, 在渲染前格式化这些 HTML
+
+### 模板的标记(markup)
+
+Angular 的标记（markup）是指用于构建 Angular 应用的 HTML 模板中的特定语法和结构。这些标记允许开发者使用 Angular 的**数据绑定、指令、组件**等功能来创建动态和响应式的网页应用。
+
+1. **插值表达式(Interpolation)**
+
+   在 HTML 中嵌入一个 JavaScript 的表达式值, Angular 会计算该值, 并插入到 DOM 中的相应位置。
+
+   `<p>{{ titile }}</p>`
+
+2. **属性绑定 (Property Binding)**
+
+   将元素的属性或者组件的属性绑定到表达式, 当表达式的值变化时, 属性的值也会更新
+
+   `<img [src]="imageUrl">`
+
+3. **事件绑定 (Event Binding)** 
+
+   用来监听元素上的事件, 并执行表达式或者方法
+
+   `<button (click)="save()">Save</button>`
+
+4. **双向数据绑定 (Two-Way Binding)**
+
+   将表单元素的值和组件类的属性绑定在一起, 实现双向数据绑定
+
+   `<input [(ngModel)]="name">`
+
+5. **结构指令(Structural Directives)**
+
+   结构: `*directive=“express”`
+
+   用途: **修改 DOM 的结构**, 例如添加, 移除, 替换元素。
+
+   如: `*ngIf` 条件渲染 `*ngFor` 列表渲染
+
+   `<div *ngIf="isLoggedIn">Welcome back!</div>`
+
+6. **属性指令 (Attribute Directives)**
+
+   用途: 用来更改元素的外观和行为 (不改变 DOM 结果) 类似于 Vue 中的`:Class`
+
+   `<div [ngClass]="{ active: isActive }">Content</div>`
+
+#### 属性绑定和属性指令的异同
+
+> 看似语法相似, 但是服务于不同的目的, 实现细节也有所不定
+
+属性绑定的数据流向是单向的, 从组件 -> 模版
+
+指令用于修改 DOM 的外观, 行为和布局, 其分为三种: 组件, 结构指令, 和属性指令
+
+**相同**
+
+1. 相似的语法, 都是用方括号`[]` (双向绑定用 `[()]`)
+
+**不同**
+
+1. 属性只是数据的流动, 而属性指令则会添加额外的行为或者逻辑, 如改变样式等
+2. 属性指令是特殊的, 因为他们是 Angular 定义的用于执行更复杂逻辑的特殊标记
+
+
+
+#### 双向数据绑定和单项数据绑定的区别
+
+单向数据绑定将数据的流动限制为单一方向。在 Angular 中，有两种单向数据绑定：
+
+- **从组件到视图**：使用**插值表达式**（`{{value}}`）或属性绑定（`[property]="value"`）将组件的数据显示在视图上。当数据在组件中更新时，视图将自动反映这些更改，但视图中的用户操作不会直接更新组件中的数据。
+- **从视图到组件**：使用**事件绑定**（`(event)="handler()"`）监听视图中的事件（如用户输入），并在组件中执行相应的操作。这允许组件响应视图中的用户操作，但不直接涉及数据的自动更新。
+
+**双向数据绑定**同时结合了从组件到视图和从视图到组件的数据流，创建了一个数据循环。这意味着当数据在组件中更新时，视图将自动更新以反映这些更改；同时，当用户在视图中进行操作（如填写表单）时，组件的数据也会自动更新。Angular 通过 `[(ngModel)]` 语法实现双向数据绑定。
+
+- `ngModel` 是 Angular 的一个指令，用于在表单元素上实现双向数据绑定。<u>它属于 FormsModule</u>，需要在应用模块中导入 FormsModule 才能使用。(feature module)
+- 使用 `[(ngModel)]` 绑定时，方括号 `[ngModel]` 表示数据从组件流向视图（属性绑定），圆括号 `(ngModelChange)` 表示数据从视图流回组件（事件绑定）。这两种绑定结合起来实现了数据的双向同步。(内部结构)
+- `[(ngModel)]` 的工作原理是通过监听表单元素的值的变化，并更新组件中的属性值；同时，当组件中的属性值变化时，也会更新表单元素的显示值。指定了**利用组件的哪个具体的值**, 来连接双向绑定。
+
+#### 自定义属性
+
+> Angular 中有类似于 Vue 中的自定义属性, Vue 中使用`:customProp` 来传递, `props` 或 `defineProps`来接受, 而 Angular 使用 ` @Input() myProperty: string;` 来接受
+
+子组件接受:
+
+```ts
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-my-component',
+  template: `<p>{{ myProperty }}</p>`,
+})
+export class MyComponent {
+  @Input() myProperty: string;
+}
+
+```
+
+父组件中传递:
+
+```ts
+<app-my-component [myProperty]="'Hello, Angular!'"></app-my-component>
+
+```
+
+**指令的自定义属性**
+
+指令的定义:
+
+```ts
+import { Directive, Input, ElementRef, OnInit } from '@angular/core';
+
+@Directive({
+  selector: '[appHighlight]'
+})
+export class HighlightDirective implements OnInit {
+  @Input() appHighlight: string;
+
+  constructor(private el: ElementRef) {}
+
+  ngOnInit() {
+    this.el.nativeElement.style.backgroundColor = this.appHighlight;
+  }
+}
+
+```
+
+指令的使用: 
+
+```ts
+<div [appHighlight]="'yellow'">Highlighted text</div>
+
+```
+
+指令定义了`appHighlight`作为选择器, 那么, **只要在组件或元素标签内写上 `appHignlight`就表示运用了该指令**
+
+```ts
+<p appHighlight>Hover over me to see the highlight!</p>
+```
+
+写成`[appHighlight]="'yellow'"`是为了给指令传值
 
 
 
