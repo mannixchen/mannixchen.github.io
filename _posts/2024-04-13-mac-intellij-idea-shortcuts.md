@@ -162,6 +162,8 @@ Replace: `⌘ + R`
 
 搜索所有: `Double ⇧`
 
+搜索**被引用的地方** (Find Usage) : `⌥ + F7`
+
 ## Git:
 
 Git popup: `⌃ + V`
