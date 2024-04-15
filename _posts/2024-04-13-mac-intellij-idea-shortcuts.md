@@ -120,6 +120,8 @@ Jump to Navigation bar: `⌘ + ↑`
 
 将光标设置为**中心**: `⌃ + L`
 
+定位上一次后一次编辑点(Back / Forward): `⌘ + [ / ⌘ + ]`
+
 
 
 ## 选择:
