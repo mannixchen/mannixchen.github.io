@@ -122,6 +122,8 @@ Jump to Navigation bar: `⌘ + ↑`
 
 定位上一次后一次编辑点(Back / Forward): `⌘ + [ / ⌘ + ]`
 
+折叠和展开当前代码块 (Fold / Expand): `⌘ + - / ⌘ + =`
+
 
 
 ## 选择:
