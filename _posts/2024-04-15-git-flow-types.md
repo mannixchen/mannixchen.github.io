@@ -109,4 +109,4 @@ https://developer.aliyun.com/article/573549
 6. 经过充分平台, 满足合并进入主项目 `release` 分支的条件
 7. 然后再主 `release` 分支上**经过test 区,预生产的充分测试, 发布生产** 最终合入到 `master` 分支, 打上标签
 
-![分支管理流程](http://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E6%B5%81%E7%A8%8B.jpg)
+![分支管理流程](https://bucket-picbed.oss-cn-shanghai.aliyuncs.com/img/%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E6%B5%81%E7%A8%8B.jpg)
