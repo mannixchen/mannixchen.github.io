@@ -1,6 +1,8 @@
 # Blog Posts
 
-[2024-04-13-angular-v12-doc.md](_posts/2024-04-13-angular-v12-doc.md) - Last Modified: 2024-04-15 10:09
+[2024-04-15-angular-v12-doc-part2.md](_posts/2024-04-15-angular-v12-doc-part2.md) - Last Modified: 2024-04-15 13:25
+
+[2024-04-13-angular-v12-doc.md](_posts/2024-04-13-angular-v12-doc.md) - Last Modified: 2024-04-15 13:24
 
 [2024-04-13-mac-intellij-idea-shortcuts.md](_posts/2024-04-13-mac-intellij-idea-shortcuts.md) - Last Modified: 2024-04-14 11:49
 
