@@ -1,6 +1,6 @@
 # Blog Posts
 
-[2024-04-13-mac-intellij-idea-shortcuts.md](_posts/2024-04-13-mac-intellij-idea-shortcuts.md) - Last Modified: 2024-04-15 19:38
+[2024-04-13-mac-intellij-idea-shortcuts.md](_posts/2024-04-13-mac-intellij-idea-shortcuts.md) - Last Modified: 2024-04-15 19:45
 
 [2024-04-15-git-flow-types.md](_posts/2024-04-15-git-flow-types.md) - Last Modified: 2024-04-15 17:55
 
