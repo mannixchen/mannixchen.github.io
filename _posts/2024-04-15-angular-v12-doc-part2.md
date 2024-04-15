@@ -246,3 +246,7 @@ export class CountdownViewChildParentComponent implements AfterViewInit {
 
 > 其实就类似于 Vue 中的插槽
 
+
+
+#### 单插槽内容投影 - 默认插槽
+
