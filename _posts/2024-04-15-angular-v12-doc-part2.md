@@ -250,3 +250,224 @@ export class CountdownViewChildParentComponent implements AfterViewInit {
 
 #### 单插槽内容投影 - 默认插槽
 
+```ts
+// 子组件的创建:
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-zippy-basic',
+  template: `
+  <h2>Single-slot content projection</h2>
+  <ng-content></ng-content> // 存放内容的地方
+`
+})
+export class ZippyBasicComponent {}
+
+// 子组件模板的使用
+<app-zippy-basic>
+  <p>Is content projection cool?</p>
+</app-zippy-basic>
+// p 标签就会被插入到 <ng-content> 的位置
+```
+
+>  `ng-content` 元素是一个占位符，它不会创建真正的 DOM 元素。`ng-content` 的那些自定义属性将被忽略。
+
+#### 多插槽内容太投影 - 具名插槽
+
+> 每个插槽可以**指定一个 CSS 选择器**，该选择器会决定将哪些内容放入该插槽。
+
+```ts
+// 子组件的创建
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-zippy-multislot',
+  template: `
+  <h2>Multi-slot content projection</h2>
+  <ng-content></ng-content>
+  <ng-content select="[question]"></ng-content>
+`
+})
+export class ZippyMultislotComponent {}
+
+// 父组件模板
+<app-zippy-multislot>
+  <p question>  
+    Is content projection cool?
+  </p>
+  <p>Let's learn about content projection!</p>
+</app-zippy-multislot>
+```
+
+**使用 `question` 属性的内容**将投影到带有 **`select=[question]` 属性**的 `ng-content` 元素。
+
+
+
+#### 利用 ng-template ng-container 以及内容投影来做条件渲染
+
+结合`ng-template`、`ng-container`和内容投影（通常称为“插槽”）来实现条件渲染，可以让你创建更加灵活和动态的组件。这种方法特别适用于当你想在父组件中定义内容，并根据某些条件在子组件中渲染这些内容时。
+
+##### 步骤1: 定义内容投影插槽
+
+在子组件中，你可以使用`<ng-content>`标签来指定一个或多个内容投影插槽。如果需要，可以通过选择器区分不同的插槽。 - 适合默认插槽和具名插槽
+
+**子组件模板 (child.component.html)**
+
+```html
+<div>
+  <!-- 默认插槽 -->
+  <ng-content></ng-content>
+
+  <!-- 条件插槽 -->
+  <ng-container *ngTemplateOutlet="condition ? templateRef : null"></ng-container>
+</div>
+```
+
+在这里，`ng-container`结合`*ngTemplateOutlet`被用来根据条件`condition`**渲染一个模板**引用`templateRef`。 
+
+其实也就是利用` ng-container` 来做条件渲染, `ng-container`允许你使用Angular指令，如结构性指令，而不实际创建额外的DOM元素。这种方式特别适合于不想添加额外标记但需要应用结构性逻辑（如条件渲染或循环）的场景。
+
+##### 步骤2: 在子组件类中定义条件和模板引用
+
+**子组件类 (child.component.ts)**
+
+```typescript
+import { Component, Input, TemplateRef } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  templateUrl: './child.component.html',
+})
+export class ChildComponent {
+  @Input() condition: boolean;
+  @Input() templateRef: TemplateRef<any>;
+}
+```
+
+在子组件类中，通过`@Input()`装饰器接受一个条件`condition`和一个模板引用`templateRef`。
+
+##### 步骤3: 父组件使用子组件并传递内容
+
+在父组件中，你可以定义内容，并使用`<ng-template>`将其标记为可投影内容。然后，将这些内容传递给子组件。
+
+**父组件模板 (parent.component.html)**
+
+```html
+<app-child [condition]="true" [templateRef]="template">
+  <p>这是总是可见的内容。</p>
+</app-child>
+
+<ng-template #template>
+  <p>这是条件性渲染的内容。</p>
+</ng-template>
+```
+
+**`<ng-template>` 不会直接渲染到DOM中**，而是可以在需要时被动态渲染。这使得`ng-template`成为定义可重用、有条件渲染或动态渲染内容的理想选择。
+
+在这个例子中，`<p>这是总是可见的内容。</p>`将总是被渲染在子组件的默认插槽中。而`<ng-template #template>`定义的内容则根据父组件传递给子组件的`[condition]`值来决定是否在子组件中渲染。
+
+将 `ng-template` 作为一个变量 `template` 传给了 `templateRef`
+
+##### 总结
+
+这种方法允许你在父组件中定义可以根据条件渲染的内容，并通过子组件的逻辑来控制这些内容的显示。这样不仅增加了组件间的互动性，也提高了组件的复用性和灵活性。通过`ng-template`、`ng-container`和内容投影的结合使用，Angular应用可以实现复杂的条件渲染逻辑，同时保持模板的清晰和组织。
+
+
+
+#### 
+
+#### 利用指令来引用 ng-template
+
+在Angular中，可以通过创建一个指令来引用并操作`ng-template`。这通常涉及到使用`TemplateRef`来获取对`ng-template`的引用，然后**通过指令中的逻辑来决定如何、何时渲染这个模板**。
+
+##### 步骤1: 创建一个自定义指令
+
+首先，你需要创建一个自定义指令。在这个指令中，你将使用Angular的依赖注入系统来注入`TemplateRef`对象，这个对象是`ng-template`的一个引用。
+
+**custom.directive.ts**
+
+```typescript
+import { Directive, TemplateRef } from '@angular/core';
+
+@Directive({
+  selector: '[appCustomDirective]'
+})
+export class CustomDirective {
+  constructor(private templateRef: TemplateRef<any>) {
+    // templateRef是对ng-template的引用
+  }
+}
+```
+
+##### 步骤2: 在组件模板中使用`ng-template`和自定义指令
+
+接下来，在你的组件模板中，使用`ng-template`定义一块模板内容，并用你的**自定义指令作为一个属性来标记这个`ng-template`。**
+
+**component.html**
+
+```html
+<ng-template appCustomDirective>
+  <div>这是通过自定义指令引用的ng-template内容。</div>
+</ng-template>
+```
+
+##### 步骤3: 在指令中操作`ng-template`
+
+在自定义指令的构造函数中，`TemplateRef`的实例（即`templateRef`）就是对上述`ng-template`的引用。你可以在指令的类中保存这个引用，并根据需要使用它。
+
+##### 总结
+
+通过使用自定义指令与`ng-template`结合。这种模式让你可以控制模板的渲染时机和方式，适用于多种应用场景，如创建条件渲染逻辑、动态表单控件、弹出窗口等。
+
+`ngProjectAs`是Angular中的一个特殊属性，它允许你改变内容投影（Content Projection）的选择器匹配方式。这个属性非常有用，特别是在你需要将内容投影到特定的`<ng-content>`插槽，但又不想在父组件中明确设置选择器时。
+
+#### `ngProjectAs`的用途
+
+通常，Angular根据选择器来决定如何将父组件的内容投影到子组件的`<ng-content>`标签中。**`ngProjectAs`让你可以“伪装”你的内容，使其匹配子组件中不同的选择器，**而不必在父组件的模板中实际使用那些选择器。
+
+##### 如何使用`ngProjectAs`
+
+假设你有一个带有多个插槽（使用不同选择器）的子组件：
+
+**子组件模板 (sub-component.html)**
+
+```html
+<div class="header">
+  <ng-content select=".header-content"></ng-content>
+</div>
+<div class="body">
+  <ng-content select=".body-content"></ng-content>
+</div>
+```
+
+在没有`ngProjectAs`的情况下，父组件需要使用对应的类来匹配这些插槽：
+
+**父组件模板 (parent-component.html)**
+
+```html
+<app-sub-component>
+  <div class="header-content">这是头部内容</div>
+  <div class="body-content">这是主体内容</div>
+</app-sub-component>
+```
+
+使用`ngProjectAs`，你可以避免在父组件的模板中设置这些类，而是使用`ngProjectAs`来指定内容应该投影到哪个`<ng-content>`插槽：
+
+**父组件模板 (parent-component.html)** 使用`ngProjectAs`
+
+```html
+<app-sub-component>
+  <div ngProjectAs=".header-content">这是头部内容</div>
+  <div ngProjectAs=".body-content">这是主体内容</div>
+</app-sub-component>
+```
+
+这样，即使父组件中的`<div>`元素没有直接使用`.header-content`或`.body-content`类，Angular也会将这些`<div>`元素正确地投影到子组件的对应`<ng-content>`插槽中。
+
+##### 为什么使用`ngProjectAs`
+
+- **灵活性**：`ngProjectAs`提供了一种灵活的方式来控制内容投影，特别是当组件的使用者不想或不能直接在其内容上设置特定的选择器时。
+- **封装性**：它允许子组件定义更具体的内容投影策略，而不需要暴露这些细节给父组件。
+- **清晰性**：对于父组件的模板来说，`ngProjectAs`使得模板保持了更高的清晰度和可读性，因为它避免了直接在内容上使用可能与组件内部实现细节相关的选择器。
+
+总之，`ngProjectAs`是一个强大的工具，能够提高Angular应用的**内容投影的灵活性和封装性**，让你可以更精细地控制内容如何被投影到子组件中。
