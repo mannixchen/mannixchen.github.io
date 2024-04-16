@@ -150,6 +150,10 @@ Unselect Occurrence: `⌃ + ⇧ + G`
 
 
 
+**File Path (Reveal in Finder)**: `⌘ + ⌥ + F12`
+
+
+
 ## 搜索:
 
 Find ⌘ + F 全局搜索: `⌘ + ⇧ + F`
