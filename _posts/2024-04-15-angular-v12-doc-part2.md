@@ -1,5 +1,5 @@
 ---
-title: Angular V12 文档学习与整理(二) - 概念篇 + 表单
+title: Angular V12 文档学习与整理(二) - 概念篇2
 description: 新入公司使用 Angular 12, 特此学习和理解
 date: 2024-04-15 10:20:43 +0800
 comments: true
@@ -478,3 +478,185 @@ export class CustomDirective {
 - **清晰性**：对于父组件的模板来说，`ngProjectAs`使得模板保持了更高的清晰度和可读性，因为它避免了直接在内容上使用可能与组件内部实现细节相关的选择器。
 
 总之，`ngProjectAs`是一个强大的工具，能够提高Angular应用的**内容投影的灵活性和封装性**，让你可以更精细地控制内容如何被投影到子组件中。
+
+### 动态组件
+
+在 Angular 中，动态组件加载允许应用在运行时动态地加载和渲染组件。这对于需要根据条件加载不同内容的应用来说非常有用，比如基于用户的操作显示不同的用户界面元素，或者在不同的场景下加载不同的组件来提升应用的性能。
+
+#### 动态组件加载的核心概念
+
+要实现动态组件加载，Angular 提供了几个关键的概念：
+
+- **ComponentFactoryResolver**：用于解析组件的工厂，**可以根据给定的组件类型动态创建组件的实例。**
+- **ViewContainerRef**：表示**视图容器的引用**，可以**用来动态添加或移除视图。**
+- **ComponentRef**：表示动态加载的**组件的引用**，可以**用来与该组件进行交互。**
+
+#### 实现步骤
+
+为了使用指令作为锚点动态加载组件，我们可以定义一个指令来代替 `ng-template` 的使用。这个指令将直接应用到一个容器元素上（例如，一个 `div` 或 `ng-container`），并在该元素上提供一个 `ViewContainerRef` 用于动态组件的加载。
+
+##### 步骤 1: 创建动态组件加载指令
+
+首先，我们需要创建一个新指令，它将作为动态组件加载的锚点。
+
+**dynamic-anchor.directive.ts**:
+
+```typescript
+import { Directive, ViewContainerRef } from '@angular/core';
+
+@Directive({
+  selector: '[appDynamicAnchor]'
+})
+export class DynamicAnchorDirective {
+  constructor(public viewContainerRef: ViewContainerRef) { }
+}
+```
+
+这个指令非常简单，它通过**依赖注入获取当前元素的 `ViewContainerRef`，**并将其公开，以便可以在父组件中使用。
+
+##### 步骤 2: 宿主组件以使用新指令
+
+使用这个新的动态加载指令。
+
+**host.component.ts** :
+
+```typescript
+import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import { DynamicComponent } from './dynamic.component';
+import { DynamicAnchorDirective } from './dynamic-anchor.directive';
+import { ComponentFactoryResolver } from '@angular/core';
+
+@Component({
+  selector: 'app-host',
+  template: `<div appDynamicAnchor></div>`
+})
+export class HostComponent implements AfterViewInit {
+  @ViewChild(DynamicAnchorDirective) dynamicAnchor: DynamicAnchorDirective;
+
+  constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
+
+  ngAfterViewInit() {
+    this.loadDynamicComponent();
+  }
+
+  loadDynamicComponent() {
+    const viewContainerRef = this.dynamicAnchor.viewContainerRef;
+    viewContainerRef.clear();
+
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(DynamicComponent);
+    viewContainerRef.createComponent(componentFactory);
+  }
+}
+```
+
+这里我们**通过 `@ViewChild` 装饰器获取 `DynamicAnchorDirective` 的实例**，进而获得与指令关联的 `ViewContainerRef`。然后，我们使用这个 `ViewContainerRef` 来动态加载 `DynamicComponent`。
+
+##### 步骤 3: 更新 AppModule
+
+确保你的 `AppModule` 包含了新指令的声明，同时注册了动态组件和宿主组件。
+
+**app.module.ts** (修改后):
+
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { DynamicComponent } from './dynamic.component';
+import { HostComponent } from './host.component';
+import { DynamicAnchorDirective } from './dynamic-anchor.directive';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    DynamicComponent,
+    HostComponent,
+    DynamicAnchorDirective // 新增指令声明
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+  entryComponents: [DynamicComponent]
+})
+export class AppModule { }
+```
+
+#### Angular 元素
+
+> Angular 元素是 Angular 的一项功能，允许你将 Angular 组件打包为 Web Components，这是一组浏览器标准，使得你可以创建可重用的自定义元素，并在任何 HTML 页面上使用它们，无论页面使用的是什么框架或不使用框架。这意味着你可以把 Angular 功能作为自定义 HTML 标签在非 Angular 项目中使用，极大地提高了组件的可重用性和互操作性。
+
+##### 自定义元素的创建步骤：
+
+1. **创建一个 Angular 组件**： 这个组件将被打包成自定义元素。组件可以包含你需要的任何模板、绑定和依赖注入。
+2. **将 Angular 组件转换为自定义元素**： 使用 Angular 的 `createCustomElement` 函数从 @angular/elements 包中将组件包装为自定义元素。这个函数需要组件类和一个注入器作为参数，并**返回一个可以定义为自定义元素的类。**
+3. **注册自定义元素**： 使用原生的 `customElements.define` 方法**注册自定义元素**。这将告诉浏览器你的自定义标签是什么，并且怎样处理它。
+
+
+
+## 指令
+
+### trackBy
+
+> trackBy 的值是一个返回值的函数
+
+`trackBy` 是 Angular 中的一个用于 `*ngFor` 指令的选项，它的主要目的是提高列表渲染性能。在使用 `*ngFor` 迭代显示数据列表时，如果列表数据发生变化（例如，元素被添加、移除或排序），默认情况下，Angular 会重新渲染整个列表的 DOM 元素。这在处理大量数据时会导致性能问题。
+
+通过使用 `trackBy` 函数，Angular 可以跟踪每个元素的身份，**只对那些改变了的元素进行 DOM 更新，而不是整个列表。**这样，对于那些未改变的元素，Angular 不会重新渲染它们的 DOM，从而提高了渲染性能。
+
+#### 如何使用 `trackBy`
+
+要使用 `trackBy`，你需要在模板中的 `*ngFor` 指令上设置它，并提供一个跟踪函数。这个跟踪函数接收两个参数：迭代的索引和当前项的数据对象。它需要返回一个唯一标识符（如 ID）来表示每个元素的身份。
+
+#### 示例：
+
+假设你有一个显示用户列表的组件，用户数据是一个包含多个用户对象的数组，每个用户对象都有一个唯一的 `id` 属性。
+
+**组件类 (TypeScript)**:
+
+```typescript
+export class UsersComponent {
+  users = [
+    { id: 1, name: 'Alice' },
+    { id: 2, name: 'Bob' },
+    { id: 3, name: 'Charlie' }
+  ];
+
+  trackByUserId(index: number, user: any): number {
+    return user.id;
+  }
+}
+```
+
+**模板 (HTML)**:
+
+```html
+<ul>
+  <li *ngFor="let user of users; trackBy: trackByUserId">{{ user.name }}</li>
+</ul>
+```
+
+在这个示例中，`trackByUserId` 函数通过返回用户的 `id` 属性作为唯一标识符，使 Angular 能够跟踪每个用户项的身份。如果 `users` 数组发生变化，Angular 会使用这个标识符来确定哪些项是新增的、哪些需要被重新渲染，哪些可以保持不变。这样，只有变化的项才会导致 DOM 更新，从而提升了性能。
+
+### NgSwitch
+
+> 就像 JavaScript 的 `switch` 语句一样。`NgSwitch` 会根据切换条件显示几个可能的元素中的一个。Angular 只会将选定的元素放入 DOM。
+
+
+
+```html
+<div [ngSwitch]="currentItem.feature">
+  <app-stout-item    *ngSwitchCase="'stout'"    [item]="currentItem"></app-stout-item>
+  <app-device-item   *ngSwitchCase="'slim'"     [item]="currentItem"></app-device-item>
+  <app-lost-item     *ngSwitchCase="'vintage'"  [item]="currentItem"></app-lost-item>
+  <app-best-item     *ngSwitchCase="'bright'"   [item]="currentItem"></app-best-item>
+<!-- . . . -->
+  <app-unknown-item  *ngSwitchDefault           [item]="currentItem"></app-unknown-item>
+</div>
+```
+
+### `NgNonBindable`
+
+`ngNonBindable` 会停用模板中的插值、指令和绑定。
+
+将 `ngNonBindable` 应用于元素将停止对该元素的子元素的绑定。但是，`ngNonBindable` 仍然允许指令在应用 `ngNonBindable` 的元素上工作。
