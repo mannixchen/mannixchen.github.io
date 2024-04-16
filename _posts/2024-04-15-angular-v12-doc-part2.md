@@ -304,6 +304,14 @@ export class ZippyMultislotComponent {}
 
 #### 利用 ng-template ng-container 以及内容投影来做条件渲染
 
+> ng-template 是个抽象容器, 直接使用它并不会被渲染, 必须搭配**结构指令** 才能够被条件渲染
+>
+> - **`*ngIf`**: 可以用来根据条件来决定是否渲染 `ng-template` 中的内容。
+> - **`*ngFor`**: 用于循环渲染一组数据，每次循环都会渲染 `ng-template` 中的内容。
+> - **`*ngTemplateOutlet`**: 允许将定义好的模板插入到文档的其他地方，从而复用模板内容。
+>
+> ng-container: 将模版元素组织在一起而不必创建多余的 DOM, 很适合做条件渲染, 分组渲染, 以及引用渲染(利用 `*ngTemplateOutlet`引用模版变量), 类似于 Vue 中的 `<template>`标签。
+
 结合`ng-template`、`ng-container`和内容投影（通常称为“插槽”）来实现条件渲染，可以让你创建更加灵活和动态的组件。这种方法特别适用于当你想在父组件中定义内容，并根据某些条件在子组件中渲染这些内容时。
 
 ##### 步骤1: 定义内容投影插槽
