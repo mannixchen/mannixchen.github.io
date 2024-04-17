@@ -208,6 +208,31 @@ https://v12.angular.cn/guide/form-validation#validating-input-in-template-driven
 
 
 
+## 构建动态表单
+
+> 利用元数据动态的基于配置构造表单, 在我司有大量应用
+
+比如文档重要动态渲染一个调查问卷: 
+
+我们可以根据只能划分出以下部分
+
+1. 单个**问题的组件** `question.component.ts`
+2. 将单个问题组合起来的**表单组件** `form.component.ts`
+3. 用来**获取元数据**的 `questions.service.ts` (一般是异步的, 在` app.component.ts`中获取)
+4. 将元数据转换成响应式表单可以理解的数据类型 (**数据转换**, 在`form.component.ts` 中获取)
+
+这个案例完美表现出了关注点分离的合理性和清晰性
+
+获取数据的获取数据
+处理数据的处理数据
+渲染表单的渲染表单
+渲染当个控件的渲染单个控件
+π
+
+
+
+
+
 
 
 
