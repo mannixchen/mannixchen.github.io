@@ -12,6 +12,8 @@ pin: true
 
 [快捷键](jetbrains://idea/settings?name=Keymap)
 
+读一下[官方介绍](https://www.jetbrains.com/help/idea/viewing-structure-and-hierarchy-of-the-source-code.html)
+
 
 
 > 重要的不是快捷键本身, 而是快捷键所能代表的功能和意义(所以要详细写下按键的意义包括中文英文)。
@@ -137,6 +139,10 @@ Select **All Occurrences**: `⌃ + ⌘ + G`
 Add Selection for **Next Occurrence**: `⌃ + G`
 
 Unselect Occurrence: `⌃ + ⇧ + G`
+
+
+
+利用鼠标多选: `⌥ + ⇧ + Double Clik`
 
 
 
