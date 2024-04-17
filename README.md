@@ -1,8 +1,10 @@
 # Blog Posts
 
-[2024-04-15-angular-v12-doc-part2.md](_posts/2024-04-15-angular-v12-doc-part2.md) - Last Modified: 2024-04-16 13:43
+[2024-04-17-angular-v12-doc-part3-form.md](_posts/2024-04-17-angular-v12-doc-part3-form.md) - Last Modified: 2024-04-17 14:27
 
-[2024-04-13-mac-intellij-idea-shortcuts.md](_posts/2024-04-13-mac-intellij-idea-shortcuts.md) - Last Modified: 2024-04-16 09:31
+[2024-04-13-mac-intellij-idea-shortcuts.md](_posts/2024-04-13-mac-intellij-idea-shortcuts.md) - Last Modified: 2024-04-17 14:27
+
+[2024-04-15-angular-v12-doc-part2.md](_posts/2024-04-15-angular-v12-doc-part2.md) - Last Modified: 2024-04-16 13:43
 
 [2024-04-15-git-flow-types.md](_posts/2024-04-15-git-flow-types.md) - Last Modified: 2024-04-15 17:55
 
