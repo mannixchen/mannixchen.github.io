@@ -1,5 +1,7 @@
 # Blog Posts
 
+[2024-04-19-angular-v12-doc-part4-routing.md](_posts/2024-04-19-angular-v12-doc-part4-routing.md) - Last Modified: 2024-04-19 16:39
+
 [2024-04-13-mac-intellij-idea-shortcuts.md](_posts/2024-04-13-mac-intellij-idea-shortcuts.md) - Last Modified: 2024-04-19 09:31
 
 [2024-04-17-angular-v12-doc-part3-form.md](_posts/2024-04-17-angular-v12-doc-part3-form.md) - Last Modified: 2024-04-17 22:12
