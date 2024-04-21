@@ -235,7 +235,6 @@ export class AppRoutingModule { }
 最后，确保你的根模块`AppModule`已经导入了`AppRoutingModule`，这样主路由配置才会生效。
 
 ```ts
-typescriptCopy code
 // app.module.ts
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -260,4 +259,72 @@ export class AppModule { }
 通过这种方式，特性路由模块（和它们的路由）与主路由模块结合到一起，实现了功能区域的模块化和路由的懒加载。这种模式对于构建大型和性能优化的Angular应用至关重要。
 
 
-待续, 下面关注路由的路由守卫, 懒加载等等问题。
+## 路由守卫
+
+> 路由守卫 (Route Guards) 是一种用来控制导航流程的机制, 可以在路由激活, 离开的时候执行某些逻辑, 可以用来执行权限检查, 预先加载组件数据, 以及判断是否离开当前页面
+
+有四种类型的路由守卫:
+
+1. `CanActivate`：决定是否可以导航到某个路由。
+2. `CanActivateChild`：决定是否可以导航到某个子路由。
+3. `CanDeactivate`：决定是否可以离开当前路由。
+4. `Resolve`：在路由激活之前获取路由数据。
+5. `CanLoad`：决定是否可以异步加载某个特性模块。
+
+
+
+要想创建一个守卫, 就要在一个服务里面实现守卫的接口
+
+`export class AuthGuard implements CanActivate {}`
+
+然后实现细节
+
+```ts
+  constructor(private router: Router) {}
+
+  canActivate(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+
+    const isAuthenticated = // ... 检查用户是否认证
+    if (!isAuthenticated) {
+      this.router.navigate(['/login']); // 如果用户未认证，重定向到登录页面
+      return false;
+    }
+    return true;
+  }
+```
+
+进一步要去配置守卫:
+
+```ts
+const routes: Routes = [
+  {
+    path: 'secure',
+    canActivate: [AuthGuard], // 在这里使用
+    loadChildren: () => import('./secure/secure.module').then(m => m.SecureModule)
+  }
+];
+```
+
+### `CanActivateChild`
+
+- **用途**：`CanActivateChild`用来决定是否可以导航**到**某个父路由的**子路由**。
+- **工作方式**：<u>它在父路由层级上配置</u>，当尝试导航到父路由的任何子路由时会被触发。与`CanActivate`相比，`CanActivateChild`提供了<u>在父路由级别统一管理对子路由访问控制的能力</u>。
+
+
+
+## 懒加载
+
+`loadChildren: () => import('./secure/secure.module').then(m => m.SecureModule)`
+
+这是Angular 实现懒加载的一种方式, 懒加载是一种性能优化技术, 允许应用按需加载特定的模块, 只有用户在实际需要访问的时候才会被加载。
+
+- `loadChildren`：这是Angular路由配置中的一个属性，用来指定一个模块懒加载的方式, **`loadChildren`的值是一个返回模块类的`Promise`。**
+- `() =>`：这部分是一个箭头函数（Lambda表达式），它是JavaScript的一个特性，允许你定义匿名函数。这里它作为`loadChildren`的值，表示路由被访问时要执行的加载操作。
+- `import('./secure/secure.module')`：这是动态`import`语句，用于动态加载模块。这是一个JavaScript的提案，目前已经得到了广泛支持。<u>它返回一个`Promise`对象</u>，这个对象解析为一个包含所有模块导出的对象。
+- `.then(m => m.SecureModule)`：`import`语句返回的`Promise`解析完成后，`.then()`方法会被调用，`m`代表模块导出的对象。这里我们从这个对象中获取`SecureModule`模块，并将它返回给Angular路由系统。
+
+
+
+这种模式不仅适用于Angular，也是现代JavaScript应用中广泛使用的模块动态加载技术，它允许应用更加灵活地控制资源的加载
