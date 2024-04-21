@@ -22,43 +22,49 @@ pin: true
 
 `⌥ 按住`就会激活其他按钮, 再按一个辅助按钮就相当于激活
 
-
+关于 Mac -> Windows键盘的映射有几个规则 (其实只要记住Mac键位就好了, 记得把 `⌘ ` 改成 `Ctrl` 就能解决大部分问题了)
+1. 再`Ctrl` 和 `⌘ `不同时使用的大部分情况下, 直接用`Ctrl` 代替` ⌘`, 
+2. 不过有几个地方比较特殊 `⌃ + ⌘` ->` Ctrl + Shift + Alt`
+	- Select **All Occurrences**: `⌃ + ⌘ + G` - `Ctrl + Shift + Alt + G`
+	- 切换全屏: `⌃ + ⌘ + F` - `Ctrl + Shift + Alt + F`
+	- 匹配括号Move Caret to **Matching Brace**: `⌃ + M` - `Ctrl + Alt + M` 
+	- **列选择**模式: `⇧ + ⌘ + 8` - `Ctrl + Shift + Alt + 8`
 
 ## 文件
 
-**New** scratch file: `⇧ + ⌘ + N`
+**New** scratch file: `⇧ + ⌘ + N` - `Ctrl + Shift + N`
 
-Copy **path**: `⇧ + ⌘ + C`
+Copy **path**: `⇧ + ⌘ + C` -   `Ctrl + Shift + C`
 
 
 
 ## 界面:
 
-切换 **tab**: `⌘ + ⇧ + [ / ]`
+切换 **tab**: `⌘ + ⇧ + [ / ]` - ` Ctrl + Shift + [ / ]`
 
-切换项目窗口: `⌘ + ⌥ + Backtick` 
+切换项目窗口: `⌘ + ⌥ + Backtick`  -  `Ctrl + Alt + Backtick`
 
-**Project**: `⌘ + 1`
+**Project**: `⌘ + 1` - `Alt + 1`
 
-Bookmark: `⌘ + 2`
+Bookmark: `⌘ + 2` - `Alt + 2`
 
-**Commit**: `⌘ + 0`
+**Commit**: `⌘ + 0` - `Alt + 0`
 
-**Git tree**:`⌘ + 9`
+**Git tree**:`⌘ + 9` - `Alt + 9`
 
-Structure: `⌘ + 7`
+Structure: `⌘ + 7` - `Alt + 7`
 
-Service: `⌘ + 8`
+Service: `⌘ + 8` - `Alt + 8`
 
-Debug: `⌘ + 5`
+Debug: `⌘ + 5` - `Alt + 5`
 
-Run: `⌘ + 4`
+Run: `⌘ + 4` - `Alt + 4`
 
-Find: `⌘ + 3`
+Find: `⌘ + 3` - `Alt + 3`
 
-**Terminal**: `⌥ + f12`
+**Terminal**: `⌥ + f12` - `Alt + F12`
 
-切换全屏: `⌃ + ⌘ + F`
+切换全屏: `⌃ + ⌘ + F` - `Ctrl + Alt + Shift + F`
 
 
 
@@ -66,103 +72,103 @@ Find: `⌘ + 3`
 
 ## 编辑:
 
-**Duplicate** line or slection复制行: `⌘ + d`
+**Duplicate** line or slection复制行: `⌘ + d` - ` Ctrl + D`
 
-**Join** lines合并行:  `⌃ + ⇧ + J`
-
-
-
-Split Line 拆分行: `⌘ + ↵`
-
-Start **New Line** 新建行: `⇧ + ↵`
-
-Start New Line Before Current 向上新建行: `⌥ + ⌘ + ↵`;
+**Join** lines合并行:  `⌃ + ⇧ + J` -  `Ctrl + Shift + J`
 
 
 
-**行上下 (Line Up)**移动 `⌥ + ⇧ + ↑`
+Split Line 拆分行: `⌘ + ↵` - `Ctrl + enter`
 
-**声明上下 (Statement Up)**移动 `⇧ + ⌘ + ↑`
+Start **New Line** 新建行: `⇧ + ↵` -  `Shift + enter`
 
-
-
-Add or Remove **Caret**: `⌥ + ⇧ + Click` - 添加鼠标光标
-
-Add **Rectangular** Selection on Mouse Drag: `⌥ + ⇧ + ⌘ + Click` - 可以矩形添加光标
+Start New Line Before Current 向上新建行: `⌥ + ⌘ + ↵`;  - `Ctrl + Alt  + enter`
 
 
 
-大小写转换: `⇧ + ⌘ + U`
+**行上下 (Line Up)**移动 `⌥ + ⇧ + ↑` -`Alt + Shift + up`
 
-**Format** 代码: `⌥ + ⌘ + L`
+**声明上下 (Statement Up)**移动 `⇧ + ⌘ + ↑` -`Ctrl + Shift + up`
 
-Format file: `⌥ + ⇧ + ⌘ + L`
 
-优化缩进: `⌃ + ⌥ + I`
+
+Add or Remove **Caret**: `⌥ + ⇧ + Click` - 添加鼠标光标 - `Alt + Shift + click`
+
+Add **Rectangular** Selection on Mouse Drag: `⌥ + ⇧ + ⌘ + Click` - 可以矩形添加光标 -  `Ctrl + Shift + Alt + click`
+
+
+
+大小写转换: `⇧ + ⌘ + U` - `Ctrl + shift + U`
+
+**Format** 代码: `⌥ + ⌘ + L` - `Ctrl + Alt + L`
+
+Format file: `⌥ + ⇧ + ⌘ + L` - `Ctrl + Shift + Alt + L`
+
+优化缩进: `⌃ + ⌥ + I` - `Ctrl + Alt + I`
 
 
 
 ## 定位
 
-**Recent** files: `⌘ + E`
+**Recent** files: `⌘ + E` - `Ctrl + E`
 
-Recent location: `⌘ + ⇧ + E`
+Recent location: `⌘ + ⇧ + E` -  `Ctrl + Shift + E`
 
-Recent changes: `⌥ + ⇧ +C`
-
-
-
-Jump to **source**: `⌘ + ↓`
-
-Jump to Navigation bar: `⌘ + ↑`
+Recent changes: `⌥ + ⇧ +C` -  `Shift + Alt + C`
 
 
 
-匹配括号Move Caret to **Matching Brace**: `⌃ + M`
+Jump to **source**: `⌘ + ↓` - `Ctrl + down`
 
-代码块中移动光标: `⌥ + ⌘ + [ or ]` (如有选择需求加上 ⇧)
+Jump to Navigation bar: `⌘ + ↑` - `Ctrl + up`
 
-将光标设置为**中心**: `⌃ + L`
 
-定位上一次后一次编辑点(Back / Forward): `⌘ + [ / ⌘ + ]`
 
-折叠和展开当前代码块 (Fold / Expand): `⌘ + - / ⌘ + =`
+匹配括号Move Caret to **Matching Brace**: `⌃ + M` - `Ctrl + Alt + M` 
+
+代码块中移动光标Caret Code Block: `⌥ + ⌘ + [ or ]` (如有选择需求加上 ⇧) - `Ctrl + Alt + [/]`
+
+将光标设置为**中心**: `⌃ + L` 
+
+定位上一次后一次编辑点(Back / Forward): `⌘ + [ / ⌘ + ]` - `Ctrl + [/]`
+
+折叠和展开当前代码块 (Fold / Expand): `⌘ + - / ⌘ + =`  -  `Ctrl + -/+`
 
 
 
 ## 选择:
 
-Find Next / Move to Next Occurrence: `⌘ + G`
+Find Next / Move to Next Occurrence: `⌘ + G`  - `Ctrl + G`
 
-Find Previous / Move to Previous Occurrence: `⌘ + ⇧ + G`
+Find Previous / Move to Previous Occurrence: `⌘ + ⇧ + G` - `Shift + Alt +G`
 
-Select **All Occurrences**: `⌃ + ⌘ + G`
+Select **All Occurrences**: `⌃ + ⌘ + G` - `Ctrl + Shift + Alt + G`
 
-Add Selection for **Next Occurrence**: `⌃ + G`
+Add Selection for **Next Occurrence**: `⌃ + G`  - `Ctrl + G`
 
-Unselect Occurrence: `⌃ + ⇧ + G`
-
-
-
-利用鼠标多选: `⌥ + ⇧ + Double Clik`
+Unselect Occurrence: `⌃ + ⇧ + G` - `Ctrl + Shift + G`
 
 
 
-**列选择**模式: `⇧ + ⌘ + 8`
+利用鼠标多选: `⌥ + ⇧ + Double Clik` - `Shift + Alt + click`
 
 
 
-**扩展选择**: `⌥ + ↑` 反向: `⌥ + ↓`
-
-**Select In**: `⌥ + F1` (将文件在不同的场景下打开, 如: Finder, Terminal, Project View 等)
+**列选择**模式: `⇧ + ⌘ + 8` - `Ctrl + Shift + Alt + 8`
 
 
 
-**File Path (Reveal in Finder)**: `⌘ + ⌥ + F12`
+**扩展选择**: `⌥ + ↑` 反向: `⌥ + ↓` - `same`
+
+**Select In**: `⌥ + F1` (将文件在不同的场景下打开, 如: Finder, Terminal, Project View 等) - `same`
 
 
 
-## 搜索:
+**File Path (Reveal in Finder)**: `⌘ + ⌥ + F12` - `Ctrl + Alt + F12`
+
+
+
+## 搜索: 
 
 Find ⌘ + F 全局搜索: `⌘ + ⇧ + F`
 
