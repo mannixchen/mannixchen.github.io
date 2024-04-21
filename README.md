@@ -1,6 +1,10 @@
 # Blog Posts
 
-[2024-04-13-mac-intellij-idea-shortcuts.md](_posts/2024-04-13-mac-intellij-idea-shortcuts.md) - Last Modified: 2024-04-19 09:31
+[2024-04-13-mac-intellij-idea-shortcuts.md](_posts/2024-04-13-mac-intellij-idea-shortcuts.md) - Last Modified: 2024-04-21 16:39
+
+[2024-04-03-学习是什么_我该怎么学.md](_posts/2024-04-03-学习是什么_我该怎么学.md) - Last Modified: 2024-04-21 15:44
+
+[2024-04-19-angular-v12-doc-part4-routing.md](_posts/2024-04-19-angular-v12-doc-part4-routing.md) - Last Modified: 2024-04-19 16:39
 
 [2024-04-17-angular-v12-doc-part3-form.md](_posts/2024-04-17-angular-v12-doc-part3-form.md) - Last Modified: 2024-04-17 22:12
 
@@ -9,8 +13,6 @@
 [2024-04-15-git-flow-types.md](_posts/2024-04-15-git-flow-types.md) - Last Modified: 2024-04-15 17:55
 
 [2024-04-13-angular-v12-doc.md](_posts/2024-04-13-angular-v12-doc.md) - Last Modified: 2024-04-15 13:24
-
-[2024-04-03-学习是什么_我该怎么学.md](_posts/2024-04-03-学习是什么_我该怎么学.md) - Last Modified: 2024-04-13 17:33
 
 [2024-04-05-combine-github-page-and-jekyll-as-static-blog-website.md](_posts/2024-04-05-combine-github-page-and-jekyll-as-static-blog-website.md) - Last Modified: 2024-04-08 15:52
 
