@@ -1,6 +1,6 @@
 # Blog Posts
 
-[2024-04-22-mac-os-shortcuts-skills.md](_posts/2024-04-22-mac-os-shortcuts-skills.md) - Last Modified: 2024-04-22 21:51
+[2024-04-22-mac-os-shortcuts-skills.md](_posts/2024-04-22-mac-os-shortcuts-skills.md) - Last Modified: 2024-04-23 09:11
 
 [2024-04-19-angular-v12-doc-part4-routing.md](_posts/2024-04-19-angular-v12-doc-part4-routing.md) - Last Modified: 2024-04-21 21:16
 
