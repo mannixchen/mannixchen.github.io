@@ -1,5 +1,9 @@
 # Blog Posts
 
+[2024-04-15-angular-v12-doc-part2.md](_posts/2024-04-15-angular-v12-doc-part2.md) - Last Modified: 2024-04-27 21:55
+
+[2024-04-13-angular-v12-doc.md](_posts/2024-04-13-angular-v12-doc.md) - Last Modified: 2024-04-27 21:55
+
 [2024-04-22-mac-os-shortcuts-skills.md](_posts/2024-04-22-mac-os-shortcuts-skills.md) - Last Modified: 2024-04-23 09:11
 
 [2024-04-19-angular-v12-doc-part4-routing.md](_posts/2024-04-19-angular-v12-doc-part4-routing.md) - Last Modified: 2024-04-21 21:16
@@ -10,11 +14,7 @@
 
 [2024-04-17-angular-v12-doc-part3-form.md](_posts/2024-04-17-angular-v12-doc-part3-form.md) - Last Modified: 2024-04-17 22:12
 
-[2024-04-15-angular-v12-doc-part2.md](_posts/2024-04-15-angular-v12-doc-part2.md) - Last Modified: 2024-04-16 13:43
-
 [2024-04-15-git-flow-types.md](_posts/2024-04-15-git-flow-types.md) - Last Modified: 2024-04-15 17:55
-
-[2024-04-13-angular-v12-doc.md](_posts/2024-04-13-angular-v12-doc.md) - Last Modified: 2024-04-15 13:24
 
 [2024-04-05-combine-github-page-and-jekyll-as-static-blog-website.md](_posts/2024-04-05-combine-github-page-and-jekyll-as-static-blog-website.md) - Last Modified: 2024-04-08 15:52
 
