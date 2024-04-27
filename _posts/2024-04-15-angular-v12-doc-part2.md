@@ -312,6 +312,8 @@ export class ZippyMultislotComponent {}
 >
 > ng-container: 将模版元素组织在一起而不必创建多余的 DOM, 很适合做条件渲染, 分组渲染, 以及引用渲染(利用 `*ngTemplateOutlet`引用模版变量), 类似于 Vue 中的 `<template>`标签。
 
+**`ng-template` 不会主动显示元素 (配合结构指令), 而 `ng-container`则只是逻辑容器, 适合用来做循环等, 而不需要添加额外的元素**
+
 结合`ng-template`、`ng-container`和内容投影（通常称为“插槽”）来实现条件渲染，可以让你创建更加灵活和动态的组件。这种方法特别适用于当你想在父组件中定义内容，并根据某些条件在子组件中渲染这些内容时。
 
 ##### 步骤1: 定义内容投影插槽
@@ -380,8 +382,6 @@ export class ChildComponent {
 这种方法允许你在父组件中定义可以根据条件渲染的内容，并通过子组件的逻辑来控制这些内容的显示。这样不仅增加了组件间的互动性，也提高了组件的复用性和灵活性。通过`ng-template`、`ng-container`和内容投影的结合使用，Angular应用可以实现复杂的条件渲染逻辑，同时保持模板的清晰和组织。
 
 
-
-#### 
 
 #### 利用指令来引用 ng-template
 
@@ -598,7 +598,7 @@ export class AppModule { }
 
 ### trackBy
 
-> trackBy 的值是一个返回值的函数
+> trackBy 的值是一个返回值的函数, 类似于 **vue** 中 `key` 的作用
 
 `trackBy` 是 Angular 中的一个用于 `*ngFor` 指令的选项，它的主要目的是提高列表渲染性能。在使用 `*ngFor` 迭代显示数据列表时，如果列表数据发生变化（例如，元素被添加、移除或排序），默认情况下，Angular 会重新渲染整个列表的 DOM 元素。这在处理大量数据时会导致性能问题。
 
