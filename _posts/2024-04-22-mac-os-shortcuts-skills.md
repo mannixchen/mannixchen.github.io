@@ -10,11 +10,11 @@ pin: false
 
 ## `fn` 按键
 
-`fn` + `C` -> 打开控制台 Control
+`fn` + `C` -> 打开控制台 **C**ontrol
 
-`fn` + `N` -> 打开 通知中心 Notification
+`fn` + `N` -> 打开 通知中心 **N**otification
 
-`fn` + `Q` -> 快速笔记 Quick Notes
+`fn` + `Q` -> 快速笔记 **Q**uick Notes
 
 
 
