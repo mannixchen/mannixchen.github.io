@@ -36,9 +36,13 @@ pin: false
 - **NgModel**：用于在模板驱动表单中创建和管理 `FormControl` 实例，并绑定 HTML 表单元素如 `<input>` 到数据模型。
 - **NgForm**：代表整个表单，用于管理表单下的所有 `NgModel` 实例。通常是自动创建和管理的，不需要显式声明。
 
+## 不要一起使用
 
+可能会导致一些问题：
 
-
+1. **双向绑定冲突：** 使用`[(ngModel)]`和`formControlName`来实现双向绑定时，它们会相互影响，可能导致不可预料的行为。响应式表单的值将优先于模板驱动表单的值。
+2. **数据一致性问题：** 当表单控件同时被模板驱动和响应式控制时，可能会导致数据不一致的问题。例如，如果你直接修改了`terminateTaskModalService.comment`的值，但没有手动更新相关的响应式表单控件，那么表单的状态和值就会不一致。
+3. **不符合最佳实践：** Angular推荐**在同一个表单中只使用一种方式来处理表单数据**。这样可以简化代码，减少潜在的问题，并使得代码更易于理解和维护。
 
 ## 响应式表单
 
@@ -173,6 +177,30 @@ this.myForm = this.fb.group({
 
 
 
+```html
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="firstName">First Name:</label>
+    <input id="firstName" type="text" formControlName="firstName">
+  </div>
+  <div formGroupName="address">
+    <div>
+      <label for="street">Street:</label>
+      <input id="street" type="text" formControlName="street">
+    </div>
+    <div>
+      <label for="city">City:</label>
+      <input id="city" type="text" formControlName="city">
+    </div>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+// 需要使用 formGroupName 来区分嵌套组
+```
+
+
+
 ## 校验
 
 模版表单的校验比较无脑:
@@ -203,8 +231,81 @@ https://v12.angular.cn/guide/form-validation#validating-input-in-template-driven
 为了防止异步校验的性能浪费, 更改updateOn 的触发时机为 `blur`或`submit`
 
 
+```html
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="firstName">First Name:</label>
+    <input id="firstName" type="text" formControlName="firstName">
+    <div *ngIf="form.get('firstName').errors?.required && form.get('firstName').touched">
+      First name is required.
+    </div>
+    <div *ngIf="form.get('firstName').errors?.minLength && form.get('firstName').touched">
+      First name must be at least 2 characters long.
+    </div>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email">
+    <div *ngIf="form.get('email').errors?.required && form.get('email').touched">
+      Email is required.
+    </div>
+    <div *ngIf="form.get('email').errors?.email && form.get('email').touched">
+      Please enter a valid email.
+    </div>
+  </div>
+  <div formGroupName="address">
+    <div>
+      <label for="street">Street:</label>
+      <input id="street" type="text" formControlName="street">
+    </div>
+    <div>
+      <label for="city">City:</label>
+      <input id="city" type="text" formControlName="city">
+      <div *ngIf="form.get('address.city').errors?.required && form.get('address.city').touched">
+        City is required.
+      </div>
+    </div>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+```
 
-更多的校验细节, 看文档的实现。 这部分比较细分, 可以用的时候再看。
+```ts
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-my-form',
+  templateUrl: './my-form.component.html'
+})
+export class MyFormComponent {
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.createForm();
+  }
+
+  createForm() {
+    this.form = this.fb.group({
+      firstName: ['', [Validators.required, Validators.minLength(2)]],
+      email: ['', [Validators.required, Validators.email]],
+      address: this.fb.group({
+        street: [''],
+        city: ['', Validators.required]
+      })
+    });
+  }
+
+  onSubmit() {
+    if (this.form.valid) {
+      console.log('Form Data: ', this.form.value);
+    } else {
+      console.log('Form is not valid');
+    }
+  }
+}
+
+```
 
 
 
