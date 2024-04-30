@@ -1,6 +1,6 @@
 # Blog Posts
 
-[2024-04-29-rxjs-learn.md](_posts/2024-04-29-rxjs-learn.md) - Last Modified: 2024-04-29 18:15
+[2024-04-29-rxjs-learn.md](_posts/2024-04-29-rxjs-learn.md) - Last Modified: 2024-04-30 14:31
 
 [2024-04-17-angular-v12-doc-part3-form.md](_posts/2024-04-17-angular-v12-doc-part3-form.md) - Last Modified: 2024-04-28 13:13
 
