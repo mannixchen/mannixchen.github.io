@@ -1,5 +1,7 @@
 # Blog Posts
 
+[2024-04-13-mac-intellij-idea-shortcuts.md](_posts/2024-04-13-mac-intellij-idea-shortcuts.md) - Last Modified: 2024-05-11 13:14
+
 [2024-04-22-mac-os-shortcuts-skills.md](_posts/2024-04-22-mac-os-shortcuts-skills.md) - Last Modified: 2024-05-05 17:48
 
 [2024-04-29-rxjs-learn.md](_posts/2024-04-29-rxjs-learn.md) - Last Modified: 2024-04-30 14:31
@@ -11,8 +13,6 @@
 [2024-04-13-angular-v12-doc.md](_posts/2024-04-13-angular-v12-doc.md) - Last Modified: 2024-04-27 21:55
 
 [2024-04-19-angular-v12-doc-part4-routing.md](_posts/2024-04-19-angular-v12-doc-part4-routing.md) - Last Modified: 2024-04-21 21:16
-
-[2024-04-13-mac-intellij-idea-shortcuts.md](_posts/2024-04-13-mac-intellij-idea-shortcuts.md) - Last Modified: 2024-04-21 16:39
 
 [2024-04-03-学习是什么_我该怎么学.md](_posts/2024-04-03-学习是什么_我该怎么学.md) - Last Modified: 2024-04-21 15:44
 
