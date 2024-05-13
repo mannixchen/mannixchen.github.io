@@ -28,13 +28,13 @@ pin: true
 	- Select **All Occurrences**: `⌃ + ⌘ + G` - `Ctrl + Shift + Alt + G`
 	- 切换全屏: `⌃ + ⌘ + F` - `Ctrl + Shift + Alt + F`
 	- 匹配括号Move Caret to **Matching Brace**: `⌃ + M` - `Ctrl + Alt + M` 
-	- **列选择**模式: `⇧ + ⌘ + 8` - `Ctrl + Shift + Alt + 8`
+	- **列选择**模式: `⌘ + ⇧ + 8` - `Ctrl + Shift + Alt + 8`
 
 ## 文件
 
-**New** scratch file: `⇧ + ⌘ + N` ------ `Ctrl + Shift + N`
+**New** scratch file: `⌘ + ⇧ + N` ------ `Ctrl + Shift + N`
 
-Copy **path**: `⇧ + ⌘ + C` ------   `Ctrl + Shift + C`
+Copy **path**: `⌘ + ⇧ + C` ------   `Ctrl + Shift + C`
 
 
 
@@ -82,27 +82,27 @@ Split Line 拆分行: `⌘ + ↵` ------ `Ctrl + enter`
 
 Start **New Line** 新建行: `⇧ + ↵` ------  `Shift + enter`
 
-Start New Line Before Current 向上新建行: `⌥ + ⌘ + ↵`;  ------ `Ctrl + Alt  + enter`
+Start New Line Before Current 向上新建行: `⌘ + ⌥ + ↵`;  ------ `Ctrl + Alt  + enter`
 
 
 
 **行上下 (Line Up)**移动 `⌥ + ⇧ + ↑` ------`Alt + Shift + up`
 
-**声明上下 (Statement Up)**移动 `⇧ + ⌘ + ↑` ------`Ctrl + Shift + up`
+**声明上下 (Statement Up)**移动 `⌘ + ⇧ + ↑` ------`Ctrl + Shift + up`
 
 
 
 Add or Remove **Caret**: `⌥ + ⇧ + Click` ------ 添加鼠标光标 ------ `Alt + Shift + click`
 
-Add **Rectangular** Selection on Mouse Drag: `⌥ + ⇧ + ⌘ + Click` ------ 可以矩形添加光标 ------  `Ctrl + Shift + Alt + click`
+Add **Rectangular** Selection on Mouse Drag: `⌘ + ⌥ + ⇧ + Click` ------ 可以矩形添加光标 ------  `Ctrl + Shift + Alt + click`
 
 
 
-大小写转换: `⇧ + ⌘ + U` ------ `Ctrl + shift + U`
+大小写转换: `⌘ + ⇧ + U` ------ `Ctrl + shift + U`
 
-**Format** 代码: `⌥ + ⌘ + L` ------ `Ctrl + Alt + L`
+**Format** 代码: `⌘ + ⌥ + L` ------ `Ctrl + Alt + L`
 
-Format file: `⌥ + ⇧ + ⌘ + L` ------ `Ctrl + Shift + Alt + L`
+Format file: `⌘ + ⌥ + ⇧ + L` ------ `Ctrl + Shift + Alt + L`
 
 优化缩进: `⌃ + ⌥ + I` ------ `Ctrl + Alt + I`
 
@@ -126,7 +126,7 @@ Jump to Navigation bar: `⌘ + ↑` ------ `Ctrl + up`
 
 匹配括号Move Caret to **Matching Brace**: `⌃ + M` ------ `Ctrl + Alt + M` 
 
-代码块中移动光标Caret Code Block: `⌥ + ⌘ + [ or ]` (如有选择需求加上 ⇧) ------ `Ctrl + Alt + [/]`
+代码块中移动光标Caret Code Block: `⌘ + ⌥ + [ or ]` (如有选择需求加上 ⇧) ------ `Ctrl + Alt + [/]`
 
 将光标设置为**中心**: `⌃ + L` 
 
@@ -154,7 +154,7 @@ Unselect Occurrence: `⌃ + ⇧ + G` ------ `Ctrl + Shift + G`
 
 
 
-**列选择**模式: `⇧ + ⌘ + 8` ------ `Ctrl + Shift + Alt + 8`
+**列选择**模式: `⌘ + ⇧ + 8` ------ `Ctrl + Shift + Alt + 8`
 
 
 
@@ -178,7 +178,7 @@ Replace: `⌘ + R`
 
 搜索文件名 Files: `⌘ + ⇧ + O`
 
-搜索 Symbols: `⌥ + ⌘ + O`
+搜索 Symbols: `⌘ + ⌥ + O`
 
 搜索 Actions: `⌘ + ⇧ + A`
 
@@ -194,9 +194,9 @@ Git popup: `⌃ + V`
 
 **Update**: `⌘ + t`
 
-Rollback: `⌥ + ⌘ + Z`
+Rollback: `⌘ + ⌥ + Z`
 
-**Push**: `⇧ + ⌘ + k`
+**Push**: `⌘ + ⇧ + k`
 
 **下一处(Next Diff)**: `F7`
 
@@ -206,4 +206,4 @@ Rollback: `⌥ + ⌘ + Z`
 
 Find usage in file: `⌘ + F7`
 
-**完成**当前声明: `⇧ + ⌘ + ↵`
+**完成**当前声明: `⌘ + ⇧ + ↵`
