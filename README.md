@@ -1,8 +1,8 @@
 # Blog Posts
 
-[2024-04-03-学习是什么_我该怎么学.md](_posts/2024-04-03-学习是什么_我该怎么学.md) - Last Modified: 2024-05-13 22:14
+[2024-04-13-mac-intellij-idea-shortcuts.md](_posts/2024-04-13-mac-intellij-idea-shortcuts.md) - Last Modified: 2024-05-20 09:36
 
-[2024-04-13-mac-intellij-idea-shortcuts.md](_posts/2024-04-13-mac-intellij-idea-shortcuts.md) - Last Modified: 2024-05-11 13:14
+[2024-04-03-学习是什么_我该怎么学.md](_posts/2024-04-03-学习是什么_我该怎么学.md) - Last Modified: 2024-05-13 22:14
 
 [2024-04-22-mac-os-shortcuts-skills.md](_posts/2024-04-22-mac-os-shortcuts-skills.md) - Last Modified: 2024-05-05 17:48
 
