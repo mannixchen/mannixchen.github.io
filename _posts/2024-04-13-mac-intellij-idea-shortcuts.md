@@ -207,3 +207,11 @@ Rollback: `⌘ + ⌥ + Z`
 Find usage in file: `⌘ + F7`
 
 **完成**当前声明: `⌘ + ⇧ + ↵`
+
+
+
+
+## 其他:
+### Git 中 revision 和 branch的区别
+Revision是一个特定的提交点，是代码在某个时间点的状态。
+Branch是一个指向特定提交的指针，并且可以在此基础上进行独立开发。
