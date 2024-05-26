@@ -1,5 +1,7 @@
 # Blog Posts
 
+[2024-04-24-understand-a-big-project-from-scratch.md](_posts/2024-04-24-understand-a-big-project-from-scratch.md) - Last Modified: 2024-05-26 22:28
+
 [2024-05-23-angular-v12-doc-part5-link-import.md](_posts/2024-05-23-angular-v12-doc-part5-link-import.md) - Last Modified: 2024-05-23 15:54
 
 [2024-04-13-mac-intellij-idea-shortcuts.md](_posts/2024-04-13-mac-intellij-idea-shortcuts.md) - Last Modified: 2024-05-20 09:36
