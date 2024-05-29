@@ -1,6 +1,6 @@
 # Blog Posts
 
-[2024-05-27-all-need-characters.md](_posts/2024-05-27-all-need-characters.md) - Last Modified: 2024-05-30 04:04
+[2024-05-27-all-need-characters.md](_posts/2024-05-27-all-need-characters.md) - Last Modified: 2024-05-30 04:28
 
 [2024-05-19-The-Power-of-Full-Engagement.md](_posts/2024-05-19-The-Power-of-Full-Engagement.md) - Last Modified: 2024-05-30 04:04
 
