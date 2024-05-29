@@ -1,8 +1,8 @@
 # Blog Posts
 
-[2024-05-27-all-need-characters.md](_posts/2024-05-27-all-need-characters.md) - Last Modified: 2024-05-27 17:31
+[2024-05-27-all-need-characters.md](_posts/2024-05-27-all-need-characters.md) - Last Modified: 2024-05-30 04:04
 
-[2024-05-19-The-Power-of-Full-Engagement.md](_posts/2024-05-19-The-Power-of-Full-Engagement.md) - Last Modified: 2024-05-27 06:40
+[2024-05-19-The-Power-of-Full-Engagement.md](_posts/2024-05-19-The-Power-of-Full-Engagement.md) - Last Modified: 2024-05-30 04:04
 
 [2024-04-24-understand-a-big-project-from-scratch.md](_posts/2024-04-24-understand-a-big-project-from-scratch.md) - Last Modified: 2024-05-26 22:28
 
