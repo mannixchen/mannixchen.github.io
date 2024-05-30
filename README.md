@@ -1,6 +1,6 @@
 # Blog Posts
 
-[2024-05-30-gpt-to-my-marathon-advice.md](_posts/2024-05-30-gpt-to-my-marathon-advice.md) - Last Modified: 2024-05-30 14:06
+[2024-05-30-gpt-to-my-marathon-advice.md](_posts/2024-05-30-gpt-to-my-marathon-advice.md) - Last Modified: 2024-05-30 14:19
 
 [2024-05-27-all-need-characters.md](_posts/2024-05-27-all-need-characters.md) - Last Modified: 2024-05-30 05:11
 
