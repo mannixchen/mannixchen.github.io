@@ -1,8 +1,8 @@
 # Blog Posts
 
-[2024-05-30-gpt-to-my-marathon-advice.md](_posts/2024-05-30-gpt-to-my-marathon-advice.md) - Last Modified: 2024-05-30 14:19
+[2024-05-27-all-need-characters.md](_posts/2024-05-27-all-need-characters.md) - Last Modified: 2024-06-04 07:46
 
-[2024-05-27-all-need-characters.md](_posts/2024-05-27-all-need-characters.md) - Last Modified: 2024-05-30 05:11
+[2024-05-30-gpt-to-my-marathon-advice.md](_posts/2024-05-30-gpt-to-my-marathon-advice.md) - Last Modified: 2024-05-30 14:19
 
 [2024-05-19-The-Power-of-Full-Engagement.md](_posts/2024-05-19-The-Power-of-Full-Engagement.md) - Last Modified: 2024-05-30 04:04
 
