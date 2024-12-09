@@ -1,5 +1,7 @@
 # Blog Posts
 
+[2024-12-09-fragile-balance-in-life.md](_posts/2024-12-09-fragile-balance-in-life.md) - Last Modified: 2024-12-09 08:11
+
 [2024-05-27-all-need-characters.md](_posts/2024-05-27-all-need-characters.md) - Last Modified: 2024-06-04 07:46
 
 [2024-05-30-gpt-to-my-marathon-advice.md](_posts/2024-05-30-gpt-to-my-marathon-advice.md) - Last Modified: 2024-05-30 14:19
