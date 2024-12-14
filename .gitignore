@@ -16,6 +16,8 @@ package-lock.json
 
 # IDE configurations
 .idea
+.obsidian
+.DS_Store
 
 # Misc
 assets/js/dist
