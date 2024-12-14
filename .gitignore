@@ -21,4 +21,5 @@ package-lock.json
 
 # Misc
 assets/js/dist
+backup/.DS_Store
 .DS_Store
