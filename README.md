@@ -1,6 +1,6 @@
 # Blog Posts
 
-[2024-12-19-entertainment-addiction.md](_posts/2024-12-19-entertainment-addiction.md) - Last Modified: 2024-12-19 18:13
+[2024-12-19-entertainment-addiction.md](_posts/2024-12-19-entertainment-addiction.md) - Last Modified: 2024-12-20 21:16
 
 [2024-12-09-fragile-balance-in-life.md](_posts/2024-12-09-fragile-balance-in-life.md) - Last Modified: 2024-12-15 22:50
 
