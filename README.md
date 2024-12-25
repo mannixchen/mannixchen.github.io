@@ -1,6 +1,6 @@
 # Blog Posts
 
-[2024-12-23-sleep-early.md](_posts/2024-12-23-sleep-early.md) - Last Modified: 2024-12-25 17:34
+[2024-12-23-sleep-early.md](_posts/2024-12-23-sleep-early.md) - Last Modified: 2024-12-25 17:44
 
 [2024-12-19-entertainment-addiction.md](_posts/2024-12-19-entertainment-addiction.md) - Last Modified: 2024-12-23 13:38
 
