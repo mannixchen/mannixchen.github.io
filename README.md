@@ -1,5 +1,7 @@
 # Blog Posts
 
+[2024-12-26-4-top-priority.md](_posts/2024-12-26-4-top-priority.md) - Last Modified: 2024-12-26 17:56
+
 [2024-12-23-sleep-early.md](_posts/2024-12-23-sleep-early.md) - Last Modified: 2024-12-25 17:44
 
 [2024-12-19-entertainment-addiction.md](_posts/2024-12-19-entertainment-addiction.md) - Last Modified: 2024-12-23 13:38
